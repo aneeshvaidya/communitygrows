@@ -45,6 +45,14 @@ group :development, :test do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'autotest-rails'
+  gem 'factory_girl_rails'
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
