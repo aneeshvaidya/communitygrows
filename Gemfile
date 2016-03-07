@@ -53,6 +53,7 @@ group :test do
   gem 'database_cleaner'
   gem 'autotest-rails'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false # added by Tony. Gem for the test coverage
 end
 
 group :production do
