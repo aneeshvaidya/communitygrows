@@ -1,6 +1,6 @@
 Feature: successfully login 
   
-  As a user
+  As an admin
   I want to log in with my credentials
   So that I can access the dashboard
   
@@ -14,10 +14,10 @@ Background: user is on the login page
   And I am on the CommunityGrows home page
 
 Scenario: successfully login with a user credential
-  When I fill in "username" with "user"
+  When I fill in "username" with "admin"
   And I fill in "password" with "password"
   And I press "login"
-  Then I should see "Welcome back, username."
+  Then I should see "Welcome back, administrator."
   Then I should see "CommunityGrows"
   
 Scenario: unsuccessfully login with a wrong username
