@@ -3,11 +3,11 @@
 #centeredmenu
   %ul.nav.nav-tabs
     %li
-      %a{:href => "#"} Documents
+      = link_to "Documents", documents_path
     %li
-      %a{:href => "#"} Subcommittee
+      = link_to "Subcomittee", committee_index_path
     %li
-      %a{:href => "#"} Admin
+      = link_to "Admin", admin_index_path
 
 %body
   #announcements
