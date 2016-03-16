@@ -1,10 +1,14 @@
 
 body {
-    /*background-image: url("login/login_page.jpg");*/
+    background: url(login/login_page.jpg) no-repeat center center fixed;
     color: white;
     font-family: "Arial", Times, sans-serif;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    background-size: 100% 100%;
 } 
 
 h2 {
