@@ -1,0 +1,2 @@
+class CommitteeController < ApplicationController
+end
