@@ -1,0 +1,44 @@
+-#  This file is app/views/movies/index.html.haml
+%h1 User Management
+
+%table#movies
+  %thead
+    %tr
+      %td User:
+      %td Status:
+      %td Created_at:
+      %td
+  %tbody
+    - users = ['Jae', 'Bae']
+    - admin = ['Admin', 'User']
+    - (1..2).each do |i|
+      %tr
+        %td= users[i-1]
+        %td= admin[i-1]
+        %td= '2016-03-10'
+        %td= link_to "Edit", ''
+
+= link_to 'Add new user', ''
+= link_to 'delete movie', ''
+
+
+
+%h1 Announcement Management
+
+%table#movies
+  %thead
+    %tr
+      %td Title:
+      %td Content:
+      %td Created_at:
+      %td 
+  %tbody
+    - (1..1).each do |i|
+      %tr
+        %td= 'Hello'
+        %td= 'This is a mock-up'
+        %td= '2016-03-10'
+        %td= link_to "Show more", ''
+
+= link_to 'Add Announcement', ''
+= link_to 'Delete Announcement', ''
