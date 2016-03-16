@@ -1,0 +1,59 @@
+#docRepo
+  %h2 Document Repository
+
+%h1#committeeTitle Executive committee
+
+%table#docs
+  %thead#filebar
+    %tr
+      %td File name
+      %td Owner
+      %td Last modified
+  %tbody
+    - files = ['Executive meeting minutes', 'Internal budet', 'External planning']
+    - users = ['Kelly', 'Barbara', 'John']
+    - (1..3).each do |i|
+      %tr
+        %td= files[i-1]
+        %td= users[i-1]
+        %td= '2016-03-10'
+        %td= link_to "Edit", ''
+        
+
+%h1#committeeTitle Internal committee
+
+%table#docs
+  %thead#filebar
+    %tr
+      %td File name
+      %td Owner
+      %td Last modified
+  %tbody
+    - files = ['Executive meeting minutes', 'Internal budet', 'External planning']
+    - users = ['Kelly', 'Barbara', 'John']
+    - (1..3).each do |i|
+      %tr
+        %td= files[i-1]
+        %td= users[i-1]
+        %td= '2016-03-10'
+        %td= link_to "Edit", ''
+        
+        
+%h1#committeeTitle External committee
+
+%table#docs
+  %thead#filebar
+    %tr
+      %td File name
+      %td Owner
+      %td Last modified
+  %tbody
+    - files = ['Executive meeting minutes', 'Internal budet', 'External planning']
+    - users = ['Kelly', 'Barbara', 'John']
+    - (1..3).each do |i|
+      %tr
+        %td= files[i-1]
+        %td= users[i-1]
+        %td= '2016-03-10'
+        %td= link_to "Edit", ''
+

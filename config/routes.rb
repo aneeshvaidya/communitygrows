@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #root 'application#hello' 
   resources :dashboard, :only => [:index]
   resources :admin, :only => [:index]
-  resources :documents :only => [:index]
+  resources :documents, :only => [:index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
