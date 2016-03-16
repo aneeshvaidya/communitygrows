@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'application#hello' 
-  resources :dashboard, :only => [:index]
+  # resources :dashboard, :only => [:index]
   resources :admin, :only => [:index]
-  resources :documents :only => [:index]
+  # resources :documents :only => [:index]
+  root :to => redirect('/admin')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
