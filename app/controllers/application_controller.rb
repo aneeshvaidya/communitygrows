@@ -3,10 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   layout "application"
-  def hello
+  
+  def login
     if user_signed_in?
       render text: "successfully signed in"
+    else
+      
     end
-    # render text: "Hi"
   end
 end
