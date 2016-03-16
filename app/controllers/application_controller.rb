@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout "application"
   def hello
-    render text: "Hi" 
+    if user_signed_in?
+      render text: "successfully signed in"
+    end
+    # render text: "Hi"
   end
 end
