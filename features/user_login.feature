@@ -6,36 +6,31 @@ Feature: successfully login
   
 Background: user is on the login page
   
-  Given the following users exist:
-  | username  | password | access_level |
-  | admin     | password | admin        |
-  | user      | password | user         |
-  
+  Given a valid user
   And I am on the CommunityGrows home page
 
 Scenario: successfully login with a user credential
-  When I fill in "username" with "user"
-  And I fill in "password" with "password"
-  And I press "login"
-  Then I should see "Welcome back, username."
+  When I fill in "user_email" with "dummy@dummy.com"
+  And I fill in "password" with "dummypass"
+  And I press "Log in"
   Then I should see "CommunityGrows"
   
 Scenario: unsuccessfully login with a wrong username
-  When I fill in "username" with "dummy_user"
-  And I fill in "password" with "password"
-  And I press "login"
-  Then I should see "Login unsuccessful. Check your login credential."
+  When I fill in "user_email" with "dummy@dummy.co"
+  And I fill in "password" with "dummypass"
+  And I press "Log in"
+  Then I should see "Invalid email or password."
 
 Scenario: unsuccessfully login with a wrong password
-  When I fill in "username" with "user"
+  When I fill in "user_email" with "dummy@dummy.co"
   And I fill in "password" with "wrong_password"
-  And I press "login"
-  Then I should see "Login unsuccessful. Check your login credential."
+  And I press "Log in"
+  Then I should see "Invalid email or password."
 
 Scenario: unsuccessfully login with empty fill-in's
-  When I fill in "username" with ""
-  And I fill in "password" with "wrong_password"
-  And I press "login"
-  Then I should see "Login unsuccessful. Check your login credential."
+  When I fill in "user_email" with ""
+  And I fill in "password" with ""
+  And I press "Log in"
+  Then I should see "Invalid email or password."
 
   

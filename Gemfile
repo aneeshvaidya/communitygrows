@@ -55,8 +55,9 @@ group :test do
   gem 'database_cleaner'
   gem 'autotest-rails'
   gem 'factory_girl_rails'
-  #gem 'simplecov', :require => false # added by Tony. Gem for the test coverage
+  gem 'simplecov', :require => false #by Tony. Gem for the test coverage
   gem 'codeclimate-test-reporter'
+  gem 'capybara', '2.6.2' #by Tony
 end
 
 group :production do

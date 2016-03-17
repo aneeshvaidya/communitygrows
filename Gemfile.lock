@@ -229,6 +229,7 @@ PLATFORMS
 DEPENDENCIES
   autotest-rails
   byebug
+  capybara (= 2.6.2)
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   cucumber-rails
@@ -245,6 +246,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simplecov
   spring
   sqlite3
   turbolinks
