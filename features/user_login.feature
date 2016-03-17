@@ -40,5 +40,6 @@ Scenario: user already signed in will be redirected to the dashboard
   Then I should see "CommunityGrows"
   And I am on the CommunityGrows home page
   Then I should see "CommunityGrows"
+  
 
   

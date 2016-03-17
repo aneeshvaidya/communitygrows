@@ -8,10 +8,10 @@ Given /^a valid user$/ do
            })
 end
 
-Given /^a logged in user$/ do
-  Given "a valid user"
-  visit "/users/sign_in"
-  fill_in "user_email", :with => "dummy@dummy.com"
-  fill_in "password", :with => "dummypass"
-  click_button "Log in"
-end
+# Given /^a logged in user$/ do
+#   Given "a valid user"
+#   visit "/users/sign_in"
+#   fill_in "user_email", :with => "dummy@dummy.com"
+#   fill_in "password", :with => "dummypass"
+#   click_button "Log in"
+# end
