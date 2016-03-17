@@ -7,8 +7,7 @@ Feature: Admin dashboard contains all necessary features
 Background: user is on the login page
   
   Given a logged in user
-  And I am on the CommunityGrows dashboard page
-  And I follow "Admin"
+  And I am on the CommunityGrows admin_dashboard page
 
 Scenario: see all the User Management tools
   Then I should see "User Management"

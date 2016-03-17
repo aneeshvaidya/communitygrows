@@ -13,6 +13,8 @@ module NavigationHelpers
       '/'
     when /the (CommunityGrows )?dashboard page$/ then
       '/dashboard/'
+    when /the (CommunityGrows )?admin_dashboard page$/ then
+      '/admin'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
