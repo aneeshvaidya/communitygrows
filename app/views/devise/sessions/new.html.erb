@@ -2,6 +2,12 @@
 <div class="console">
   <h2>CommunityGrows Board Login</h2>
   
+  <% if flash[:message] %>
+    <div class="sign_in_flash_message">
+      <p><%= flash[:message] %></p>
+    </div>
+  <% end %>
+  
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email, :class => "input_text" %>
