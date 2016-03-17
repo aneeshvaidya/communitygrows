@@ -1,4 +1,5 @@
-class DashboardController < ApplicationController
+class DashboardController < ActionController::Base
+    layout "dashboard"
     
     # by Tony
     # if user tries to access the dashboard through uri, should redirect to the sign_in page if not signed in

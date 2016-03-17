@@ -1,4 +1,5 @@
-class AdminController < ApplicationController
+class AdminController < ActionController::Base
+    layout "admin"
   
     # by Tony
     # if user tries to access the admin through uri, should redirect to the sign_in page if not signed in.
