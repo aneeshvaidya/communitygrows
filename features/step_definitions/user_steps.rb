@@ -9,7 +9,11 @@ Given /^a valid user$/ do
 end
 
 Given /^a logged in user$/ do
-  Given "a valid user"
+  @user = User.create!({
+             :email => "dummy@dummy.com",
+             :password => "dummypass",
+             :password_confirmation => "dummypass"
+           })
   visit "/users/sign_in"
   fill_in "user_email", :with => "dummy@dummy.com"
   fill_in "password", :with => "dummypass"

@@ -1,6 +1,6 @@
-/*// Place all the styles related to the dashboard controller here.*/
-/*// They will automatically be included in application.css.*/
-/*// You can use Sass (SCSS) here: http://sass-lang.com/*/
+/* Place all the styles related to the dashboard controller here.*/
+/* They will automatically be included in application.css.*/
+/* You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 #centeredmenu {
    background:#fff;
@@ -49,24 +49,21 @@
    font-weight:bold;
 }
 
-// <style>
 #announcements {
     background-color:#eeeeee;
     float:left;
     height:300px;
-    margin:20px 10px;
-    padding:5px;
+    margin:20px 5px;
     text-align:center;
-    width:48%;
+    width:47%;
 }
 #calendar {
     background-color:#eeeeee;
     float:right;
     height:300px;
-    margin:20px 10px;
-    padding:5px;
+    margin:20px 5px;
     text-align:center;
-    width:48%;
+    width:47%;
 }
 #salesforce {
     background-color:#eeeeee;
@@ -81,8 +78,6 @@
     background-color:black;
     clear:both;
     color:white;
-    padding:5px; 
     text-align:center;
     width:100%;
 }
-/*// </style>*/

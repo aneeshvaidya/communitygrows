@@ -11,6 +11,8 @@ module NavigationHelpers
 
     when /the (CommunityGrows )?home page$/ then
       '/'
+    when /the (CommunityGrows )?dashboard page$/ then
+      '/dashboard/'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

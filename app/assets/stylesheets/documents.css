@@ -1,12 +1,12 @@
-/*// Place all the styles related to the documents controller here.*/
-/*// They will automatically be included in application.css.*/
-/*// You can use Sass (SCSS) here: http://sass-lang.com/*/
+/* Place all the styles related to the documents controller here.*/
+/* They will automatically be included in application.css.*/
+/* You can use Sass (SCSS) here: http://sass-lang.com/*/
 table#docs {
   margin: 30px;
-  /*//border-collapse: collapse;*/
+  /* border-collapse: collapse;*/
   width: 90%;
   border: 1px solid black;
-  /*//border-bottom: 2px solid black;*/
+  /* border-bottom: 2px solid black;*/
 }
 table#docs th {
   border: 2px solid white;
