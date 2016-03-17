@@ -9,4 +9,3 @@ class User < ActiveRecord::Base
     super(attr_with_defaults)
   end
 end
-
