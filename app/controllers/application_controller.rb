@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
   # by Tony
   def authenticate
     if user_signed_in?
-      flash[:message] = "hello"
+      flash[:message] = "Welcome back!"
+      
     else
+      flash[:message] = "Please sign in"
       redirect_to("/users/sign_in")
     end
   end
