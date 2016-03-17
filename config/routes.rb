@@ -6,13 +6,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'application#hello' 
-  root :to => redirect("/users/sign_in")
+  root 'application#authenticate' #redirects to the login page
   resources :dashboard, :only => [:index]
   resources :admin, :only => [:index]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
-
 
 
   # Example of regular route:

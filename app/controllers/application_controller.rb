@@ -4,11 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout "application"
   
-  def login
+  # by Tony
+  def authenticate
     if user_signed_in?
-      render text: "successfully signed in"
+      flash[:message] = "hello"
     else
-      
+      redirect_to("/users/sign_in")
     end
   end
 end
