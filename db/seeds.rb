@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-['registered', 'banned', 'moderator', 'admin'].each do |role|
-  Role.find_or_create_by({name: role})
-end
+
+User.delete_all
+curr = User.create!(:email => "admin@communitygrows.org", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", 
+:admin => true)
