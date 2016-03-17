@@ -32,5 +32,13 @@ Scenario: unsuccessfully login with empty fill-in's
   And I fill in "password" with ""
   And I press "Log in"
   Then I should see "Invalid email or password."
+  
+Scenario: user already signed in will be redirected to the dashboard
+  When I fill in "user_email" with "dummy@dummy.com"
+  And I fill in "password" with "dummypass"
+  And I press "Log in"
+  Then I should see "CommunityGrows"
+  And I am on the CommunityGrows home page
+  Then I should see "CommunityGrows"
 
   
