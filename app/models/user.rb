@@ -4,11 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  belongs_to :role
-  before_create :set_default_role
-  
-  private
-  def set_default_role
-    self.role ||=Role.find_by_name('registered')
+  def initalize(attributes=nil)
+    attr_with_defaults = {:admin => false}.merge(attributes)
+    super(attr_with_defaults)
   end
 end
