@@ -6,21 +6,19 @@
 %table#movies
   %thead
     %tr
-      %td User:
-      %td Status:
-      %td Created_at:
-      %td
+      %td User
+      %td Status
+      %td Created At
+      %td Last Sign In
   %tbody
-    - users = ['Jae', 'Bae']
-    - admin = ['Admin', 'User']
-    - (1..2).each do |i|
+    -@users.each do |user|
       %tr
-        %td= users[i-1]
-        %td= admin[i-1]
-        %td= '2016-03-10'
-        %td= link_to "Edit", ''
+        %td= link_to "#{user.email}", edit_user_path(user.id)
+        %td= user.admin
+        %td= user.created_at.in_time_zone("Pacific Time (US & Canada)")
+        %td= user.last_sign_in_at
 
-= link_to 'Add new user', ''
+= link_to 'Add new user', new_user_path
 = link_to 'delete movie', ''
 
 
