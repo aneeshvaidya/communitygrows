@@ -16,15 +16,30 @@ class AdminController < ActionController::Base
     
     def update_user
         @user = User.find params[:id]
-        @user.update_attributes!(user_params)
-        flash[:notice] = "#{@user.email} was successfully updated."
-        redirect_to admin_index_path(@user)
+        begin
+            @user.update_attributes!(user_params)
+        rescue Exception
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to edit_user_path(@user.id)
+        else
+            flash[:notice] = "#{@user.email} was successfully updated."
+            redirect_to admin_index_path
+        end
+        #check params for null password fields
+        #if either is null, flash notification saying must fill in fields
     end
     
     def create_user
-        @user = User.create!(user_params)
-        flash[:notice] = "#{@user.email} was successfully created."
-        redirect_to admin_index_path
+        #try and catch
+        begin
+            @user = User.create!(user_params)
+        rescue Exception
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to new_user_path
+        else
+            flash[:notice] = "#{@user.email} was successfully created."
+            redirect_to admin_index_path 
+        end
     end
     
     def new_user

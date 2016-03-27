@@ -1,5 +1,11 @@
 %h1 Create New User
 
+- if flash[:notice]
+  #flashNotice
+    = flash[:notice]
+    :javascript
+      alert("Fill in all forms before submission.");
+
 = form_tag create_user_path do
 
   = label :user, :email, 'Email'

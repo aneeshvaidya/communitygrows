@@ -1,3 +1,4 @@
+#Author: Zachary
 Feature: Admin dashboard contains all necessary features
   
   As a user
@@ -37,6 +38,13 @@ Scenario: edit an existing user's info
   Then I should be on the admin_dashboard page
   And I should see "zachary@gmail.com"
   And I should not see "zach@gmail.com"
+  
+Scenario: user fails to enter password during edit
+  When I follow "zach@gmail.com"
+  Then I fill in "Email" with "zachary@gmail.com"
+  And I press "Update user"
+  Then I should see "Populate all fields before submission."
+  And I should be on the edit user page for "zach@gmail.com"
   
   
   
