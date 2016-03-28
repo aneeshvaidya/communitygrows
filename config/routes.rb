@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#authenticate' #redirects to the login page
   resources :dashboard, :only => [:index]
-  resources :admin, :only => [:index]
+  resources :admin, :only => [:index, :destroy]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
 
