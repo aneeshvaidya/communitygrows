@@ -46,7 +46,7 @@ class AdminController < ActionController::Base
         #default: render 'new' template
     end
     
-    def destroy
+    def delete_user
         @user = User.find params[:id]
         @user.destroy
         redirect_to admin_index_path

@@ -8,14 +8,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#authenticate' #redirects to the login page
   resources :dashboard, :only => [:index]
-  resources :admin, :only => [:index, :destroy]
+  resources :admin, :only => [:index]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
 
   
   get 'admin/:id/edit_user' => 'admin#edit_user', as: :edit_user
   get 'admin/new_user' => 'admin#new_user', as: :new_user
-  
+  delete 'admin/:id' => 'admin#delete_user', as: :delete_user
   put 'admin/:id/update' => 'admin#update_user', as: :update_user
   post 'admin/create' => 'admin#create_user', as: :create_user
   
