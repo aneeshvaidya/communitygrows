@@ -1,6 +1,9 @@
 /* Place all the styles related to the documents controller here.*/
 /* They will automatically be included in application.css.*/
 /* You can use Sass (SCSS) here: http://sass-lang.com/*/
+body {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
 table#docs {
   margin: 30px;
   /* border-collapse: collapse;*/
@@ -30,7 +33,6 @@ thead#filebar{
   padding: 0px;
 }
 h2{
-  color: white;
   padding: 14px 16px;
   text-decoration: none;
 }
@@ -48,8 +50,9 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    width: 100%;
+    height: auto;
 }
-
 
 li a {
     display: block;
@@ -57,6 +60,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border-left: 1px solid #bbb;
 }
 
 a:hover:not(.active) {

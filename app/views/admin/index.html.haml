@@ -1,12 +1,13 @@
 = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true 
 #admin
-  %h2 Administrator
+  %h1 Administrator
 
 - if flash[:notice]
   #flashNotice
-    = flash[:notice]
+  %h3 
+  = flash[:notice]
 
-%h1 User Management
+%h2 User Management
 
 %table#movies
   %thead
@@ -28,7 +29,7 @@
 = link_to 'Add new user', ''
 = link_to 'delete movie', ''
 
-%h1 Announcement Management
+%h2 Announcement Management
 
 %table#movies
   %thead
@@ -48,7 +49,7 @@
 = link_to 'Add Announcement', ''
 = link_to 'Delete Announcement', ''
 
-%h1 Register/Update Google Calendar
+%h2 Register/Update Google Calendar
 %p Insert your Google id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
 
 = form_tag update_calendar_path(@calendar), :method => :put do
