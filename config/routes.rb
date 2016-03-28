@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   
   put '/admin/update_calendar' => 'admin#update_calendar', as: :update_calendar
 
+  get 'admin/new_announcement' => 'admin#new_announcement', as: :new_announcement
+  put 'admin/create_announcement' => 'admin#create_announcement', as: :create_announcement
+  get 'admin/:id/edit_announcement' => 'admin#edit_announcement', as: :edit_announcement
+  put 'admin/:id/edit_announcement' => 'admin#update_announcement', as: :update_announcement
+  get 'admin/:id/delete_announcement' => 'admin#delete_announcement', as: :delete_announcement
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

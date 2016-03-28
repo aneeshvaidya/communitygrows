@@ -15,6 +15,14 @@ ActiveRecord::Schema.define(version: 20160327064613) do
 
   create_table "calendars", force: :cascade do |t|
     t.string   "html"
+  end
+end
+
+ActiveRecord::Schema.define(version: 20160328033650) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

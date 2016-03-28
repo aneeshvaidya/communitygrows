@@ -8,5 +8,6 @@ class DashboardController < ActionController::Base
         if @curr_calendar
             @curr_calendar_id = @curr_calendar.user_id
         end
+        @announcement_list = Announcement.order(created_at: :DESC)
     end
 end
