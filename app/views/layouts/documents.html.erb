@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<ul>
+  <li><a class="dashboard" href="#dashboard">Community Grows</a></li>
+  <!--<li><a class="navigation" href="#documents">Documents</a></li>-->
+  
+  <li><%= link_to "Documents", documents_path, { :class=>"navigation"}%></li>
+  <li><%= link_to "Comittee", committee_index_path, { :class=>"navigation"}%></li>
+  <li><%= link_to "Admin", admin_index_path, { :class=>"navigation"}%></li>
+  <!--<li><a class="navigation" href="#admin">Admin</a></li>-->
+</ul>
+
 <!-- yield will substitute different views in -->
 <%= yield %>
 
