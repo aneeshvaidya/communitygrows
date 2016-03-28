@@ -10,6 +10,10 @@ body {
   margin-top:60px;
   margin-left:20px;
 }
+
+/***************/
+/*Documents CSS*/
+/***************/
 table#docs {
   margin: 30px;
   /* border-collapse: collapse;*/
@@ -17,18 +21,22 @@ table#docs {
   border: 1px solid black;
   /* border-bottom: 2px solid black;*/
 }
+
 table#docs th {
   border: 2px solid white;
   font-weight: bold;
   background-color: wheat;
 }
+
 table#docs th, table#docs td {
   padding: 4px;
   text-align: left;
 }
+
 table#docs th.hilite {
   background-color: yellow;
 }
+
 thead#filebar{
   background-color: #8fbc8f;
 }
@@ -38,10 +46,10 @@ thead#filebar{
   margin: 0px;
   padding: 0px;
 }
-h2{
-  padding: 14px 16px;
-  text-decoration: none;
-}
+
+/***************/
+/* Nav Bar CSS */
+/***************/
 
 .dashboard{
   float: left;
@@ -75,4 +83,147 @@ li a {
 
 a:hover:not(.active) {
     background-color: #111;
+}
+
+/*****************/
+/* Dashboard CSS */
+/*****************/
+#announcements {
+    background-color:#eeeeee;
+    float:left;
+    height:600px;
+    margin:20px 5px;
+    text-align:center;
+    width:47%;
+}
+#calendar {
+    background-color:#eeeeee;
+    float:right;
+    height:600px;
+    margin:20px 5px;
+    text-align:center;
+    width:47%;
+}
+#salesforce {
+    background-color:#eeeeee;
+    float: right;
+    height:500px;
+    position: relative;
+    right: 5%;
+    text-align: center;
+    width:90%;
+}
+#footer {
+    background-color:black;
+    clear:both;
+    color:white;
+    text-align:center;
+    width:100%;
+}
+
+/*****************/
+/* Committee CSS */
+/*****************/
+
+.container{
+    /* background: #4b3603;*/
+    width: 100%;
+    height: 100%; 
+}
+
+#left-block{
+    /* background: red; */
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+#right-block{
+    /* background: blue;*/
+    float: right;
+    width: 30%;
+    height: 100%;
+}
+
+.chat-container {
+    /* background: black;*/
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 60%;
+    width: 80%;
+
+}
+
+#chat-box {
+    text-align: center;
+    /* background: green;*/
+    height: 90%;
+    width: 100%;
+}
+
+#chat-box h2{
+    padding-top: 5%;
+}
+
+#chat-input {
+    /* background: blue;*/
+    height: 10%;
+    width: 100%;
+}
+
+.meeting-container {
+    margin-top: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
+    background: white;
+    height: 15%;
+    width: 60%;
+}
+button#send{
+    float: right;
+    width: 20%;
+    height: 100%;
+}
+
+button{
+    background-color: #72D072;
+    height: 100%;
+    width: 100%;
+    font-size: xx-large;
+    border-radius: 10px;
+}
+
+#doc-header{
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.file a{
+    color: black;
+}
+
+.file{
+    margin-top: 5%;
+    text-align: center;
+}
+
+#message{
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+
+#message input{
+    width: 97%;
+    height: 90%;
+}
+
+/*****************/
+/*    Admin CSS  */
+/*****************/
+
+#calendar_html {
+  width: 200px;
+  height: 20px;
 }
