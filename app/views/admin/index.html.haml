@@ -14,7 +14,7 @@
     -@users.each do |user|
       %tr
         %td= link_to "#{user.email}", edit_user_path(user.id)
-        %td= user.admin
+        %td= user.admin ? "Admin" : "User"
         %td= user.created_at.in_time_zone("Pacific Time (US & Canada)")
         %td= user.last_sign_in_at
 

@@ -33,7 +33,7 @@ class AdminController < ActionController::Base
         #try and catch
         begin
             @user = User.create!(user_params)
-        rescue Exception
+        rescue Exception => e
             flash[:notice] = "Populate all fields before submission."
             redirect_to new_user_path
         else
