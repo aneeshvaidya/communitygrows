@@ -6,7 +6,7 @@ Feature: Admin dashboard contains all necessary features
   
 Background: user is on the login page
   
-  Given a logged in user
+  Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
 
 Scenario: see all the User Management tools

@@ -52,7 +52,7 @@
 #announcements {
     background-color:#eeeeee;
     float:left;
-    height:300px;
+    height:600px;
     margin:20px 5px;
     text-align:center;
     width:47%;
@@ -60,7 +60,7 @@
 #calendar {
     background-color:#eeeeee;
     float:right;
-    height:300px;
+    height:600px;
     margin:20px 5px;
     text-align:center;
     width:47%;

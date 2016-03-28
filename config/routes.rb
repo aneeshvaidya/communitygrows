@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :admin, :only => [:index]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
-
+  
+  put '/admin/update_calendar' => 'admin#update_calendar', as: :update_calendar
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
