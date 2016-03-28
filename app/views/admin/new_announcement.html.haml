@@ -1,0 +1,46 @@
+= form_tag create_announcement_path(@announcement), :method => :put do
+  = label :announcement, :title, "Title: "
+  = text_field :announcement, 'title'
+  
+  = label :announcement, :content, "Content: "
+  = text_field :announcement, 'content'
+  
+  = submit_tag 'Submit'
+  
+= link_to 'Back', admin_index_path
+
+// form_for(@announcement) do |f|
+//   - if @announcement.errors.any?
+//     #error_explanation
+//       %h2
+//         = pluralize(@announcement.errors.count, "error")
+//         prohibited this announcement from being saved:
+//       %ul
+//         - @announcement.errors.full_messages.each do |message|
+//           %li= message
+//   .field
+//     = f.label :title
+//     %br/
+//     = f.text_field :title
+//   .field
+//     = f.label :last_modified_by
+//     %br/
+//     = f.text_field :last_modified_by
+//   .field
+//     = f.label :content
+//     %br/
+//     = f.text_area :content
+//   .field
+//     = f.label :last_modified_at
+//     %br/
+//     = f.datetime_select :last_modified_at
+//   .actions
+//     = f.submit
+    
+// = link_to 'Back', admin_index_path
+
+// = form_tag update_calendar_path(@calendar), :method => :put do
+//   = label :calendar, :title, "Google Calendar owner's id:"
+//   = text_field :calendar, 'html'
+
+//   = submit_tag 'Update Google Calendar'

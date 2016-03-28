@@ -12,6 +12,16 @@
 %body
   #announcements
     %h2 Announcements
+    %table#announcement
+      %thead
+        %tr
+          %td Title:
+          %td Content:
+      %tbody
+        - @announcement_list.each do |announcement|
+          %tr
+            %td= announcement.title
+            %td= announcement.content
   #calendar
     %h2 Calendar
   #salesforce

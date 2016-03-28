@@ -33,14 +33,17 @@
       %td Title:
       %td Content:
       %td Created_at:
-      %td 
+      %td Updated_at:
+      %td
+      %td
   %tbody
-    - (1..1).each do |i|
+    - @announcement_list.each do |announcement|
       %tr
-        %td= 'Hello'
-        %td= 'This is a mock-up'
-        %td= '2016-03-10'
-        %td= link_to "Show more", ''
+        %td= announcement.title
+        %td= announcement.content
+        %td= announcement.created_at
+        %td= announcement.updated_at
+        %td= link_to "Edit", edit_announcement_path(announcement.id)
+        %td= link_to "Delete", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
 
-= link_to 'Add Announcement', ''
-= link_to 'Delete Announcement', ''
+= link_to 'New Announcement', new_announcement_path
