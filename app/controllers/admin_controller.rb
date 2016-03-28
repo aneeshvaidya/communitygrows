@@ -1,5 +1,5 @@
 class AdminController < ActionController::Base
-    layout "admin"
+    layout "base"
     before_filter :authenticate_user!
     
     def calendar_params

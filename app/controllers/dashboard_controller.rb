@@ -1,5 +1,5 @@
 class DashboardController < ActionController::Base
-    layout "dashboard"
+    layout "base"
     before_filter :authenticate_user!
     
     def index
