@@ -11,6 +11,10 @@ body {
   margin-left:20px;
 }
 
+h1 {
+  text-align: center;
+}
+
 /***************/
 /*Documents CSS*/
 /***************/
@@ -53,11 +57,18 @@ thead#filebar{
 
 .dashboard{
   float: left;
-  background-color:#4CAF50;
+  margin:0;
+  padding:0;
 }
 
 .navigation{
   float: right;
+  padding: 18px 18px;
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-left: 1px solid #bbb;
 }
 
 ul {
@@ -72,17 +83,14 @@ ul {
     top: 0;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-left: 1px solid #bbb;
+.navigation:hover:not(.active) {
+    background-color: #666;
 }
 
-a:hover:not(.active) {
-    background-color: #111;
+.dashboard img {
+  width: 160px;
+  height: auto;
+  padding: 0px 0px;
 }
 
 /*****************/
