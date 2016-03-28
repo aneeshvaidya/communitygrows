@@ -1,5 +1,5 @@
 class CommitteeController < ActionController::Base
-    layout "committee"
+    layout "base"
     before_filter :authenticate_user!
   
     def index
