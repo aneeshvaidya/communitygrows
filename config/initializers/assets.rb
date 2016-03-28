@@ -7,7 +7,8 @@ Rails.application.config.assets.precompile += %w( login.css ) #by Tony to compil
 Rails.application.config.assets.precompile += %w( dashboard.css ) #by Tony to compile dashboard.css
 Rails.application.config.assets.precompile += %w( admin.css ) #by Tony to compile admin.css
 Rails.application.config.assets.precompile += %w( committee.css ) #by Tony to compile committee.css
-Rails.application.config.assets.precompile += %w( documents.css ) #by Tony to compile documents.css
+#Rails.application.config.assets.precompile += %w( documents.css ) #by Tony to compile documents.css
+Rails.application.config.assets.precompile += %w( base.css ) #by Facundo to compile base.css
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

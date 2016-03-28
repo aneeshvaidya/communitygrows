@@ -1,0 +1,64 @@
+/* Place all the styles related to the documents controller here.*/
+/* They will automatically be included in application.css.*/
+/* You can use Sass (SCSS) here: http://sass-lang.com/*/
+table#docs {
+  margin: 30px;
+  /* border-collapse: collapse;*/
+  width: 90%;
+  border: 1px solid black;
+  /* border-bottom: 2px solid black;*/
+}
+table#docs th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: wheat;
+}
+table#docs th, table#docs td {
+  padding: 4px;
+  text-align: left;
+}
+table#docs th.hilite {
+  background-color: yellow;
+}
+thead#filebar{
+  background-color: #8fbc8f;
+}
+
+#docRepo{
+  background-color: #8fbc8f;
+  margin: 0px;
+  padding: 0px;
+}
+h2{
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dashboard{
+  float: left;
+  background-color:#4CAF50;
+}
+.navigation{
+  float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover:not(.active) {
+    background-color: #111;
+}
