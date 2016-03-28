@@ -7,15 +7,15 @@ Feature: Announcement CRUD actions supported on admin dashboard
   
 Background: admin is on the admin dashboard
   
-  Given a logged in admin
+  Given a logged in user
   And I am on the CommunityGrows admin_dashboard page
 
 Scenario: should see announcement new
-  Then I should see "New"
+  Then I should see "Add Announcement"
 
 Scenario: should see announcement edit
-  Then I should see "Edit"
+  Then I should see "Show more"
   
 Scenario: should see announcement delete
-  Then I should see "Delete"
+  Then I should see "Delete Announcement"
 

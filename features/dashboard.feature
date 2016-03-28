@@ -11,8 +11,8 @@ Background: user is on the login page
 
 Scenario: see all the tabs
   Then I should see "Documents"
-  And I should see "Subcomittee"
-  And I should see "Admin"
+  And I should see "Comittee"
+  And I should see "Admin Dashboard"
 
 Scenario: see all the panels
   Then I should see "Announcements"
@@ -24,9 +24,11 @@ Scenario: document tab works successfully
   Then I should see "Document Repository"
   
 Scenario: subcomittee tab works successfully
-  When I follow "Subcomittee"
+  When I follow "Comittee"
   Then I should see "Go to meeting"
   
 Scenario: admin tab works successfully
-  When I follow "Admin"
-  Then I should see "Administrator"
+  When I follow "Admin Dashboard"
+  Then I should see "Admin Dashboard"
+  Then I should see "User Management"
+  Then I should see "Announcement Management"
