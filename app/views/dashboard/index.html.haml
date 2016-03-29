@@ -1,19 +1,11 @@
-%h1 Dashboard
-
-#centeredmenu
-  %ul.nav.nav-tabs
-    %li
-      = link_to "Documents", documents_path
-    %li
-      = link_to "Subcomittee", committee_index_path
-    %li
-      = link_to "Admin", admin_index_path
+%h1 Board Member Dashboard
 
 %body
   #announcements
     %h2 Announcements
   #calendar
     %h2 Calendar
+    <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="650" height="500" frameborder="1" scrolling="no"></iframe>
   #salesforce
     %h2 Salesforce
   #footer

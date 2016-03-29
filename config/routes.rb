@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
 
+
   
   get 'admin/:id/edit_user' => 'admin#edit_user', as: :edit_user
   get 'admin/new_user' => 'admin#new_user', as: :new_user
@@ -19,8 +20,7 @@ Rails.application.routes.draw do
   put 'admin/:id/update' => 'admin#update_user', as: :update_user
   post 'admin/create' => 'admin#create_user', as: :create_user
   
-  
-
+  put '/admin/update_calendar' => 'admin#update_calendar', as: :update_calendar
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

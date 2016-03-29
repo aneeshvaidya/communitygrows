@@ -1,9 +1,12 @@
 class AdminController < ActionController::Base
-    layout "admin"
+    layout "base"
     before_filter :authenticate_user!
     
     def user_params
       params.require(:user).permit(:email, :admin, :password, :password_confirmation)
+
+    def calendar_params
+        params.require(:calendar).permit(:html)
     end
   
     def index
@@ -52,4 +55,10 @@ class AdminController < ActionController::Base
         redirect_to admin_index_path
     end
     
+    def update_calendar
+        Calendar.destroy_all
+        @new_calendar = Calendar.create!(calendar_params)
+        flash[:notice] = 'New Calendar Creation successful'
+        redirect_to('/admin')
+    end
 end

@@ -10,7 +10,8 @@ Given /^a valid user$/ do
   @user = User.create!({
              :email => "dummy@dummy.com",
              :password => "dummypass",
-             :password_confirmation => "dummypass"
+             :password_confirmation => "dummypass",
+             :admin => false
            })
 end
 
@@ -18,7 +19,8 @@ Given /^a logged in user$/ do
   @user = User.create!({
              :email => "dummy@dummy.com",
              :password => "dummypass",
-             :password_confirmation => "dummypass"
+             :password_confirmation => "dummypass",
+             :admin => false
            })
   visit "/users/sign_in"
   fill_in "user_email", :with => "dummy@dummy.com"
