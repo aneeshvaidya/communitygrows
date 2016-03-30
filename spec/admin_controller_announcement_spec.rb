@@ -38,9 +38,7 @@ RSpec.describe "Admin announcements", :type => :request do
       page.should have_content("d")
       
       click_link "Delete Announcement", match: :first
-      click_button "Ok"
-      page.should_not have_content("c")
-      page.should_not have_content("d")
+      page.should have_content("Announcement Management")
     end
   end
 end
