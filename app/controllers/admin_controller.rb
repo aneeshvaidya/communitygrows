@@ -18,15 +18,9 @@ class AdminController < ActionController::Base
     end
     
     def create_announcement
-        begin
-            Announcement.create!(announcement_params)
-        rescue Exception
-            flash[:notice] = 'Announcement creation unsuccessful.'
-            redirect_to('/admin')
-        else
-            flash[:notice] = 'Announcement creation successful.'
-            redirect_to('/admin')
-        end
+        Announcement.create!(announcement_params)
+        flash[:notice] = 'Announcement creation successful.'
+        redirect_to('/admin')
     end
     
     def edit_announcement
