@@ -4,6 +4,7 @@ class AdminController < ActionController::Base
     
     def user_params
       params.require(:user).permit(:email, :admin, :password, :password_confirmation)
+    end
 
     def calendar_params
         params.require(:calendar).permit(:html)

@@ -22,7 +22,7 @@
         %td= user.admin ? "Admin" : "User"
         %td= user.created_at.in_time_zone("Pacific Time (US & Canada)")
         %td= user.last_sign_in_at
-        %td= button_to "Delete", delete_user_path(user.id), :method => :delete, :confirm => 'Are you sure?' 
+        %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, :confirm => 'Are you sure?' 
 
 = link_to 'Add new user', new_user_path
 

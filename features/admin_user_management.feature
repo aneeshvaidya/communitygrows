@@ -46,6 +46,17 @@ Scenario: user fails to enter password during edit
   Then I should see "Populate all fields before submission."
   And I should be on the edit user page for "zach@gmail.com"
   
+Scenario: should see user new
+  Then I should see "Add new user"
+  
+Scenario: should see last login data availabe for every user
+  Then I should see "Created_at"
+  
+Scenario: create new user without filling in password 
+  When I follow "Add new user"
+  And I fill in "Email" with "bob@billy.com"
+  And I press "Submit"
+  Then I should see "Populate all fields before submission."
 
   
   
