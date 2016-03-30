@@ -8,49 +8,54 @@
 
 %h2 User Management
 
-%table
-  %thead
-    %tr
-      %td User:
-      %td Status:
-      %td Created_at:
-      %td
-  %tbody
-    - users = ['Jae', 'Bae']
-    - admin = ['Admin', 'User']
-    - (1..2).each do |i|
+#table_content
+  %table
+    %thead
       %tr
-        %td= users[i-1]
-        %td= admin[i-1]
-        %td= '2016-03-10'
-        %td= link_to "Edit", ''
+        %td User:
+        %td Status:
+        %td Created_at:
+        %td
+    %tbody
+      - users = ['Jae', 'Bae']
+      - admin = ['Admin', 'User']
+      - (1..2).each do |i|
+        %tr
+          %td= users[i-1]
+          %td= admin[i-1]
+          %td= '2016-03-10'
+          %td= link_to "Edit", ''
 
-= link_to 'Add new user', ''
-= link_to 'delete user', ''
-
+= link_to 'Add new user', '', :class => "button"
+= link_to 'delete user', '', :class => "button"
+<br/>
+<br/>
 %h2 Announcement Management
 
-%table
-  %thead
-    %tr
-      %td Title:
-      %td Content:
-      %td Created_at:
-      %td Updated_at:
-      %td
-      %td
-  %tbody
-    - @announcement_list.each do |announcement|
+#table_content
+  %table
+    %thead
       %tr
-        %td= announcement.title
-        %td= announcement.content
-        %td= announcement.created_at
-        %td= announcement.updated_at
-        %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
-        %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
+        %td Title:
+        %td Content:
+        %td Created_at:
+        %td Updated_at:
+        %td
+        %td
+    %tbody
+      - @announcement_list.each do |announcement|
+        %tr
+          %td= announcement.title
+          %td= announcement.content
+          %td= announcement.created_at
+          %td= announcement.updated_at
+          %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
+          %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
 
-= link_to 'New Announcement', new_announcement_path
+= link_to 'New Announcement', new_announcement_path, :class => "button"
 
+<br/>
+<br/>
 %h2 Register/Update Google Calendar
 %p Insert your Google id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
 

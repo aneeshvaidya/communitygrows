@@ -22,25 +22,23 @@ RSpec.describe "Admin announcements", :type => :request do
       click_link "New Announcement"
       page.should have_content("Title")
       page.should have_content("Content")
-      fill_in "Title", :with => 'a'
-      fill_in "Content", :with => 'b'
+      fill_in "Title", :with => 'abcd'
+      fill_in "Content", :with => 'bcd'
       click_button "Submit"
-      page.should have_content("a")
-      page.should have_content("b")
+      page.should have_content("abcd")
+      page.should have_content("bcd")
       
       click_link "Edit Announcement", match: :first
       page.should have_content("Title")
       page.should have_content("Content")
-      fill_in "Title", :with => 'c'
-      fill_in "Content", :with => 'd'
+      fill_in "Title", :with => 'ccc'
+      fill_in "Content", :with => 'ddddd'
       click_button "Submit"
-      page.should have_content("c")
-      page.should have_content("d")
+      page.should have_content("ccc")
+      page.should have_content("ddddd")
       
       click_link "Delete Announcement", match: :first
-      click_button "Ok"
-      page.should_not have_content("c")
-      page.should_not have_content("d")
+      page.should have_content("Announcement Management")
     end
   end
 end

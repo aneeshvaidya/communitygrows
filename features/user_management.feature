@@ -17,7 +17,7 @@ Scenario: should see user edit
   Then I should see "Edit"
   
 Scenario: should see user delete
-  Then I should see "delete movie"
+  Then I should see "delete user"
 
 Scenario: should see last login data availabe for every user
   Then I should see "Created_at"

@@ -31,6 +31,7 @@ class AdminController < ActionController::Base
     
     def edit_announcement
         @id = params[:id]
+        @target_announcement = Announcement.find @id
     end
     
     def update_announcement
