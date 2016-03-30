@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 20160328033650) do
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.datetime "created_at", null: false, :format => :us
-    t.datetime "updated_at", null: false, :format => :us
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "calendars", force: :cascade do |t|
     t.string   "html"
-    t.datetime "created_at", null: false, :format => :us
-    t.datetime "updated_at", null: false, :format => :us
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20160328033650) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at", :format => :us
-    t.datetime "last_sign_in_at", :format => :us
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at", :format => :us           null: false
-    t.datetime "updated_at", :format => :us           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.boolean  "admin"
   end
 

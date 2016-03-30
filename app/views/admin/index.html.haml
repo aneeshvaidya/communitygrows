@@ -36,10 +36,10 @@
   %table
     %thead
       %tr
-        %td Title:
-        %td Content:
-        %td Created_at:
-        %td Updated_at:
+        %td Title
+        %td Content
+        %td Created at
+        %td Updated at
         %td
         %td
     %tbody
@@ -47,8 +47,8 @@
         %tr
           %td= announcement.title
           %td= announcement.content
-          %td= announcement.created_at
-          %td= announcement.updated_at
+          %td= announcement.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
           %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
 
