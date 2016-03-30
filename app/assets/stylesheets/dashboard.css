@@ -57,6 +57,14 @@
     text-align:center;
     width:47%;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+}
+
 #calendar {
     background-color:#eeeeee;
     float:right;

@@ -4,7 +4,7 @@ Feature: Admin dashboard contains all necessary features
   I want to make sure everything I want is on the Admin dashboard
   So I can view user management and announcement tools 
   
-Background: user is on the login page
+Background: user is on the admin page
   
   Given a logged in user
   And I am on the CommunityGrows admin_dashboard page
@@ -14,6 +14,6 @@ Scenario: see all the User Management tools
   And I should see "Jae"
 
 Scenario: see all the Annoucement tools
-  Then I should see "Announcement"
-  And I should see "Hello"
+  Then I should see "Announcement Management"
+
 
