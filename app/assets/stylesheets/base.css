@@ -236,3 +236,10 @@ button{
   width: 200px;
   height: 20px;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+}

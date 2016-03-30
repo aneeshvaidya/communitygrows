@@ -8,7 +8,7 @@
 
 %h2 User Management
 
-%table#movies
+%table
   %thead
     %tr
       %td User:
@@ -26,11 +26,11 @@
         %td= link_to "Edit", ''
 
 = link_to 'Add new user', ''
-= link_to 'delete movie', ''
+= link_to 'delete user', ''
 
 %h2 Announcement Management
 
-%table#movies
+%table
   %thead
     %tr
       %td Title:
@@ -46,8 +46,8 @@
         %td= announcement.content
         %td= announcement.created_at
         %td= announcement.updated_at
-        %td= link_to "Edit", edit_announcement_path(announcement.id)
-        %td= link_to "Delete", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
+        %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
+        %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
 
 = link_to 'New Announcement', new_announcement_path
 
