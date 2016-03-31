@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :committee, :only => [:index]
 
 
-  
   get 'admin/:id/edit_user' => 'admin#edit_user', as: :edit_user
   get 'admin/new_user' => 'admin#new_user', as: :new_user
   delete 'admin/:id' => 'admin#delete_user', as: :delete_user
