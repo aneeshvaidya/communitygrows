@@ -12,6 +12,11 @@ describe AdminController do
             get :new_user
             response.should render_template(:new_user)
         end
+        it 'renders index page' do
+            sign_in users(:tester)
+            post :create_user
+            response.should redirect_to(:admin_index)
+        end
         
     end    
     describe 'delete_user' do
