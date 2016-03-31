@@ -7,7 +7,7 @@ Feature: User CRUD actions supported on admin dashboard
   
 Background: admin is on the admin dashboard
   
-  Given a logged in user
+  Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
 
 Scenario: should see user new

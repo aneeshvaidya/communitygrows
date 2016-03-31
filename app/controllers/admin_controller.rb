@@ -12,6 +12,10 @@ class AdminController < ActionController::Base
   
     def index
         @announcement_list = Announcement.order(created_at: :DESC)
+        if !current_user.admin
+            flash[:message] = "Access not granted. Please sign in again."
+            redirect_to("/users/sign_in")
+        end
     end
     
     def new_announcement

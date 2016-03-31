@@ -13,7 +13,8 @@ Given /^a logged in admin$/ do
   @user = User.create!({
              :email => "admin@communitygrows.org",
              :password => "communitygrowsrocks",
-             :password_confirmation => "communitygrowsrocks"
+             :password_confirmation => "communitygrowsrocks",
+             :admin => true
            })
   visit "/users/sign_in"
   fill_in "user_email", :with => "admin@communitygrows.org"

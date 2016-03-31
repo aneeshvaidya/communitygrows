@@ -27,8 +27,6 @@ Scenario: subcomittee tab works successfully
   When I follow "Comittee"
   Then I should see "Go to meeting"
   
-Scenario: admin tab works successfully
+Scenario: admin tab should not work successfully because you are a user
   When I follow "Admin Dashboard"
-  Then I should see "Admin Dashboard"
-  Then I should see "User Management"
-  Then I should see "Announcement Management"
+  And I am on the CommunityGrows home page
