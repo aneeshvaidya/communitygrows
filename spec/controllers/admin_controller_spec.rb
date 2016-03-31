@@ -7,13 +7,12 @@ describe AdminController do
 
     end
     describe 'new_user' do
-        it 'creates a new user' do
+        it 'renders new user page' do
             sign_in users(:tester)
-            fake_user = double('user1')
-            user_params = {:email => "admin@rspec.com", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true}
-            controller.should_receive(:new_user)
-            post :new_user, user_params
+            get :new_user
+            response.should render_template(:new_user)
         end
+        
     end    
     describe 'delete_user' do
         
@@ -24,6 +23,12 @@ describe AdminController do
             sign_in users(:user)
             get :index
             response.should redirect_to('/users/sign_in')
+            sign_out users(:user)
+        end
+        it 'allows admin users' do
+            sign_in users(:tester)
+            get :index
+            response.should render_template(:index)
         end
     end
     
