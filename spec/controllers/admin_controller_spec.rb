@@ -6,13 +6,13 @@ describe AdminController do
     before(:each) do
 
     end
-    describe 'create_user' do
+    describe 'new_user' do
         it 'creates a new user' do
             sign_in users(:tester)
             fake_user = double('user1')
             user_params = {:email => "admin@rspec.com", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true}
-            controller.should_receive(:create_user)
-            post :create_user, user_params
+            controller.should_receive(:new_user)
+            post :new_user, user_params
         end
     end    
     describe 'delete_user' do
