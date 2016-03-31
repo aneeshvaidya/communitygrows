@@ -33,12 +33,12 @@
   %table
     %thead
       %tr
-        %td Title
-        %td Content
-        %td Created at
-        %td Updated at
-        %td
-        %td
+        %td{:class => "admindashboard_row_announcement_title"} Title
+        %td{:class => "admindashboard_row_announcement_content"} Content
+        %td{:class => "admindashboard_row_announcement_createdat"} Created at
+        %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
+        %td{:class => "admindashboard_row_announcement_edit"}
+        %td{:class => "admindashboard_row_announcement_delete"}
     %tbody
       - @announcement_list.each do |announcement|
         %tr

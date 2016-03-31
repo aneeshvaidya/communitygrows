@@ -32,6 +32,7 @@ Scenario: should be able to edit a created announcement
   Then I should see "edited title"
   And I should see "edited content"
 
+@javascript
 Scenario: should be able to delete a created announcement
   Then I should see "New Announcement"
   When I follow "New Announcement"
@@ -41,5 +42,6 @@ Scenario: should be able to delete a created announcement
   Then I should see "new title"
   And I should see "new content"
   Then I should see "Delete Announcement"
-  When I follow "Delete Announcement"
-  
+  When I follow first "Delete Announcement"
+  And I confirm popup
+  Then I should not see "new content"
