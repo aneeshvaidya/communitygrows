@@ -15,8 +15,12 @@ module NavigationHelpers
       '/dashboard/'
     when /the (CommunityGrows )?admin_dashboard page$/ then
       '/admin'
+    when /the (CommunityGrows )?log_in page$/ then
+      '/users/sign_in'
+    when /the edit user page for "([^"]*)"$/ then
+      edit_user_path(User.find_by_email($1).id)
 
-    # Add more mappings here.
+    # "Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i

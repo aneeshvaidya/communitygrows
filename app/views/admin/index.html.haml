@@ -8,26 +8,23 @@
 
 %h2 User Management
 
-#table_content
-  %table
-    %thead
+%table#movies
+  %thead
+    %tr
+      %td User
+      %td Status
+      %td Created At
+      %td Last Sign In
+  %tbody
+    -@users.each do |user|
       %tr
-        %th User:
-        %th Status:
-        %th Created_at:
-        %th
-    %tbody
-      - users = ['Jae', 'Bae']
-      - admin = ['Admin', 'User']
-      - (1..2).each do |i|
-        %tr
-          %td= users[i-1]
-          %td= admin[i-1]
-          %td= '2016-03-10'
-          %td= link_to "Edit", ''
+        %td= link_to "#{user.email}", edit_user_path(user.id)
+        %td= user.admin ? "Admin" : "User"
+        %td= user.created_at.strftime("%m/%d/%Y %l:%M %p")
+        %td= user.last_sign_in_at.strftime("%m/%d/%Y %l:%M %p")
+        %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, :confirm => 'Are you sure?' 
 
-= link_to 'Add new user', '', :class => "button"
-= link_to 'delete user', '', :class => "button"
+= link_to 'Add new user', new_user_path
 <br/>
 <br/>
 %h2 Announcement Management

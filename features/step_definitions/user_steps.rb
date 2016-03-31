@@ -1,5 +1,12 @@
 # By Tony. Steps needed for user testing
 
+Given /the following users exist/ do |users_table|
+    User.delete_all
+    users_table.hashes.each do |user|
+        User.create!(user)
+    end
+end
+
 Given /^a valid user$/ do
   @user = User.create!({
              :email => "dummy@dummy.com",

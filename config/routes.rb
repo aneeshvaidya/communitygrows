@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   resources :admin, :only => [:index]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
+
+
+  get 'admin/:id/edit_user' => 'admin#edit_user', as: :edit_user
+  get 'admin/new_user' => 'admin#new_user', as: :new_user
+  delete 'admin/:id' => 'admin#delete_user', as: :delete_user
+  put 'admin/:id/update' => 'admin#update_user', as: :update_user
+  post 'admin/create' => 'admin#create_user', as: :create_user
   
   put '/admin/update_calendar' => 'admin#update_calendar', as: :update_calendar
 
@@ -23,6 +30,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  # =>                       controller#method
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

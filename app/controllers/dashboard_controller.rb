@@ -4,7 +4,7 @@ class DashboardController < ActionController::Base
     
     def index
         # updating calendar
-        @curr_calendar = Calendar.all[0]
+        @curr_calendar = Calendar.all[0] #Calendar.first rather than .all
         if @curr_calendar
             @curr_calendar_id = @curr_calendar.user_id
         end

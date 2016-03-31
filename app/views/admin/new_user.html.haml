@@ -1,0 +1,23 @@
+%h1 Create New User
+
+- if flash[:notice]
+  #flashNotice
+    = flash[:notice]
+    :javascript
+      alert("Fill in all forms before submission.");
+
+= form_tag create_user_path do
+
+  = label :user, :email, 'Email'
+  = text_field :user, 'email'
+  
+  = label :user, :password, 'Password'
+  = text_field :user, 'password'
+  
+  = label :user, :password_confirmation, 'Password Confirmation'
+  = text_field :user, 'password_confirmation'
+
+  = label :user, :admin, 'Admin'
+  = select :user, :admin, [['True', true], ['False', false]]
+
+  = submit_tag 'Submit'
