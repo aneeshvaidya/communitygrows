@@ -15,7 +15,7 @@ describe AdminController do
         it 'renders index page' do
             sign_in users(:tester)
             post :create_user
-            response.should redirect_to(:admin_index)
+            response.should redirect_to(:new_user)
         end
         
     end    
