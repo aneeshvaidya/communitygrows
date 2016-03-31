@@ -4,6 +4,7 @@
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   margin: 0;
+  font-size: .8em;
 }
 
 .view {
@@ -61,46 +62,35 @@ h1 {
 }
 
 #table_content {
+  overflow: auto;
+  max-height: 500px;
 
 }
 
 table {
   width: 100%;
   text-align: center;
-  border-bottom: 5px solid #ddd;
+  border:2px solid #ddd;
+  
+  table-layout: fixed;
+  white-space: nowrap;
 }
 
-th {
+thead {
   background-color: #333;
   color: white;
   border-bottom: 3px solid #ddd;
-  /*display: block;*/
-  /*max-height: 485px;*/
-  /*overflow: auto;*/
-}
-
-tbody{
-  /*display:block;*/
-  width: 100%;
-  /*max-height: 485px;*/
-  /*overflow: auto;*/
-  
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/*tr {*/
-/*    display:block;*/
-/*}*/
-
-thead, td {
-    /*width: 100%;*/
-}
-
-th, td {
+td {
   padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 link {
@@ -108,8 +98,10 @@ link {
 }
 
 #announcement_content {
- width: 400px;
- height: 20px;
+  overflow: auto;
+  max-width: 650px;
+  max-height: 500px;
+  font-size: 11px;
 }
 
 /***************/
@@ -225,6 +217,13 @@ ul {
     text-align:center;
     width:100%;
 }
+.dashboard_row_announcement_content {
+  width: 82%;
+}
+
+.dashboard_row_announcement_time {
+  width: 18%;
+}
 
 /*****************/
 /* Committee CSS */
@@ -331,14 +330,24 @@ button{
 #calendar_html {
   width: 200px;
   height: 20px;
+  padding: 10px 10px;
 }
 
-#announcement_title {
-  width: 200px;
-  height: 20px;  
+.admindashboard_row_announcement_title {
+  width: 10%;
 }
-
-#announcement_content {
-  width: 400px;
-  height: 20px;
+.admindashboard_row_announcement_content {
+  width: 48%;
+}
+.admindashboard_row_announcement_createdat {
+  width: 10%;
+}
+.admindashboard_row_announcement_updatedat {
+  width: 10%;
+}
+.admindashboard_row_announcement_edit {
+  width: 10%;
+}
+.admindashboard_row_announcement_delete {
+  width: 12%;
 }
