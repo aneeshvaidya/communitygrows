@@ -44,16 +44,15 @@ class AdminController < ActionController::Base
     
     def create_user
         #try and catch
-        # begin
-        #     @user = User.create!(user_params)
-        # rescue Exception => e
-        #     flash[:notice] = "Populate all fields before submission."
-        #     redirect_to new_user_path
-        # else
-        #     flash[:notice] = "#{@user.email} was successfully created."
-        #     redirect_to admin_index_path 
-        # end
-        redirect_to admin_index_path
+        begin
+            @user = User.create!(user_params)
+        rescue Exception => e
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to new_user_path
+        else
+            flash[:notice] = "#{@user.email} was successfully created."
+            redirect_to admin_index_path 
+        end
     end
     
     def new_user
