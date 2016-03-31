@@ -8,13 +8,11 @@
         %thead
           %tr
             %td{:class => "dashboard_row_announcement_time"}= "Date"
-            // %td Title
             %td{:class => "dashboard_row_announcement_content"}= "Content"
         %tbody
           - @announcement_list.each do |announcement|
             %tr
               %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-              // %td= announcement.title
               %td= announcement.content
   #calendar
     %h2 Calendar

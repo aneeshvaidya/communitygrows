@@ -218,11 +218,15 @@ ul {
     width:100%;
 }
 .dashboard_row_announcement_content {
-  width: 82%;
+  width: 72%;
 }
 
 .dashboard_row_announcement_time {
   width: 18%;
+}
+
+.dashboard_row_announcement_title {
+  width: 10%;
 }
 
 /*****************/
