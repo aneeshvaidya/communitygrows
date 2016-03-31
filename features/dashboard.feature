@@ -18,6 +18,9 @@ Scenario: see all the panels
   Then I should see "Announcements"
   And I should see "Calendar"
   And I should see "Salesforce"
+  And I should see "Date"
+  And I should see "Title"
+  And I should see "Content"
 
 Scenario: document tab works successfully
   When I follow "Documents"
