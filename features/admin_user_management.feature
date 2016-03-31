@@ -16,11 +16,11 @@ Background: users in database
   Given a logged in user
   And I am on the CommunityGrows admin_dashboard page
 
-Scenario: see users on admin dashboard
+Scenario: Admin should see users on admin dashboard
   Then I should see "zach@gmail.com"
   And I should see "tonylee@gmail.com"
   
-Scenario: add new user to the database 
+Scenario: Admin can add new user to the database 
   When I follow "Add new user"
   Then I fill in "Email" with "mg@mgmt.com"
   Then I fill in "Password" with "12345678"
@@ -29,7 +29,7 @@ Scenario: add new user to the database
   Then I should be on the admin_dashboard page
   And I should see "mg@mgmt.com"
   
-Scenario: edit an existing user's info
+Scenario: Admin can edit an existing user's email
   When I follow "zach@gmail.com"
   Then I fill in "Email" with "zachary@gmail.com"
   Then I fill in "Password" with "password"
@@ -39,24 +39,24 @@ Scenario: edit an existing user's info
   And I should see "zachary@gmail.com"
   And I should not see "zach@gmail.com"
   
-Scenario: user fails to enter password during edit
+Scenario: Admin fails to enter password during edit
   When I follow "zach@gmail.com"
   Then I fill in "Email" with "zachary@gmail.com"
   And I press "Update user"
   Then I should see "Populate all fields before submission."
   And I should be on the edit user page for "zach@gmail.com"
   
-Scenario: should see user new
-  Then I should see "Add new user"
-  
-Scenario: should see last login data availabe for every user
-  Then I should see "Created_at"
-  
-Scenario: create new user without filling in password 
+Scenario: Admin fails to enter password while adding new user 
   When I follow "Add new user"
   And I fill in "Email" with "bob@billy.com"
   And I press "Submit"
   Then I should see "Populate all fields before submission."
+  
+Scenario: Admin should see new user link
+  Then I should see "Add new user"
+  
+Scenario: Admin should see last login data availabe for every user
+  Then I should see "Created_at"
 
   
   
