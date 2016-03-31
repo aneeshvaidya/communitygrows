@@ -18,7 +18,7 @@ Scenario: should be able to add an announcement
   Then I should see "new title"
   And I should see "new content"
 
-Scenario: should be able to edit an announcement
+Scenario: should be able to edit a created announcement
   Then I should see "New Announcement"
   When I follow "New Announcement"
   And I fill in "Title" with "new title"
@@ -32,7 +32,7 @@ Scenario: should be able to edit an announcement
   Then I should see "edited title"
   And I should see "edited content"
 
-Scenario: should be able to delete an announcement
+Scenario: should be able to delete a created announcement
   Then I should see "New Announcement"
   When I follow "New Announcement"
   And I fill in "Title" with "new title"
