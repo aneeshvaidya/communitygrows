@@ -42,3 +42,4 @@ Scenario: should be able to delete a created announcement
   And I should see "new content"
   Then I should see "Delete Announcement"
   When I follow "Delete Announcement"
+  

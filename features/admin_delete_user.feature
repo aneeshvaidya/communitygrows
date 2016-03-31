@@ -7,10 +7,10 @@ Feature: Admin can delete an existing user from the admin dashboard
   
 Background: users in database
 
-  Given a logged in user
+  Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
  
 Scenario: delete a user in the database 
-  And I should see "dummy@dummy.com"
+  And I should see "admin@communitygrows.org"
   Then I press "Delete User"
   Then I should be on the log_in page

@@ -13,7 +13,7 @@ Background: users in database
     | tonylee@gmail.com | false      | 2016-03-14 15:32:00  | 43124312     | 43124312                  |
     | jae@berkeley.edu  | false      | 2016-03-18 22:12:11  | 54175417     | 54175417                  |
 
-  Given a logged in user
+  Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
 
 Scenario: Admin should see users on admin dashboard
@@ -56,7 +56,7 @@ Scenario: Admin should see new user link
   Then I should see "Add new user"
   
 Scenario: Admin should see last login data availabe for every user
-  Then I should see "Created_at"
+  Then I should see "Created At"
 
   
   
