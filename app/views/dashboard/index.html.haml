@@ -3,6 +3,18 @@
 %body
   #announcements
     %h2 Announcements
+    %table#announcement
+      %thead
+        %tr
+          %td Date
+          %td Title
+          %td Content
+      %tbody
+        - @announcement_list.each do |announcement|
+          %tr
+            %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
+            %td= announcement.title
+            %td= announcement.content
   #calendar
     %h2 Calendar
     <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="650" height="500" frameborder="1" scrolling="no"></iframe>

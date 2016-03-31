@@ -18,6 +18,9 @@ Scenario: see all the panels
   Then I should see "Announcements"
   And I should see "Calendar"
   And I should see "Salesforce"
+  And I should see "Date"
+  And I should see "Title"
+  And I should see "Content"
 
 Scenario: document tab works successfully
   When I follow "Documents"
@@ -27,8 +30,7 @@ Scenario: subcomittee tab works successfully
   When I follow "Comittee"
   Then I should see "Go to meeting"
   
-Scenario: admin tab works successfully
+Scenario: admin tab should not work successfully because you are a use
   When I follow "Admin Dashboard"
-  Then I should see "Admin Dashboard"
-  Then I should see "User Management"
-  Then I should see "Announcement Management"
+  Then I should not see "User Management"
+  Then I should not see "Announcement Management"

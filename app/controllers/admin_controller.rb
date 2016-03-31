@@ -9,9 +9,18 @@ class AdminController < ActionController::Base
     def calendar_params
         params.require(:calendar).permit(:html)
     end
+    
+    def announcement_params
+        params.require(:announcement).permit(:title, :content)
+    end
   
     def index
         @users = User.all
+        @announcement_list = Announcement.order(created_at: :DESC)
+        if !current_user.admin
+            flash[:message] = "Access not granted. Please sign in again."
+            redirect_to("/users/sign_in")
+        end
     end
     
     def edit_user
@@ -60,6 +69,34 @@ class AdminController < ActionController::Base
         redirect_to admin_index_path
     end
     
+    def new_announcement
+    end
+    
+    def create_announcement
+        Announcement.create!(announcement_params)
+        flash[:notice] = 'Announcement creation successful.'
+        redirect_to('/admin')
+    end
+    
+    def edit_announcement
+        @id = params[:id]
+        @target_announcement = Announcement.find @id
+    end
+    
+    def update_announcement
+        @target_announcement = Announcement.find params[:id]
+        @target_announcement.update_attributes!(announcement_params)
+        flash[:notice] = "Announcement with title [#{@target_announcement.title}] updated successfully"
+        redirect_to(admin_index_path)
+    end
+    
+    def delete_announcement
+        @target_announcement = Announcement.find params[:id]
+        @target_announcement.destroy!
+        flash[:notice] = "Announcement with title [#{@target_announcement.title}] deleted successfully"
+        redirect_to(admin_index_path)
+    end
+    
     def update_calendar
         Calendar.destroy_all
         @new_calendar = Calendar.create!(calendar_params)
@@ -67,3 +104,4 @@ class AdminController < ActionController::Base
         redirect_to('/admin')
     end
 end
+

@@ -11,14 +11,17 @@ end
 
 Given /^a logged in admin$/ do
   @user = User.create!({
-             :email => "admindummy@dummy.com",
-             :password => "dummypass",
-             :password_confirmation => "dummypass",
-             :admin => false
+             :email => "admin@communitygrows.org",
+             :password => "communitygrowsrocks",
+             :password_confirmation => "communitygrowsrocks",
+             :admin => true
            })
   visit "/users/sign_in"
-  fill_in "user_email", :with => "admindummy@dummy.com"
-  fill_in "password", :with => "dummypass"
+  fill_in "user_email", :with => "admin@communitygrows.org"
+  fill_in "password", :with => "communitygrowsrocks"
   click_button "Log in"
 end
 
+When /^(?:|I )follow first "([^"]*)"$/ do |link|
+  click_link(link, match: :first)
+end

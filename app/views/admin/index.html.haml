@@ -25,27 +25,34 @@
         %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, :confirm => 'Are you sure?' 
 
 = link_to 'Add new user', new_user_path
-
+<br/>
+<br/>
 %h2 Announcement Management
 
-%table#movies
-  %thead
-    %tr
-      %td Title:
-      %td Content:
-      %td Created_at:
-      %td 
-  %tbody
-    - (1..1).each do |i|
+#table_content
+  %table
+    %thead
       %tr
-        %td= 'Hello'
-        %td= 'This is a mock-up'
-        %td= '2016-03-10'
-        %td= link_to "Show more", ''
+        %td Title
+        %td Content
+        %td Created at
+        %td Updated at
+        %td
+        %td
+    %tbody
+      - @announcement_list.each do |announcement|
+        %tr
+          %td= announcement.title
+          %td= announcement.content
+          %td= announcement.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
+          %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
 
-= link_to 'Add Announcement', ''
-= link_to 'Delete Announcement', ''
+= link_to 'New Announcement', new_announcement_path, :class => "button"
 
+<br/>
+<br/>
 %h2 Register/Update Google Calendar
 %p Insert your Google id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
 

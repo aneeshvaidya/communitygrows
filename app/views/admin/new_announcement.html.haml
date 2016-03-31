@@ -1,0 +1,10 @@
+#content
+  = form_tag create_announcement_path(@announcement), :method => :put do
+    = label :announcement, :title, "Title: "
+    = text_field :announcement, 'title', :placeholder => "Your title here"
+    <br/>
+    = label :announcement, :content, "Content: "
+    = text_field :announcement, 'content', cols: 40, rows: 5, :placeholder => "Your content here"
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', admin_index_path, :class => "button"
