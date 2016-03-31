@@ -22,6 +22,10 @@ Given /^a logged in admin$/ do
   click_button "Log in"
 end
 
+When /^(?:|I )confirm popup$/ do
+  page.driver.browser.switch_to.alert.accept
+end
+
 When /^(?:|I )follow first "([^"]*)"$/ do |link|
   click_link(link, match: :first)
 end

@@ -12,10 +12,10 @@
   %table
     %thead
       %tr
-        %td User:
-        %td Status:
-        %td Created_at:
-        %td
+        %th User:
+        %th Status:
+        %th Created_at:
+        %th
     %tbody
       - users = ['Jae', 'Bae']
       - admin = ['Admin', 'User']
@@ -36,12 +36,12 @@
   %table
     %thead
       %tr
-        %td Title
-        %td Content
-        %td Created at
-        %td Updated at
-        %td
-        %td
+        %th Title
+        %th Content
+        %th Created at
+        %th Updated at
+        %th
+        %th
     %tbody
       - @announcement_list.each do |announcement|
         %tr
