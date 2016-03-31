@@ -2,22 +2,16 @@ require 'spec_helper'
 require "rails_helper"
 
 describe AdminController do
-
-    
+    before(:each) do
+        @request.env["devise.mapping"] = Devise.mappings[:admin]
+        sign_in :user, FactoryGirl.create(:admin) 
+    end
     describe 'create_user' do
-        it 'should call the model method to create a new user' do
-            curr = User.create!(:email => "admin@communitygrows.org", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true)
-            visit "/users/sign_in"
-            fill_in "Email",    :with => curr.email
-            fill_in "Password", :with => curr.password
-            click_button "Log in"
-            visit "/admin/new_user"
-            fill_in "Email", :with => "zachary@gmail.net"
-            fill_in "Password", :with => "12345678"
-            fill_in "Password Confirmation", :with => "12345678"
-            click_button "Submit"
-            page.should have_content("Admin Dashboard")
-            page.should have_content("zachary@gmail.net")
+        it 'should call the model method' do
+            fake_user = double('user1')
+            user_params = {:email => "admin@rspec.com", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true}
+            User.should_receive(:create)
+            post :create_user, user_params
         end
     end
     
