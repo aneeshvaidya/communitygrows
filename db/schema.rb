@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331031414) do
+ActiveRecord::Schema.define(version: 20160331233718) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -39,8 +39,7 @@ ActiveRecord::Schema.define(version: 20160331031414) do
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.boolean  "admin"
-    t.boolean  "notification_email",     default: true
-    t.datetime "last_sign_in_at",        default: '2016-03-31 03:24:17', null: false
+    t.datetime "last_sign_in_at",        default: '2016-03-31 23:38:06', null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
