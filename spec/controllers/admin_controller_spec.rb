@@ -20,7 +20,11 @@ describe AdminController do
         
     end    
     describe 'delete_user' do
-        
+        it 'deletes a user' do
+            sign_in users(:tester)
+            delete :delete_user, id: users(:user).id
+            response.should redirect_to(:admin_index)
+        end
     end
     
     describe 'index' do
@@ -38,7 +42,11 @@ describe AdminController do
     end
     
     describe 'edit_user' do
-        
+        it 'renders edit user page' do
+            sign_in users(:tester)
+            get :edit_user, id: users(:tester).id
+            response.should render_template(:edit_user)
+        end
     end
 
 end
