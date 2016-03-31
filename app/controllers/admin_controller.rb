@@ -28,8 +28,7 @@ class AdminController < ActionController::Base
     end
     
     def edit_announcement
-        @id = params[:id]
-        @target_announcement = Announcement.find @id
+        @target_announcement = Announcement.find params[:id]
     end
     
     def update_announcement
@@ -42,7 +41,7 @@ class AdminController < ActionController::Base
     def delete_announcement
         @target_announcement = Announcement.find params[:id]
         @target_announcement.destroy!
-        flash[:notice] = "Announcement with title [#{@target_announcement.title}] updated successfully"
+        flash[:notice] = "Announcement with title [#{@target_announcement.title}] deleted successfully"
         redirect_to(admin_index_path)
     end
     
