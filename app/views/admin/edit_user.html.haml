@@ -18,6 +18,6 @@
   = text_field :user, 'password_confirmation'
 
   = label :user, :admin, 'Admin'
-  = select :user, :admin, ['True','False']
+  = select :user, :admin, [['True', true], ['False', false]]
 
   = submit_tag 'Update user'
