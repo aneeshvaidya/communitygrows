@@ -18,7 +18,8 @@
               %td= announcement.content
   #calendar
     %h2 Calendar
-    %iframe{:frameborder => "1", :height => "500", :scrolling => "no", :src => "https://calendar.google.com/calendar/embed?src=\#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles", :style => "border: 0", :width => "650"}
+    <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="650" height="530" frameborder="1" scrolling="no"></iframe>
+    // %iframe{:frameborder => "1", :height => "500", :scrolling => "no", :src => "https://calendar.google.com/calendar/embed?src=\#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles", :style => "border: 0", :width => "650"}
   #salesforce
     %h2 Salesforce
   #footer
