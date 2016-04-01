@@ -53,6 +53,17 @@ describe AdminController do
             get :edit_user, id: users(:tester).id
             response.should render_template(:edit_user)
         end
+        it 'should redirect to edit user page' do
+            sign_in users(:tester)
+            put :update_user, id: users(:tester).id
+            response.should redirect_to(:edit_user)
+        end
+        it 'redirects to index page on success' do
+            sign_in users(:tester)
+            user_params = {:email => "admin@rspec.com", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true}
+            put :update_user, id: users(:tester).id, :user => user_params
+            response.should redirect_to(:admin_index)
+        end
     end
 
 end
