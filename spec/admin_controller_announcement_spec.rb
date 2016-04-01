@@ -1,7 +1,7 @@
 require 'spec_helper'
 require "rails_helper"
 
-RSpec.describe "Admin announcements", :type => :request do
+RSpec.describe "Admin announcements/calendar", :type => :request do
   describe "CommunityGrows website" do
     before 'should redirect to the dashboard when user is signed in' do
       curr = User.create!(:email => "admin@communitygrows.org", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true)
@@ -39,6 +39,14 @@ RSpec.describe "Admin announcements", :type => :request do
       
       click_link "Delete Announcement", match: :first
       page.should have_content("Announcement Management")
+    end
+    
+    it 'should update or register a calendar' do
+      visit '/admin'
+      
+      fill_in "calendar_html", :with => 'tonylee1993'
+      click_button "Update Google Calendar"
+      page.should have_content("New Calendar Creation successful")
     end
   end
 end
