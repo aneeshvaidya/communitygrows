@@ -19,6 +19,7 @@ require 'capybara/rspec' #by Tony
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
+SimpleCov.start 'rails'
 
 # require "codeclimate-test-reporter"
 # CodeClimate::TestReporter.start
