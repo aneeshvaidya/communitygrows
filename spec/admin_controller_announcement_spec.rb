@@ -36,7 +36,6 @@ RSpec.describe "Admin announcements/calendar", :type => :request do
       click_button "Submit"
       page.should have_content("ccc")
       page.should have_content("ddddd")
-      
       click_link "Delete Announcement", match: :first
       page.should have_content("Announcement Management")
     end
