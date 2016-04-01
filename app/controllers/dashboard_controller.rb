@@ -6,7 +6,7 @@ class DashboardController < ActionController::Base
         # updating calendar
         @curr_calendar = Calendar.all[0] #Calendar.first rather than .all
         if @curr_calendar
-            @curr_calendar_id = @curr_calendar.user_id
+            @curr_calendar_id = @curr_calendar.html
         end
         @announcement_list = Announcement.order(created_at: :DESC)
     end
