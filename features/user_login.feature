@@ -6,7 +6,6 @@ Feature: successfully login
   So that I can access the dashboard
 
 Background: user is on the login page
-  
   Given a valid user
   And I am on the CommunityGrows home page
 

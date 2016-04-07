@@ -17,6 +17,14 @@ module NavigationHelpers
       '/admin'
     when /the (CommunityGrows )?log_in page$/ then
       '/users/sign_in'
+    when /the (CommunityGrows )?document repository page$/ then
+      fail "Unimplemented"
+    when /the (CommunityGrows )?internal affairs committee page$/ then
+      fail "Unimplemented"
+    when /the (CommunityGrows )?executive committee page$/ then
+      fail "Unimplemented"
+    when /the (CommunityGrows )?external affairs committee page$/ then
+      fail "Unimplemented"
     when /the edit user page for "([^"]*)"$/ then
       edit_user_path(User.find_by_email($1).id)
 
