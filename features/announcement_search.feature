@@ -7,7 +7,7 @@ Feature: successfully search for announcements
 
 Background: user is on the document repository page and announcement is made
   
-  Given a logged in valid user
+  Given a logged in user
   And I am on the CommunityGrows dashboard page
   And an announcement is made with "test" as title and "test-url" as url
 

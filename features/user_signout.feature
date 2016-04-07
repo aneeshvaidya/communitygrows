@@ -7,7 +7,7 @@ Feature: successfully signout
 
 Background: user is on the dashboard
   
-  Given a logged in valid user
+  Given a logged in user
   And I am on the CommunityGrows home page
 
 # happy path

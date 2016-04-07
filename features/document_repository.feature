@@ -7,7 +7,7 @@ Feature: successfully CRUD on the document repository
 
 Background: user is on the document repository page
   
-  Given a logged in valid user
+  Given a logged in user
   And I am on the document repository page
 
 # happy path

@@ -5,10 +5,10 @@ Feature: successfully working on subcommittee
   I want to naviagte through three subcommittee pages
   So that I can perform announcements actions on the subcommittee pages and keep currently working document list
 
-Background: user is on the admin_dashboard page
+Background: user is on the document repo page
   
-  Given a logged in valid user
-  And I am on the CommunityGrows dashboard page
+  Given a logged in user
+  And I am on the document repository page
 
 # happy path
 Scenario: User can naviagte through executive committee page

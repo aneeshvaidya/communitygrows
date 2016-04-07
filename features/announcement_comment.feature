@@ -7,14 +7,14 @@ Feature: successfully comment on an announcement
 
 Background: user is on the document repository page and announcement is made
   
-  Given a logged in valid user
+  Given a logged in user
   And I am on the CommunityGrows dashboard page
   And an announcement is made with "test" as title and "test-url" as url
 
 # happy path
 Scenario: User can add a comment on an announcement
   When I follow "test"
-  Then I follow comment
+  Then I follow "comment"
   Then I fill in "comment" with "test comment"
   And I press "Submit"
   Then I should be on the announcement page
@@ -23,7 +23,7 @@ Scenario: User can add a comment on an announcement
 # sad path
 Scenario: User can't add a new document without proper text
   When I follow "announcement title"
-  Then I follow comment
+  Then I follow "comment"
   Then I fill in "comment" with ""
   And I press "Submit"
   Then I should be on the announcement page
