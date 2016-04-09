@@ -24,7 +24,7 @@
         %td= user.last_sign_in_at.strftime("%m/%d/%Y %l:%M %p")
         %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'Add new user', new_user_path
+= link_to 'Add new user', new_user_path, :class => "button"
 <br/>
 <br/>
 %h2 Announcement Management
@@ -60,4 +60,4 @@
   = label :calendar, :title, "Google Calendar owner's id:"
   = text_field :calendar, 'html'
 
-  = submit_tag 'Update Google Calendar'
+  = submit_tag 'Update Google Calendar', :class => "button"
