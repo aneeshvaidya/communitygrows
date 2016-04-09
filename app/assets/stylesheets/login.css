@@ -18,7 +18,7 @@ body {
 h2 {
     color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .console {
@@ -35,8 +35,28 @@ input:required {
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
+  width: 200px;
 }
 
 .input_text {
     font-size: 1em;
+}
+
+.submit_button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #333;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.sign_in_flash_alert {
+    font-size: 1.5em;
 }
