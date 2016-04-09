@@ -5,7 +5,7 @@
 
 body {
     background: url(login/login_page.jpg) no-repeat center center fixed;
-    color: white;
+    color: Gray;
     font-family: "Arial", Times, sans-serif;
     top: 0; 
     left: 0; 
@@ -16,14 +16,20 @@ body {
 } 
 
 h2 {
-    color: white;
+    color: black;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .console {
-    margin-top: 15%;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 8% auto 100px;
+    padding: 45px;
     text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 input:required {
@@ -31,11 +37,15 @@ input:required {
 }
 
 .input {
-  padding: 10px;
-  border: none;
-  border-bottom: solid 2px #c9c9c9;
-  transition: border 0.3s;
-  width: 200px;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 70%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 .input_text {
@@ -43,20 +53,20 @@ input:required {
 }
 
 .submit_button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #333;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
-  width: 120px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: gray;
+    width: 70%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
 }
 
 .sign_in_flash_alert {
-    font-size: 1.5em;
+    font-size: 1em;
 }
