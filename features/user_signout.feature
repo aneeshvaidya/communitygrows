@@ -12,16 +12,9 @@ Background: user is on the dashboard
 
 # happy path
 Scenario: successfully logged out from the dashboard
-  When I sign out
+  When I follow "Sign out"
   Then I should be on the log_in page
   Then I should not see "announcements"
   
-# sad path
-Scenario: unsuccessfully sign out because you already signed out
-  When I sign out
-  Then I should be on the log_in page
-  Then I should not see "announcements"
-  When I sign out
-  Then I should be on the log_in page
+# There is no sad path because sign out will just instantly kill the current session and there is no way around it
 
-  

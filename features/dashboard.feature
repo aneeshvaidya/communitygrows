@@ -12,7 +12,6 @@ Background: user is on the login page
 Scenario: see all the tabs
   Then I should see "Documents"
   And I should see "Comittee"
-  And I should see "Admin Dashboard"
 
 Scenario: see all the panels
   Then I should see "Announcements"
@@ -30,6 +29,4 @@ Scenario: subcomittee tab works successfully
   Then I should see "Go to meeting"
   
 Scenario: admin tab should not work successfully because you are a use
-  When I follow "Admin Dashboard"
-  Then I should not see "User Management"
-  Then I should not see "Announcement Management"
+  Then I should not see "Admin Dashboard"
