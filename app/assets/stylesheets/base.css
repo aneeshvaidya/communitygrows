@@ -153,12 +153,13 @@ thead#filebar{
 
 .navigation{
   float: right;
-  padding: 18px 18px;
+  padding: 20px 20px;
   display: block;
   color: white;
   text-align: center;
   text-decoration: none;
   border-left: 1px solid #bbb;
+  font-size: 1.1em;
 }
 
 ul {
@@ -168,7 +169,7 @@ ul {
     overflow: hidden;
     background-color: #333;
     width: 100%;
-    height: auto;
+    height: 55.5px;
     position: fixed;
     top: 0;
 }
@@ -179,7 +180,7 @@ ul {
 
 .dashboard img {
   width: 160px;
-  height: auto;
+  height: 55px;
   padding: 0px 0px;
 }
 
