@@ -6,8 +6,8 @@ RSpec.describe "Admin announcements/calendar", :type => :request do
     before 'should redirect to the dashboard when user is signed in' do
       curr = User.create!(:email => "admin@communitygrows.org", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true)
       visit "/users/sign_in"
-      fill_in "Email",    :with => curr.email
-      fill_in "Password", :with => curr.password
+      fill_in :user_email,    :with => curr.email
+      fill_in :user_password, :with => curr.password
       click_button "Log in"
       page.should have_content("Dashboard")
       
