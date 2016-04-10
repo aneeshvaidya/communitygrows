@@ -14,11 +14,10 @@ Scenario: see all the tabs
   And I should see "Comittee"
 
 Scenario: see all the panels
-  Then I should see "Announcements"
+  Then I should see "Main Announcements"
   And I should see "Calendar"
-  And I should see "Salesforce"
   And I should see "Date"
-  And I should see "Content"
+  And I should see "Title"
 
 Scenario: document tab works successfully
   When I follow "Documents"

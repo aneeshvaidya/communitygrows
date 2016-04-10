@@ -3,20 +3,21 @@
 /* You can use Sass (SCSS) here: http://sass-lang.com/*/
 body {
   font-family: "Open Sans";
-  font-size: .8em;
+  font-size: .75em;
   margin: 0;
 }
 .content_without_nav {
-  margin:6%;
+  margin-top:5%;
   margin-left:2%;
   margin-right:2%;
 }
 h1 {
   font-family: "Forum";
-  font-size: 3em;
+  font-size: 2.9em;
 }
 h2 {
-  font-size: 1.7em;
+  font-family: "Forum";
+  font-size: 1.6em;
 }
 .button {
   display: inline-block;
@@ -99,13 +100,11 @@ thead#filebar{
 /***************/
 /* Nav Bar CSS */
 /***************/
-
 .dashboard{
   float: left;
   margin:0;
   padding:0;
 }
-
 .navigation{
   float: right;
   padding: 20px 20px;
@@ -116,7 +115,6 @@ thead#filebar{
   border-left: 1px solid #bbb;
   font-size: 1.1em;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -124,56 +122,58 @@ ul {
     overflow: hidden;
     background-color: #333;
     width: 100%;
-    height: 55.5px;
+    height: 4.7em;
     position: fixed;
     top: 0;
 }
-
 .navigation:hover:not(.active) {
     background-color: #666;
 }
-
 .dashboard img {
   width: 160px;
-  height: 55px;
+  height: 4.6em;
   padding: 0px 0px;
 }
-
 /*****************/
 /* Dashboard CSS */
 /*****************/
 #announcements {
     background-color:#eeeeee;
     float:left;
-    height:650px;
-    margin:1% 0px;
+    height:60em;
     text-align:center;
-    width:49%;
+    width:49.5%;
+    border-radius: 7px;
+    padding: 1px;
+    margin-bottom: 2%;
 }
 #calendar {
     background-color:#eeeeee;
     float:right;
-    height:650px;
-    margin:1% 0px;
+    height:60em;
     text-align:center;
-    width:49%;
+    width:49.5%;
+    border-radius: 7px;
+    padding: 1px;
+    margin-bottom: 2%;
 }
-#salesforce {
-    background-color:#eeeeee;
-    float: right;
-    height:500px;
-    position: relative;
-    right: 5%;
-    text-align: center;
-    width:90%;
-}
-#footer {
-    background-color:black;
-    clear:both;
-    color:white;
-    text-align:center;
-    width:100%;
-}
+/*#salesforce {*/
+/*    background-color:#eeeeee;*/
+/*    float: None;*/
+/*    height:500px;*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    width:99%;*/
+/*    border-radius: 7px;*/
+/*}*/
+/*#footer {*/
+/*    margin-top: 5%;*/
+/*    background-color:black;*/
+/*    clear:both;*/
+/*    color:white;*/
+/*    text-align:center;*/
+/*    width:100%;*/
+/*}*/
 .dashboard_row_announcement_content {
   width: 70%;
 }

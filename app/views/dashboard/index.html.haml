@@ -1,24 +1,34 @@
 %h1 Board Member Dashboard
-
-%body
-  #announcements
-    %h2 Announcements
-    #announcement_content
-      %table
-        %thead
+#announcements
+  %h2 Main Announcements
+  #announcement_content
+    %table
+      %thead
+        %tr
+          %td{:class => "dashboard_row_announcement_time"}= "Date"
+          %td{:class => "dashboard_row_announcement_content"}= "Title"
+      %tbody
+        - @announcement_list.each do |announcement|
           %tr
-            %td{:class => "dashboard_row_announcement_time"}= "Date"
-            %td{:class => "dashboard_row_announcement_content"}= "Title"
-        %tbody
-          - @announcement_list.each do |announcement|
-            %tr
-              %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-              %td= announcement.title
-  #calendar
-    %h2 Calendar
-    <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width=98% height=90% frameborder="1" scrolling="no"></iframe>
-    // %iframe{:frameborder => "1", :height => "500", :scrolling => "no", :src => "https://calendar.google.com/calendar/embed?src=\#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles", :style => "border: 0", :width => "650"}
-  #salesforce
-    %h2 Salesforce
-  #footer
-    CommunityGrows
+            %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
+            %td= announcement.title
+  %h2 Subcommittee Announcements
+  #announcement_content
+    %table
+      %thead
+        %tr
+          %td{:class => "dashboard_row_announcement_time"}= "Date"
+          %td{:class => "dashboard_row_announcement_content"}= "Title"
+      %tbody
+        - @announcement_list.each do |announcement|
+          %tr
+            %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
+            %td= announcement.title
+            
+#calendar
+  %h2 Calendar
+  <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width=98% height=91% frameborder="1" scrolling="no"></iframe>
+// #salesforce
+//   %h2 Salesforce
+// #footer
+//   CommunityGrows
