@@ -8,25 +8,29 @@
 
 %h2 User Management
 
-%table#movies
-  %thead
-    %tr
-      %td User
-      %td Status
-      %td Created At
-      %td Last Sign In
-  %tbody
-    -@users.each do |user|
+#table_content
+  %table
+    %thead
       %tr
-        %td= link_to "#{user.email}", edit_user_path(user.id)
-        %td= user.admin ? "Admin" : "User"
-        %td= user.created_at.strftime("%m/%d/%Y %l:%M %p")
-        %td= user.last_sign_in_at.strftime("%m/%d/%Y %l:%M %p")
-        %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }
+        %td User
+        %td Status
+        %td Created At
+        %td Last Sign In
+        %td Delete
+    %tbody
+      -@users.each do |user|
+        %tr
+          %td= link_to "#{user.email}", edit_user_path(user.id)
+          %td= user.admin ? "Admin" : "User"
+          %td= user.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= user.last_sign_in_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new user', new_user_path, :class => "button"
-<br/>
-<br/>
+
+<br/> <br/>
+
+
 %h2 Announcement Management
 
 #table_content
@@ -37,8 +41,8 @@
         %td{:class => "admindashboard_row_announcement_content"} Content
         %td{:class => "admindashboard_row_announcement_createdat"} Created at
         %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
-        %td{:class => "admindashboard_row_announcement_edit"}
-        %td{:class => "admindashboard_row_announcement_delete"}
+        %td{:class => "admindashboard_row_announcement_edit"} Edit
+        %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
       - @announcement_list.each do |announcement|
         %tr
@@ -51,8 +55,8 @@
 
 = link_to 'New Announcement', new_announcement_path, :class => "button"
 
-<br/>
-<br/>
+<br/> <br/>
+
 %h2 Register/Update Google Calendar
 %p Insert your Google id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
 
