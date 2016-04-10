@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   # by Tony
   # redirecting to the dashboard after authentication
   def after_sign_in_path_for(resource)
-    flash[:message] = "Welcome back #{current_user.id}"
     '/dashboard#index'
   end  
   
@@ -17,10 +16,9 @@ class ApplicationController < ActionController::Base
   def authenticate
     if user_signed_in?
       user_id = current_user.id
-      flash[:message] = "Welcome back #{current_user.id}"
       redirect_to("/dashboard#index")
     else
-      flash[:message] = "Please sign in"
+      flash[:message] = "Please sign in to continue"
       redirect_to("/users/sign_in")
     end
   end
