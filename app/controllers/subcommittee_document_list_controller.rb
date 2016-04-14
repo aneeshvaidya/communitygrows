@@ -3,15 +3,15 @@ class SubcommitteeDocumentListController < ActionController::Base
     before_filter :authenticate_user!
     
     def executive_params
-        params.require(:executive_document_lists).permit(:title, :url)
+        params.require(:executive_document_list).permit(:title, :url)
     end
     
     def external_params
-        params.require(:external_document_lists).permit(:title, :url)
+        params.require(:external_document_list).permit(:title, :url)
     end
     
     def internal_params
-        params.require(:internal_document_lists).permit(:title, :url)
+        params.require(:internal_document_list).permit(:title, :url)
     end
 
     def new_executive_document_list
@@ -42,15 +42,18 @@ class SubcommitteeDocumentListController < ActionController::Base
     end
         
     def edit_executive_document_list
-        @executive_document_list = ExecutiveDocumentList.find params[:id]
+        @executive_document_list_id = params[:id]
+        @executive_document_list = ExecutiveDocumentList.find @executive_document_list_id
     end
     
     def edit_external_document_list
-        @external_document_list = ExternalDocumentList.find params[:id]
+        @external_document_list_id = params[:id]
+        @external_document_list = ExternalDocumentList.find @external_document_list_id
     end
     
     def edit_internal_document_list
-        @internal_document_list = InternalDocumentList.find params[:id]
+        @internal_document_list_id = params[:id]
+        @internal_document_list = InternalDocumentList.find @internal_document_list_id
     end
     
     def update_executive_document_list

@@ -20,11 +20,11 @@ module NavigationHelpers
     when /the (CommunityGrows )?document repository page$/ then
       fail "Unimplemented"
     when /the (CommunityGrows )?internal affairs committee page$/ then
-      fail "Unimplemented"
+      '/internal_committee/'
     when /the (CommunityGrows )?executive committee page$/ then
-      fail "Unimplemented"
+      '/executive_committee/'
     when /the (CommunityGrows )?external affairs committee page$/ then
-      fail "Unimplemented"
+      '/external_committee/'
     when /the edit user page for "([^"]*)"$/ then
       edit_user_path(User.find_by_email($1).id)
 

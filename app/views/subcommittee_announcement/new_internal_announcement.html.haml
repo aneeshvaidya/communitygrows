@@ -1,0 +1,10 @@
+#content
+  = form_tag create_internal_announcement_path(@internal_announcement), :method => :put do
+    = label :internal_announcement, :title, "Title: "
+    = text_area :internal_announcement, 'title', cols: 40, rows: 3, :placeholder => "Your title here"
+    <br/>
+    = label :internal_announcement, :content, "Content: "
+    = text_area :internal_announcement, 'content', cols: 40, rows: 10, :placeholder => "Your content here"
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', internal_committee_index_path, :class => "button"

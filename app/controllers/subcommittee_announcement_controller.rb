@@ -3,15 +3,15 @@ class SubcommitteeAnnouncementController < ActionController::Base
     before_filter :authenticate_user!
 
     def executive_params
-        params.require(:executive_announcements).permit(:title, :content)
+        params.require(:executive_announcement).permit(:title, :content)
     end
     
     def external_params
-        params.require(:external_announcements).permit(:title, :content)
+        params.require(:external_announcement).permit(:title, :content)
     end
     
     def internal_params
-        params.require(:internal_announcements).permit(:title, :content)
+        params.require(:internal_announcement).permit(:title, :content)
     end
 
     def new_executive_announcement
@@ -42,15 +42,18 @@ class SubcommitteeAnnouncementController < ActionController::Base
     end
         
     def edit_executive_announcement
-        @executive_announcement = ExecutiveAnnouncement.find params[:id]
+        @executive_announcement_id = params[:id]
+        @executive_announcement = ExecutiveAnnouncement.find @executive_announcement_id
     end
     
     def edit_external_announcement
-        @external_announcement = ExternalAnnouncement.find params[:id]
+        @external_announcement_id = params[:id]
+        @external_announcement = ExternalAnnouncement.find @external_announcement_id
     end
     
     def edit_internal_announcement
-        @internal_announcement = InternalAnnouncement.find params[:id]
+        @internal_announcement_id = params[:id]
+        @internal_announcement = InternalAnnouncement.find @internal_announcement_id
     end
     
     def update_executive_announcement

@@ -8,25 +8,31 @@ Feature: successfully working on subcommittee
 Background: user is on the document repo page
   
   Given a logged in user
-  And I am on the document repository page
+  And I am on the dashboard page
 
 # happy path
+@javascript
 Scenario: User can naviagte through executive committee page
-  When I follow "executive committee"
+  When I hover "Subcommittee"
+  And I follow "Executive"
   Then I should be on the executive committee page
-  And I should see "Executive committee"
+  And I should see "Executive Subcommittee"
 
 # happy path
+@javascript
 Scenario: User can naviagte through external affairs committee page
-  When I follow "external affairs committee"
+  When I hover "Subcommittee"
+  And I follow "External"
   Then I should be on the external affairs committee page
-  And I should see "External affairs committee"
+  And I should see "External Subcommittee"
 
 # happy path
+@javascript
 Scenario: User can naviagte through internal affairs committee page
-  When I follow "internal affairs committee"
+  When I hover "Subcommittee"
+  And I follow "Internal"
   Then I should be on the internal affairs committee page
-  And I should see "Internal affairs committee"
+  And I should see "Internal Subcommittee"
 
 # sad path does not exist
 

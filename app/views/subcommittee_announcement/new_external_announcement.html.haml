@@ -1,0 +1,10 @@
+#content
+  = form_tag create_external_announcement_path(@external_announcement), :method => :put do
+    = label :external_announcement, :title, "Title: "
+    = text_area :external_announcement, 'title', cols: 40, rows: 3, :placeholder => "Your title here"
+    <br/>
+    = label :external_announcement, :content, "Content: "
+    = text_area :external_announcement, 'content', cols: 40, rows: 10, :placeholder => "Your content here"
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', external_committee_index_path, :class => "button"
