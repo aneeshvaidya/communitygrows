@@ -1,0 +1,58 @@
+#admin
+  %h1 External Committee
+
+- if flash[:notice]
+  #flashNotice
+  %h3 
+  = flash[:notice]
+
+%h2 Announcements
+
+#table_content
+  %table
+    %thead
+      %tr
+        %td{:class => "admindashboard_row_announcement_title"} Title
+        %td{:class => "admindashboard_row_announcement_content"} Content
+        %td{:class => "admindashboard_row_announcement_createdat"} Created at
+        %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
+        %td{:class => "admindashboard_row_announcement_edit"} Edit
+        %td{:class => "admindashboard_row_announcement_delete"} Delete
+    %tbody
+      -@external_announcements.each do |ex_an|
+        %tr
+          %td= ex_an.title
+          %td= ex_an.content
+          %td= ex_an.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= ex_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Edit Announcement", edit_external_announcement(ex_an.id)
+          %td= button_to "Delete Announcement", delete_external_announcement(ex_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'Add new announcement', new_external_announcement, :class => "button"
+
+<br/> <br/>
+
+
+%h2 Documents
+
+#table_content
+  %table
+    %thead
+      %tr
+        %td{:class => "admindashboard_row_announcement_title"} Title
+        %td{:class => "admindashboard_row_announcement_content"} URL
+        %td{:class => "admindashboard_row_announcement_createdat"} Created at
+        %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
+        %td{:class => "admindashboard_row_announcement_delete"} Delete
+    %tbody
+      - @external_document_lists.each do |document|
+        %tr
+          %td= document.title
+          %td= document.content
+          %td= document.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= document.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Delete document", delete_external_document_list(document.id), data: { confirm: 'Are you sure?' }
+
+// = link_to 'New document',new_external_document_list, :class => "button"
+
+<br/> <br/>
