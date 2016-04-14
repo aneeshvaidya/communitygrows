@@ -17,7 +17,7 @@ class SubcommitteeController < ActionController::Base
         if !current_user.admin
             redirect_to("/users/sign_in")
         end
-        # render('???')
+        render('external_committee')
     end
     
     def internal_committee_index
@@ -26,6 +26,6 @@ class SubcommitteeController < ActionController::Base
         if !current_user.admin
             redirect_to("/users/sign_in")
         end
-        # render('???')
+        render('internal_committee')
     end
 end
