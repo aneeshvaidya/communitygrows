@@ -11,7 +11,10 @@ Background: user is on the login page
 
 Scenario: see all the tabs
   Then I should see "Documents"
-  And I should see "Comittee"
+  And I should see "Executive"
+  And I should see "External"
+  And I should see "Internal"
+  
 
 Scenario: see all the panels
   Then I should see "Main Announcements"
@@ -22,10 +25,18 @@ Scenario: see all the panels
 Scenario: document tab works successfully
   When I follow "Documents"
   Then I should see "Document Repository"
+
+Scenario: subcomittee tab works successfully
+  When I follow "Executive"
+  Then I should see "Executive"
   
 Scenario: subcomittee tab works successfully
-  When I follow "Comittee"
-  Then I should see "Go to meeting"
+  When I follow "External"
+  Then I should see "External"
+  
+Scenario: subcomittee tab works successfully
+  When I follow "Internal"
+  Then I should see "Internal"
   
 Scenario: admin tab should not work successfully because you are a use
   Then I should not see "Admin Dashboard"

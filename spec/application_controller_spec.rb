@@ -11,8 +11,16 @@ RSpec.describe "User security", :type => :request do
       get '/dashboard'
       response.should redirect_to('/users/sign_in')
     end
-    it 'should redirect to the login when unsigned user is trying to access the subcommittees' do
-      get '/committee'
+    it 'should redirect to the login when unsigned user is trying to access the executive subcommittee' do
+      get '/executive_committee'
+      response.should redirect_to('/users/sign_in')
+    end
+    it 'should redirect to the login when unsigned user is trying to access the external subcommittee' do
+      get '/external_committee'
+      response.should redirect_to('/users/sign_in')
+    end
+    it 'should redirect to the login when unsigned user is trying to access the internal subcommittee' do
+      get '/internal_committee'
       response.should redirect_to('/users/sign_in')
     end
     it 'should redirect to the login when unsigned user is trying to access the documents' do
