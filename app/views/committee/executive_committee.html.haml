@@ -1,11 +1,6 @@
 #admin
   %h1 Executive Committee
 
-- if flash[:notice]
-  #flashNotice
-  %h3 
-  = flash[:notice]
-
 %h2 Announcements
 
 #table_content
@@ -25,10 +20,10 @@
           %td= ex_an.content
           %td= ex_an.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= ex_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= link_to "Edit Announcement", edit_announcement_path(ex_an.id)
-          %td= button_to "Delete Announcement", delete_announcement_path(ex_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to "Edit Announcement", edit_executive_announcement(ex_an.id)
+          %td= button_to "Delete Announcement", delete_executive_announcement(ex_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'Add new announcement', new_announcement_path, :class => "button"
+= link_to 'Add new announcement', new_executive_announcement, :class => "button"
 
 <br/> <br/>
 
