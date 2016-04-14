@@ -12,7 +12,7 @@ module NavigationHelpers
     when /the (CommunityGrows )?home page$/ then
       '/'
     when /the (CommunityGrows )?dashboard page$/ then
-      '/dashboard/'
+      '/dashboard'
     when /the (CommunityGrows )?admin_dashboard page$/ then
       '/admin'
     when /the (CommunityGrows )?log_in page$/ then
@@ -20,11 +20,11 @@ module NavigationHelpers
     when /the (CommunityGrows )?document repository page$/ then
       fail "Unimplemented"
     when /the (CommunityGrows )?internal affairs committee page$/ then
-      '/internal_committee/'
+      '/internal_committee'
     when /the (CommunityGrows )?executive committee page$/ then
-      '/executive_committee/'
+      '/executive_committee'
     when /the (CommunityGrows )?external affairs committee page$/ then
-      '/external_committee/'
+      '/external_committee'
     when /the edit user page for "([^"]*)"$/ then
       edit_user_path(User.find_by_email($1).id)
 

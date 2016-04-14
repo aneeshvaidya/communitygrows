@@ -36,7 +36,7 @@ RSpec.describe "Internal Committee Announcements/Document List", :type => :reque
       click_button "Submit"
       page.should have_content("ccc")
       page.should have_content("ddddd")
-      click_button "Delete Announcement", match: :first
+      click_link "Delete Announcement", match: :first
       page.should have_content("Internal Subcommittee")
     end
     
