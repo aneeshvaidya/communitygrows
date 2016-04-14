@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'admin/:id/delete_announcement' => 'admin#delete_announcement', as: :delete_announcement
   
   # Subcommittee
-  get 'executive_committee' => 'subcommittee#executive_committee_index', as: :executvie_committee
+  get 'executive_committee' => 'subcommittee#executive_committee_index', as: :executive_committee
   get 'external_committee' => 'subcommittee#external_committee_index', as: :external_committee
   get 'internal_committee' => 'subcommittee#internal_committee_index', as: :internal_committee
   

@@ -8,7 +8,7 @@ class SubcommitteeController < ActionController::Base
         if !current_user.admin
             redirect_to("/users/sign_in")
         end
-        # render('???')
+        render('executive_committee')
     end
     
     def external_committee_index
