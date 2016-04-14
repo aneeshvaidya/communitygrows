@@ -1,0 +1,10 @@
+#content
+  = form_tag update_external_document_list_path(@external_document_list_id, @external_document_list), :method => :put do
+    = label :external_document_list, :title, "Title: "
+    = text_area :external_document_list, 'title', cols: 40, rows: 3, :value => @external_document_list.title
+    <br/>
+    = label :external_document_list, :url, "URL: "
+    = text_area :external_document_list, 'url', cols: 40, rows: 10, :value => @external_document_list.url
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', external_committee_index_path, :class => "button"

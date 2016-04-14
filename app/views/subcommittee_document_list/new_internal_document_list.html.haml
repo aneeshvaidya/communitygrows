@@ -1,0 +1,10 @@
+#content
+  = form_tag create_internal_document_list_path(@internal_document_list), :method => :put do
+    = label :internal_document_list, :title, "Title: "
+    = text_area :internal_document_list, 'title', cols: 40, rows: 3, :placeholder => "Your title here"
+    <br/>
+    = label :internal_document_list, :url, "URL: "
+    = text_area :internal_document_list, 'url', cols: 40, rows: 10, :placeholder => "Your URL here"
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', internal_committee_index_path, :class => "button"

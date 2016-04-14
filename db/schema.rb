@@ -38,6 +38,48 @@ ActiveRecord::Schema.define(version: 20160414080703) do
 
   add_index "comments", ["announcement_id"], name: "index_comments_on_announcement_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  
+  create_table "executive_announcements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "executive_document_lists", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "external_announcements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "external_document_lists", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "internal_announcements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "internal_document_lists", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",                    null: false
@@ -52,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160414080703) do
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.boolean  "admin"
-    t.datetime "last_sign_in_at",        default: '2016-03-31 23:38:06', null: false
+    t.datetime "last_sign_in_at",        default: '2016-04-13 03:41:25', null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
