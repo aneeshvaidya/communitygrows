@@ -68,6 +68,9 @@ Rails.application.routes.draw do
   put 'internal_committee/:id/edit_internal_document_list' => 'subcommittee_document_list#update_internal_document_list', as: :update_internal_document_list
   get 'internal_committee/:id/delete_internal_document_list' => 'subcommittee_document_list#delete_internal_document_list', as: :delete_internal_document_list
   
+  
+  get 'documents/new_file' => 'documents#new_file', as: :new_file
+#  get 'dashboard/create_file' => 'documents#create_file', as :create_file
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # =>                       controller#method

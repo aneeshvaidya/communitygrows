@@ -1,0 +1,21 @@
+%h1 Add new file
+
+- if flash[:notice]
+  #flashNotice
+    = flash[:notice]
+
+</br>
+
+= form_tag create_user_path do
+
+  = label :user, :title, 'Title'
+  = text_field :user, 'title'
+  
+  = label :user, :url, 'URL'
+  = text_field :user, 'url'
+
+  = label :user, :committee, 'Committee'
+  = select :user, :committee, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}
+//  = select :user, options_for_select([['Executive', 'executive'], ['Internal', 'internal'], ['External','external']])
+
+= submit_tag 'Submit'
