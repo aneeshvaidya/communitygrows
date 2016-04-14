@@ -11,7 +11,7 @@
         - @announcement_list.each do |announcement|
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-            %td= announcement.title
+            %td= link_to "#{announcement.title}", comment_path(announcement.id)
   %h2 Subcommittee Announcements
   #announcement_content
     %table
@@ -23,7 +23,7 @@
         - @announcement_list.each do |announcement|
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-            %td= announcement.title
+            %td= link_to "#{announcement.title}", comment_path(announcement.id)
             
 #calendar
   %h2 Calendar

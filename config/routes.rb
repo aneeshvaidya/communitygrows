@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :admin, :only => [:index]
   resources :documents, :only => [:index]
   resources :committee, :only => [:index]
+  
 
   get 'admin/:id/edit_user' => 'admin#edit_user', as: :edit_user
   get 'admin/new_user' => 'admin#new_user', as: :new_user
@@ -25,7 +26,11 @@ Rails.application.routes.draw do
   get 'admin/:id/edit_announcement' => 'admin#edit_announcement', as: :edit_announcement
   put 'admin/:id/edit_announcement' => 'admin#update_announcement', as: :update_announcement
   get 'admin/:id/delete_announcement' => 'admin#delete_announcement', as: :delete_announcement
-
+  
+  get 'dashboard_announcements/:announcement_id/comments' => 'comment#index', as: :comment
+  get 'dashboard_announcements/:announcement_id/comments/new_comment' => 'comment#new_comment', as: :new_comment
+  post 'dashboard_announcements/:announcement_id/comments/create_comment' => 'comment#create_comment', as: :create_comment
+  delete 'dashboard_announcements/:announcement_id/comments/delete_comment/:comment_id' => 'comment#delete_comment', as: :delete_comment
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
