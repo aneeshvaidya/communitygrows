@@ -12,21 +12,23 @@
   %table
     %thead
       %tr
-        %td User
-        %td Status
-        %td Created At
-        %td Last Sign In
-        %td Delete
+        %td{:class => "admindashboard_row_announcement_title"} Title
+        %td{:class => "admindashboard_row_announcement_content"} Content
+        %td{:class => "admindashboard_row_announcement_createdat"} Created at
+        %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
+        %td{:class => "admindashboard_row_announcement_edit"} Edit
+        %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      -@users.each do |user|
+      -@internal_announcements.each do |in_an|
         %tr
-          %td= link_to "#{user.email}", edit_user_path(user.id)
-          %td= user.admin ? "Admin" : "User"
-          %td= user.created_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= user.last_sign_in_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= button_to "Delete User", delete_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }
+          %td= in_an.title
+          %td= in_an.content
+          %td= in_an.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= in_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Edit Announcement", edit_internal_announcement(in_an.id)
+          %td= button_to "Delete Announcement", delete_internal_announcement(in_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'Add new user', new_user_path, :class => "button"
+= link_to 'Add new announcement', new_internal_announcement, :class => "button"
 
 <br/> <br/>
 
@@ -38,30 +40,19 @@
     %thead
       %tr
         %td{:class => "admindashboard_row_announcement_title"} Title
-        %td{:class => "admindashboard_row_announcement_content"} Content
+        %td{:class => "admindashboard_row_announcement_content"} URL
         %td{:class => "admindashboard_row_announcement_createdat"} Created at
         %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
-        %td{:class => "admindashboard_row_announcement_edit"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      - @announcement_list.each do |announcement|
+      - @internal_document_lists.each do |document|
         %tr
-          %td= announcement.title
-          %td= announcement.content
-          %td= announcement.created_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= link_to "Edit Announcement", edit_announcement_path(announcement.id)
-          %td= link_to "Delete Announcement", delete_announcement_path(announcement.id), data: { confirm: 'Are you sure?' }
+          %td= document.title
+          %td= document.content
+          %td= document.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= document.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Delete document", delete_internal_document_list(document.id), data: { confirm: 'Are you sure?' }
 
-= link_to 'New Announcement', new_announcement_path, :class => "button"
+// = link_to 'New document',new_internal_document_list, :class => "button"
 
 <br/> <br/>
-
-%h2 Register/Update Google Calendar
-%p Insert your Google id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
-
-= form_tag update_calendar_path(@calendar), :method => :put do
-  = label :calendar, :title, "Google Calendar owner's id:"
-  = text_field :calendar, 'html'
-
-  = submit_tag 'Update Google Calendar', :class => "button"
