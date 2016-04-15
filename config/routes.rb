@@ -32,9 +32,7 @@ Rails.application.routes.draw do
   delete 'dashboard_announcements/:announcement_id/comments/delete_comment/:comment_id' => 'comment#delete_comment', as: :delete_comment
 
   # Subcommittee
-  get 'executive_committee' => 'subcommittee#executive_committee_index', as: :executive_committee_index
-  get 'external_committee' => 'subcommittee#external_committee_index', as: :external_committee_index
-  get 'internal_committee' => 'subcommittee#internal_committee_index', as: :internal_committee_index
+  get 'subcommittee_index/:committee_type/' => 'subcommittee#index', as: :committee_index
   
   # Subcommittee Announcement
   get 'executive_committee/new_executive_announcement' => 'subcommittee_announcement#new_executive_announcement', as: :new_executive_announcement

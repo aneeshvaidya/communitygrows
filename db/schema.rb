@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160414180323) do
+=======
+ActiveRecord::Schema.define(version: 20160415012017) do
+>>>>>>> 1fbdc039a61d960e4c286b4b2b8a89c2fd6e77f7
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "committee_type"
   end
 
   create_table "calendars", force: :cascade do |t|
@@ -26,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160414180323) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.integer  "parent_id"
     t.string   "title"
@@ -68,23 +74,14 @@ ActiveRecord::Schema.define(version: 20160414180323) do
 
   create_table "external_document_lists", force: :cascade do |t|
     t.string   "title"
+=======
+  create_table "documents", force: :cascade do |t|
+>>>>>>> 1fbdc039a61d960e4c286b4b2b8a89c2fd6e77f7
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "internal_announcements", force: :cascade do |t|
     t.string   "title"
-    t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "internal_document_lists", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "committee_type"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,7 +97,7 @@ ActiveRecord::Schema.define(version: 20160414180323) do
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.boolean  "admin"
-    t.datetime "last_sign_in_at",        default: '2016-04-13 03:41:25', null: false
+    t.datetime "last_sign_in_at",        default: '2016-04-08 21:36:22', null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

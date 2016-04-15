@@ -19,14 +19,14 @@
         %td{:class => "admindashboard_row_announcement_edit"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      -@executive_announcements.each do |ex_an|
+      -@announcements.each do |ex_an|
         %tr
           %td= ex_an.title
           %td= ex_an.content
           %td= ex_an.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= ex_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Announcement", edit_executive_announcement_path(ex_an.id)
-          %td= link_to "Delete Announcement", delete_executive_announcement_path(ex_an.id), :method => :get, data: { confirm: 'Are you sure?' }
+          %td= button_to "Delete Announcement", delete_executive_announcement_path(ex_an.id), :method => :get, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new announcement', new_executive_announcement_path, :class => "button"
 
@@ -46,7 +46,7 @@
         %td{:class => "admindashboard_row_announcement_updatedat"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      - @executive_document_lists.each do |document|
+      - @document_list.each do |document|
         %tr
           %td= document.title
           %td= document.url
