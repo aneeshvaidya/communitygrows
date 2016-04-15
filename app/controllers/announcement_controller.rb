@@ -2,8 +2,8 @@ class SubcommitteeAnnouncementController < ActionController::Base
     layout "base"
     before_filter :authenticate_user!
 
-    def params
-        params.require(:executive_announcement).permit(:title, :content, :committee_type)
+    def announcement_params
+        params.require(:announcement).permit(:title, :content)
     end
 
 
@@ -12,40 +12,32 @@ class SubcommitteeAnnouncementController < ActionController::Base
     
         
     def create_announcement
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        ExecutiveAnnouncement.create!(executive_params)
+        @title = params[:title]
+        @content = params[:content]
+        Announcement.create!(:title => @title, :content => @content, :committee_type => @comittee_type)
         flash[:notice] = 'Executive Announcement creation successful.'
-        redirect_to executive_committee_index_path
+        redirect_to subcommittee_index_path(@comittee_type)
     end
         
     def edit_announcement
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @executive_announcement_id = params[:id]
-        @executive_announcement = ExecutiveAnnouncement.find @executive_announcement_id
+        @announcement_id = params[:id]
+        @announcement = Announcement.find @announcement_id
     end
     
     def update_announcement
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @target_announcement = ExecutiveAnnouncement.find params[:id]
-        @target_announcement.update_attributes!(executive_params)
-        flash[:notice] = "Executive Announcement with title [#{@target_announcement.title}] updated successfully"
-        redirect_to executive_committee_index_path
+        @target_announcement = Announcement.find params[:announcement_id]
+        @title = params[:title]
+        @content = params[:content]
+        @target_announcement.update_attributes!(:title => @title, :content => @content, :committee_type => @comittee_type)
+        flash[:notice] = "Announcement with title [#{@target_announcement.title}] updated successfully"
+        redirect_to subcommittee_index_path(@comittee_type)
     end
     
     def delete_announcement
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @target_announcement = ExecutiveAnnouncement.find params[:id]
+        @target_announcement = Announcement.find params[:announcement_id]
         @target_announcement.destroy!
         flash[:notice] = "Executive Announcement with title [#{@target_announcement.title}] deleted successfully"
-        redirect_to executive_committee_index_path
+        redirect_to subcommittee_index_path(@comittee_type)
     end
 
 end

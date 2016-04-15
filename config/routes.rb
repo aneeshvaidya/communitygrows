@@ -32,26 +32,14 @@ Rails.application.routes.draw do
   delete 'dashboard_announcements/:announcement_id/comments/delete_comment/:comment_id' => 'comment#delete_comment', as: :delete_comment
 
   # Subcommittee
-  get 'subcommittee_index/:committee_type/' => 'subcommittee#index', as: :committee_index
+  get 'subcommittee_index/:committee_type/' => 'subcommittee#index', as: :subcommittee_index
   
   # Subcommittee Announcement
-  get 'executive_committee/new_executive_announcement' => 'subcommittee_announcement#new_executive_announcement', as: :new_executive_announcement
-  put 'executive_committee/create_executive_announcement' => 'subcommittee_announcement#create_executive_announcement', as: :create_executive_announcement
-  get 'executive_committee/:id/edit_executive_announcement' => 'subcommittee_announcement#edit_executive_announcement', as: :edit_executive_announcement
-  put 'executive_committee/:id/edit_executive_announcement' => 'subcommittee_announcement#update_executive_announcement', as: :update_executive_announcement
-  get 'executive_committee/:id/delete_executive_announcement' => 'subcommittee_announcement#delete_executive_announcement', as: :delete_executive_announcement
-  
-  get 'external_committee/new_external_announcement' => 'subcommittee_announcement#new_external_announcement', as: :new_external_announcement
-  put 'external_committee/create_external_announcement' => 'subcommittee_announcement#create_external_announcement', as: :create_external_announcement
-  get 'external_committee/:id/edit_external_announcement' => 'subcommittee_announcement#edit_external_announcement', as: :edit_external_announcement
-  put 'external_committee/:id/edit_external_announcement' => 'subcommittee_announcement#update_external_announcement', as: :update_external_announcement
-  get 'external_committee/:id/delete_external_announcement' => 'subcommittee_announcement#delete_external_announcement', as: :delete_external_announcement
-  
-  get 'internal_committee/new_internal_announcement' => 'subcommittee_announcement#new_internal_announcement', as: :new_internal_announcement
-  put 'internal_committee/create_internal_announcement' => 'subcommittee_announcement#create_internal_announcement', as: :create_internal_announcement
-  get 'internal_committee/:id/edit_internal_announcement' => 'subcommittee_announcement#edit_internal_announcement', as: :edit_internal_announcement
-  put 'internal_committee/:id/edit_internal_announcement' => 'subcommittee_announcement#update_internal_announcement', as: :update_internal_announcement
-  get 'internal_committee/:id/delete_internal_announcement' => 'subcommittee_announcement#delete_internal_announcement', as: :delete_internal_announcement
+  get 'subcommittee_index/:committee_type/:announcement_id/new_announcement' => 'subcommittee#new_announcement', as: :new_committee_announcement
+  post 'subcommittee_index/:committee_type/create_announcement' => 'subcommittee#create_announcement', as: :create_committee_announcement
+  delete 'subcommittee_index/:committee_type/:announcement_id/delete_announcement' => 'subcommittee#delete_announcement', as: :delete_committee_announcement
+  get 'subcommittee_index/:committee_type/edit_announcement' => 'subcommittee#edit_announcement', as: :edit_committee_announcement
+  put 'subcommittee_index/:committee_type/update_announcement' => 'subcommittee#update_announcement', as: :update_committee_announcement
 
   # Subcommittee Document List
   get 'executive_committee/new_executive_document_list' => 'subcommittee_document_list#new_executive_document_list', as: :new_executive_document_list

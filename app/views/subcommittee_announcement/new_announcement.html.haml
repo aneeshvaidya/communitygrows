@@ -1,5 +1,5 @@
 #content
-  = form_tag create_executive_announcement_path(@announcement_type), :method => :put do
+  = form_tag create_executive_announcement_path :method => :put do
     = label :title, "Title: "
     = text_area :title, 'title', cols: 40, rows: 3, :placeholder => "Your title here"
     <br/>
@@ -7,4 +7,4 @@
     = text_area :content, 'content', cols: 40, rows: 10, :placeholder => "Your content here"
     <br/>
     = submit_tag 'Submit', :class => "button"
-  = link_to 'Back', committee_index_path(@announcement_type), :class => "button"
+  = link_to 'Back', committee_index_path(@comittee_type), :class => "button"

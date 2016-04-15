@@ -2,7 +2,7 @@ class SubcommitteeDocumentListController < ActionController::Base
     layout "base"
     before_filter :authenticate_user!
     
-    def executive_params
+    def document_params
         params.require(:executive_document_list).permit(:title, :url, :committee_type)
     end
     
@@ -10,40 +10,32 @@ class SubcommitteeDocumentListController < ActionController::Base
     end
         
     def create_document_list
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        ExecutiveDocumentList.create!(executive_params)
-        flash[:notice] = 'Executive Document List creation successful.'
-        redirect_to executive_committee_index_path
+        @title = params[:title]
+        @url = params[:url]
+        Document.create!(:title => @title, :url => @url, :committee_type => @comittee_type)
+        flash[:notice] = 'Document List creation successful.'
+        redirect_to subcommittee_index_path(@comittee_type)
     end
     
     def edit_document_list
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @executive_document_list_id = params[:id]
-        @executive_document_list = ExecutiveDocumentList.find @executive_document_list_id
+        @document_list_id = params[:id]
+        @executive_document_list = Document.find @executive_document_list_id
     end
     
     def update_document_list
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @target_document_list = ExecutiveDocumentList.find params[:id]
-        @target_document_list.update_attributes!(executive_params)
-        flash[:notice] = "Executive Document List with title [#{@target_document_list.title}] updated successfully"
-        redirect_to executive_committee_index_path
+        @title = params[:title]
+        @url = params[:url]
+        @target_document = Document.find params[:id]
+        @target_document.update_attributes!(:title => @title, :url => @url, :committee_type => @comittee_type)
+        flash[:notice] = "Executive Document List with title [#{@target_document.title}] updated successfully"
+        redirect_to subcommittee_index_path(@comittee_type)
     end
     
     def delete_document_list
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        #FIX FIX FIX FIX FIX FIX
-        @target_document_list = ExecutiveDocumentList.find params[:id]
-        @target_document_list.destroy!
-        flash[:notice] = "Executive Document List with title [#{@target_document_list.title}] deleted successfully"
-        redirect_to executive_committee_index_path
+        @target_document = Document.find params[:id]
+        @target_document.destroy!
+        flash[:notice] = "Executive Document List with title [#{@target_document.title}] deleted successfully"
+        redirect_to subcommittee_index_path(@comittee_type)
     end
     
 end
