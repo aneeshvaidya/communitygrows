@@ -20,10 +20,10 @@
           %td{:class => "dashboard_row_announcement_time"}= "Date"
           %td{:class => "dashboard_row_announcement_content"}= "Title"
       %tbody
-        - @announcement_list.each do |announcement|
+        - @subcomittee_announcements_list.each do |announcement|
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
-            %td= link_to "#{announcement.title}", comment_path(announcement.id)
+            %td= link_to "#{announcement.title} [#{announcement.committee_type}]", comment_path(announcement.id)
             
 #calendar
   %h2 Calendar

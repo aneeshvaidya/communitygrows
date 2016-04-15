@@ -50,25 +50,6 @@ Rails.application.routes.draw do
   put 'subcommittee_index/:committee_type/update_document' => 'document_list#update_document', as: :update_committee_document
   
   
-  # Subcommittee Document List
-  get 'executive_committee/new_executive_document_list' => 'subcommittee_document_list#new_executive_document_list', as: :new_executive_document_list
-  put 'executive_committee/create_executive_document_list' => 'subcommittee_document_list#create_executive_document_list', as: :create_executive_document_list
-  get 'executive_committee/:id/edit_executive_document_list' => 'subcommittee_document_list#edit_executive_document_list', as: :edit_executive_document_list
-  put 'executive_committee/:id/edit_executive_document_list' => 'subcommittee_document_list#update_executive_document_list', as: :update_executive_document_list
-  get 'executive_committee/:id/delete_executive_document_list' => 'subcommittee_document_list#delete_executive_document_list', as: :delete_executive_document_list
-  
-  get 'external_committee/new_external_document_list' => 'subcommittee_document_list#new_external_document_list', as: :new_external_document_list
-  put 'external_committee/create_external_document_list' => 'subcommittee_document_list#create_external_document_list', as: :create_external_document_list
-  get 'external_committee/:id/edit_external_document_list' => 'subcommittee_document_list#edit_external_document_list', as: :edit_external_document_list
-  put 'external_committee/:id/edit_external_document_list' => 'subcommittee_document_list#update_external_document_list', as: :update_external_document_list
-  get 'external_committee/:id/delete_external_document_list' => 'subcommittee_document_list#delete_external_document_list', as: :delete_external_document_list
-  
-  get 'internal_committee/new_internal_document_list' => 'subcommittee_document_list#new_internal_document_list', as: :new_internal_document_list
-  put 'internal_committee/create_internal_document_list' => 'subcommittee_document_list#create_internal_document_list', as: :create_internal_document_list
-  get 'internal_committee/:id/edit_internal_document_list' => 'subcommittee_document_list#edit_internal_document_list', as: :edit_internal_document_list
-  put 'internal_committee/:id/edit_internal_document_list' => 'subcommittee_document_list#update_internal_document_list', as: :update_internal_document_list
-  get 'internal_committee/:id/delete_internal_document_list' => 'subcommittee_document_list#delete_internal_document_list', as: :delete_internal_document_list
-  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # =>                       controller#method
