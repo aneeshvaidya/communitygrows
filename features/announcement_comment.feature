@@ -5,7 +5,7 @@ Feature: successfully comment on an announcement
   I want to comment on announcements
   So that the conversation between different users can be established
 
-Background: user is on the document repository page and announcement is made
+Background: user is on the main dashboard page and announcement is made
   
   Given a logged in user
   And I am on the CommunityGrows dashboard page
