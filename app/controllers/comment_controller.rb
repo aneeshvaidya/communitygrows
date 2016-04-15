@@ -1,4 +1,6 @@
 class CommentController < ApplicationController
+    layout "base"
+    before_filter :authenticate_user!
     
     def announcement_params
         params.require(:announcement).permit(:id, :title, :content)
@@ -10,10 +12,12 @@ class CommentController < ApplicationController
     
     def index
         @comments = Comment.all
-        @announcement = Announcement.find params[:announcement_id]
+        @announcement_id = params[:announcement_id]
+        @announcement = Announcement.find @announcement_id
     end
     
     def new_comment
+        @announcement_id = params[:announcement_id]
         @comment = Comment.new
     end
     

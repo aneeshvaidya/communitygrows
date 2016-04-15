@@ -17,9 +17,9 @@
   <li><%= link_to image_tag( 'logo/logo.jpg'), dashboard_index_path, {:class=>"dashboard"}%></li>
   <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete', :class=>"navigation"%></li>
   <li><%= link_to "Admin Dashboard", admin_index_path, { :class=>"navigation"} if current_user.admin %></li>
-  <li><%= link_to "Executive", committee_index_path("executive"), { :class=>"navigation"}%></li>
-  <li><%= link_to "External", committee_index_path("external"), { :class=>"navigation"}%></li>
-  <li><%= link_to "Internal", committee_index_path("internal"), { :class=>"navigation"}%></li>
+  <li><%= link_to "Executive", subcommittee_index_path("executive"), { :class=>"navigation"}%></li>
+  <li><%= link_to "External", subcommittee_index_path("external"), { :class=>"navigation"}%></li>
+  <li><%= link_to "Internal", subcommittee_index_path("internal"), { :class=>"navigation"}%></li>
   <li><%= link_to "Documents", documents_path, { :class=>"navigation"}%></li>
   <li><%= link_to "Dashboard", dashboard_index_path, { :class=>"navigation"}%></li>
 </ul>
