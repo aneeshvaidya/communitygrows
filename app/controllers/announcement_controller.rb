@@ -1,4 +1,4 @@
-class SubcommitteeAnnouncementController < ActionController::Base
+class AnnouncementController < ActionController::Base
     layout "base"
     before_filter :authenticate_user!
 
@@ -14,9 +14,10 @@ class SubcommitteeAnnouncementController < ActionController::Base
     def create_announcement
         @title = params[:title]
         @content = params[:content]
-        Announcement.create!(:title => @title, :content => @content, :committee_type => @comittee_type)
+        @committee_type = params[:committee_type]
+        Announcement.create!(:title => @title, :content => @content, :committee_type => @committee_type)
         flash[:notice] = 'Executive Announcement creation successful.'
-        redirect_to subcommittee_index_path(@comittee_type)
+        redirect_to subcommittee_index_path(:committee_type => @committee_type)
     end
         
     def edit_announcement
@@ -25,19 +26,22 @@ class SubcommitteeAnnouncementController < ActionController::Base
     end
     
     def update_announcement
-        @target_announcement = Announcement.find params[:announcement_id]
+        p params
+        @target_announcement = Announcement.find params[:announcement][:id]
         @title = params[:title]
         @content = params[:content]
-        @target_announcement.update_attributes!(:title => @title, :content => @content, :committee_type => @comittee_type)
+        @committee_type = params[:committee_type]
+        @target_announcement.update_attributes!(:title => @title, :content => @content, :committee_type => @committee_type)
         flash[:notice] = "Announcement with title [#{@target_announcement.title}] updated successfully"
-        redirect_to subcommittee_index_path(@comittee_type)
+        redirect_to subcommittee_index_path(@committee_type)
     end
     
     def delete_announcement
         @target_announcement = Announcement.find params[:announcement_id]
+        @committee_type = params[:committee_type]
         @target_announcement.destroy!
         flash[:notice] = "Executive Announcement with title [#{@target_announcement.title}] deleted successfully"
-        redirect_to subcommittee_index_path(@comittee_type)
+        redirect_to subcommittee_index_path(@committee_type)
     end
 
 end

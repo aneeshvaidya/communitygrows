@@ -25,8 +25,8 @@
           %td= in_an.content
           %td= in_an.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= in_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= link_to "Edit Announcement", edit_committee_announcement_path(in_an.id)
-          %td= button_to "Delete Announcement", delete_committee_announcement_path(in_an.id), :method => :get, data: { confirm: 'Are you sure?' }
+          %td= link_to "Edit Announcement", edit_committee_announcement_path(:id => in_an.id)
+          %td= button_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => in_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new announcement', new_committee_announcement_path, :class => "button"
 

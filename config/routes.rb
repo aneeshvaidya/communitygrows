@@ -35,12 +35,14 @@ Rails.application.routes.draw do
   get 'subcommittee_index/:committee_type/' => 'subcommittee#index', as: :subcommittee_index
   
   # Subcommittee Announcement
-  get 'subcommittee_index/:committee_type/new_announcement' => 'subcommittee#new_announcement', as: :new_committee_announcement
-  post 'subcommittee_index/:committee_type/create_announcement' => 'subcommittee#create_announcement', as: :create_committee_announcement
-  delete 'subcommittee_index/:committee_type/:announcement_id/delete_announcement' => 'subcommittee#delete_announcement', as: :delete_committee_announcement
-  get 'subcommittee_index/:committee_type/edit_announcement' => 'subcommittee#edit_announcement', as: :edit_committee_announcement
-  put 'subcommittee_index/:committee_type/update_announcement' => 'subcommittee#update_announcement', as: :update_committee_announcement
-
+  get 'subcommittee_index/:committee_type/new_announcement' => 'announcement#new_announcement', as: :new_committee_announcement
+  post 'subcommittee_index/:committee_type/create_announcement' => 'announcement#create_announcement', as: :create_committee_announcement
+  delete 'subcommittee_index/:committee_type/:announcement_id/delete_announcement' => 'announcement#delete_announcement', as: :delete_committee_announcement
+  get 'subcommittee_index/:committee_type/edit_announcement' => 'announcement#edit_announcement', as: :edit_committee_announcement
+  put 'subcommittee_index/:committee_type/update_announcement' => 'announcement#update_announcement', as: :update_committee_announcement
+  
+  # get 'subcommittee_index/:committee_type/new_announcement' => 'announcement#new_announcement', as: :new_committee_announcement
+  
   # Subcommittee Document List
   get 'executive_committee/new_executive_document_list' => 'subcommittee_document_list#new_executive_document_list', as: :new_executive_document_list
   put 'executive_committee/create_executive_document_list' => 'subcommittee_document_list#create_executive_document_list', as: :create_executive_document_list
