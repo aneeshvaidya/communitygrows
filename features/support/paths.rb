@@ -27,6 +27,9 @@ module NavigationHelpers
       '/external_committee'
     when /the edit user page for "([^"]*)"$/ then
       edit_user_path(User.find_by_email($1).id)
+      
+    when /^the comment page for "([^"]+)"$/
+      comment_path(Announcement.find_by_title($1).id)
 
     # "Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

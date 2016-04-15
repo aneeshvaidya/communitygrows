@@ -4,6 +4,10 @@ Given /an announcement is made with "([^"]*)" as title and "([^"]*)" as url$/ do
   fail "Unimplemented"
 end
 
-Given /I search for "([^"]*)"$/ do |title, url|
-  fail "Unimplemented"
+
+Given /the following announcements exist/ do |announcement_table|
+    Announcement.delete_all
+    announcement_table.hashes.each do |announcement|
+        Announcement.create!(announcement)
+    end
 end
