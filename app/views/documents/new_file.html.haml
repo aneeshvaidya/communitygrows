@@ -1,21 +1,20 @@
 %h1 Add new file
 
-- if flash[:notice]
+- if flash[:notice] == "Populate all fields before submission."
   #flashNotice
     = flash[:notice]
 
 </br>
 
-= form_tag create_user_path do
+= form_tag create_file_path do
 
-  = label :user, :title, 'Title'
-  = text_field :user, 'title'
+  = label :file, :title, 'Title'
+  = text_field :file, 'title'
   
-  = label :user, :url, 'URL'
-  = text_field :user, 'url'
+  = label :file, :url, 'URL'
+  = text_field :file, 'url'
 
-  = label :user, :committee, 'Committee'
-  = select :user, :committee, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}
-//  = select :user, options_for_select([['Executive', 'executive'], ['Internal', 'internal'], ['External','external']])
+  = label :file, :committee, 'Committee'
+  = select :file, :committee, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}
 
-= submit_tag 'Submit'
+  = submit_tag 'Submit'

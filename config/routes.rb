@@ -70,7 +70,8 @@ Rails.application.routes.draw do
   
   
   get 'documents/new_file' => 'documents#new_file', as: :new_file
-#  get 'dashboard/create_file' => 'documents#create_file', as :create_file
+  post 'documents/create' => 'documents#create_file', as: :create_file
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # =>                       controller#method
