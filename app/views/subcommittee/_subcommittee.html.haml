@@ -1,5 +1,5 @@
 #admin
-  %h1 Internal Subcommittee
+  %h1 #{@committee_type.capitalize} Subcommittee
 
 - if flash[:notice]
   #flashNotice
@@ -19,14 +19,14 @@
         %td{:class => "admindashboard_row_announcement_edit"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      -@announcements.each do |in_an|
+      -@announcements.each do |a|
         %tr
-          %td= in_an.title
-          %td= in_an.content
-          %td= in_an.created_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= in_an.updated_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= link_to "Edit Announcement", edit_committee_announcement_path(:id => in_an.id)
-          %td= button_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => in_an.id), :method => :delete, data: { confirm: 'Are you sure?' }
+          %td= a.title
+          %td= a.content
+          %td= a.created_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= a.updated_at.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Edit Announcement", edit_committee_announcement_path(:id => a.id)
+          %td= button_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => a.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new announcement', new_committee_announcement_path, :class => "button"
 
