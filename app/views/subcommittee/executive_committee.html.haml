@@ -19,7 +19,7 @@
         %td{:class => "admindashboard_row_announcement_edit"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      -@executive_announcements.each do |ex_an|
+      -@announcements.each do |ex_an|
         %tr
           %td= ex_an.title
           %td= ex_an.content
@@ -46,7 +46,7 @@
         %td{:class => "admindashboard_row_announcement_updatedat"} Edit
         %td{:class => "admindashboard_row_announcement_delete"} Delete
     %tbody
-      - @executive_document_lists.each do |document|
+      - @document_list.each do |document|
         %tr
           %td= document.title
           %td= document.url
