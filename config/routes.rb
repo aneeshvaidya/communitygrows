@@ -43,6 +43,13 @@ Rails.application.routes.draw do
   
   # get 'subcommittee_index/:committee_type/new_announcement' => 'announcement#new_announcement', as: :new_committee_announcement
   
+  get 'subcommittee_index/:committee_type/new_document' => 'document_list#new_document', as: :new_committee_document
+  post 'subcommittee_index/:committee_type/create_document' => 'document_list#create_document', as: :create_committee_document 
+  delete 'subcommittee_index/:committee_type/:document_id/delete_document' => 'document_list#delete_document', as: :delete_committee_document
+  get 'subcommittee_index/:committee_type/edit_document' => 'document_list#edit_document', as: :edit_committee_document 
+  put 'subcommittee_index/:committee_type/update_document' => 'document_list#update_document', as: :update_committee_document
+  
+  
   # Subcommittee Document List
   get 'executive_committee/new_executive_document_list' => 'subcommittee_document_list#new_executive_document_list', as: :new_executive_document_list
   put 'executive_committee/create_executive_document_list' => 'subcommittee_document_list#create_executive_document_list', as: :create_executive_document_list

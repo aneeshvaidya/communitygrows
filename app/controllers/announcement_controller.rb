@@ -26,7 +26,6 @@ class AnnouncementController < ActionController::Base
     end
     
     def update_announcement
-        p params
         @target_announcement = Announcement.find params[:announcement][:id]
         @title = params[:title]
         @content = params[:content]
