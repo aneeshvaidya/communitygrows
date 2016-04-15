@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414080703) do
+ActiveRecord::Schema.define(version: 20160414180323) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -34,11 +34,17 @@ ActiveRecord::Schema.define(version: 20160414080703) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "announcement_id"
+    t.integer  "executive_announcement_id"
+    t.integer  "external_announcement_id"
+    t.integer  "internal_announcement_id"
   end
 
   add_index "comments", ["announcement_id"], name: "index_comments_on_announcement_id"
+  add_index "comments", ["executive_announcement_id"], name: "index_comments_on_executive_announcement_id"
+  add_index "comments", ["external_announcement_id"], name: "index_comments_on_external_announcement_id"
+  add_index "comments", ["internal_announcement_id"], name: "index_comments_on_internal_announcement_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
-  
+
   create_table "executive_announcements", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
