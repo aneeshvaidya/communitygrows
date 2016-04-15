@@ -44,8 +44,7 @@ Scenario: should be able to delete a created announcement
   And I press "Submit"
   Then I should see "new title"
   And I should see "new content"
-  Then I should see "Delete Announcement"
-  When I follow first "Delete Announcement"
+  And I press "Delete Announcement"
   And I confirm popup
   Then I should not see "new content"
   
@@ -69,7 +68,7 @@ Scenario: should be able to edit a created document
   Then I should see "Edit Document"
   When I follow first "Edit Document"
   And I fill in "Title" with "edited title"
-  And I fill in "URL" with "edited url"
+  And I fill in "url" with "edited url"
   And I press "Submit"
   Then I should see "edited title"
   And I should see "edited url"
