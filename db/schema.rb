@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20160415012017) do
     t.string   "committee_type"
   end
 
+  create_table "executive_announcements", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "announcement_id"
+    t.integer  "executive_announcement_id"
+    t.integer  "external_announcement_id"
+    t.integer  "internal_announcement_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",                    null: false
     t.string   "encrypted_password",     default: "",                    null: false

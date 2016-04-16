@@ -12,44 +12,58 @@ Background: user is on the document repository page
 
 # happy path
 Scenario: User can add a new document
-  When I follow "Add new document"
-  Then I fill in "file name" with "schedule"
-  Then I fill in "url" with "mock.com/schedule"
+  When I follow "Add new file"
+  Then I fill in "file_title" with "schedule"
+  Then I fill in "file_url" with "mock.com/schedule"
   And I press "Submit"
   Then I should be on the document repository page
   And I should see "schedule"
+  And I should see "mock.com/schedule"
 
 # sad path
 Scenario: User can't add a new document without proper file name
-  When I follow "Add new document"
-  Then I fill in "file name" with ""
-  Then I fill in "url" with "mock.com/schedule"
+  When I follow "Add new file"
+  Then I fill in "file_url" with "mock.com/schedule"
   And I press "Submit"
-  Then I should be on the document repository page
-  And I should not see "schedule"
+  And I should see "Populate all fields before submission."
 
 # happy path
 Scenario: User can edit an existing file
-  When I follow "schedule"
-  Then I fill in "file name" with "new schedule"
-  Then I fill in "url" with "mock.com/schedule"
+  When I follow "Add new file"
+  Then I fill in "file_title" with "schedule"
+  Then I fill in "file_url" with "mock.com/schedule"
+  And I press "Submit"
+  
+  When I follow "Edit document"
+  Then I fill in "file_title" with "new schedule"
+  Then I fill in "file_url" with "mock.com/schedule"
   And I press "Submit"
   Then I should be on the document repository page
   And I should see "new schedule"
+  And I should see "mock.com/schedule"
 
 # sad path
 Scenario: User cannot edit an existing file without proper file name
-  When I follow "new schedule"
-  Then I fill in "file name" with ""
-  Then I fill in "url" with "mock.com/schedule"
+  When I follow "Add new file"
+  Then I fill in "file_title" with "schedule"
+  Then I fill in "file_url" with "mock.com/schedule"
   And I press "Submit"
-  Then I should be on the document repository page
-  And I should see "new schedule"
+  When I follow "Edit document"
+  Then I fill in "file_title" with ""
+  Then I fill in "file_url" with "mock.com/schedule"
+  And I press "Submit"
+  And I should see "Populate all fields before submission."
 
 # happy path
+@javascript
 Scenario: User can delete an announcement
-  When I follow "delete"
+  When I follow "Add new file"
+  Then I fill in "file_title" with "delete schedule"
+  Then I fill in "file_url" with "mock.com/schedule"
+  And I press "Submit"
+  When I follow "Delete document"
+  And I confirm popup
   Then I should be on the document repository page
-  And I should not see "new schedule"
+  And I should see "deleted successfully"
 
   

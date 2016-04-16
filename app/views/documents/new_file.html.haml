@@ -1,0 +1,20 @@
+%h1 Add new file
+
+- if flash[:notice] == "Populate all fields before submission."
+  #flashNotice
+    = flash[:notice]
+
+</br>
+
+= form_tag create_file_path do
+
+  = label :file, :title, 'Title'
+  = text_field :file, 'title'
+  
+  = label :file, :url, 'URL'
+  = text_field :file, 'url'
+
+  = label :file, :committee_type, 'Committee'
+  = select :file, :committee_type, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}
+
+  = submit_tag 'Submit'
