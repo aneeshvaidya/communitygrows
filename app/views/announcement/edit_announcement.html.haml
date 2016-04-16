@@ -1,3 +1,8 @@
+- if flash[:notice]
+  #flashNotice
+  = flash[:notice]
+</br>
+
 #content
   = form_tag update_committee_announcement_path, :method => :put do
     = hidden_field :announcement, :id

@@ -25,12 +25,19 @@ module NavigationHelpers
       subcommittee_index_path("executive")
     when /the (CommunityGrows )?external affairs committee page$/ then
       subcommittee_index_path("external")
+      
     when /the edit user page for "([^"]*)"$/ then
       edit_user_path(User.find_by_email($1).id)
-      
+    
     when /^the comment page for "([^"]+)"$/
       comment_path(Announcement.find_by_title($1).id)
-
+    
+    when /the new announcement page for "([^"]+)"$/ then
+      new_committee_announcement_path($1)
+      
+    when /^the edit announcement page for "([^"]+)"$/ then
+      edit_committee_announcement_path(:committee_type => Announcement.find_by_title($1).committee_type, :announcement_id => Announcement.find_by_title($1).id)
+      
     # "Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

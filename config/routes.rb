@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   get 'subcommittee_index/:committee_type/new_announcement' => 'announcement#new_announcement', as: :new_committee_announcement
   post 'subcommittee_index/:committee_type/create_announcement' => 'announcement#create_announcement', as: :create_committee_announcement
   delete 'subcommittee_index/:committee_type/:announcement_id/delete_announcement' => 'announcement#delete_announcement', as: :delete_committee_announcement
-  get 'subcommittee_index/:committee_type/edit_announcement' => 'announcement#edit_announcement', as: :edit_committee_announcement
-  put 'subcommittee_index/:committee_type/update_announcement' => 'announcement#update_announcement', as: :update_committee_announcement
+  get 'subcommittee_index/:committee_type/edit_announcement/:announcement_id' => 'announcement#edit_announcement', as: :edit_committee_announcement
+  put 'subcommittee_index/:committee_type/update_announcement/:announcement_id' => 'announcement#update_announcement', as: :update_committee_announcement
   
   # get 'subcommittee_index/:committee_type/new_announcement' => 'announcement#new_announcement', as: :new_committee_announcement
   

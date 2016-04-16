@@ -33,6 +33,29 @@ Scenario: should be able to edit a created announcement
   And I press "Submit"
   Then I should see "edited title"
   And I should see "edited content"
+  
+# sad path
+Scenario: user should not be able to edit an existing announcement and submit with empty title field
+  Then I should see "Add new announcement"
+  When I follow "Add new announcement"
+  And I fill in "Title" with "newtitle"
+  And I fill in "Content" with "new content"
+  And I press "Submit"
+  Then I follow first "Edit Announcement"
+  And I fill in "Title" with ""
+  And I fill in "Content" with "here is the new edited content"
+  And I press "Submit"
+  Then I should be on the edit announcement page for "newtitle"
+  And I should see "Title field cannot be left blank."
+  
+#sad path
+Scenario: user should not be able to create announcement with empty title field
+  Then I should see "Add new announcement"
+  When I follow "Add new announcement"
+  Then I fill in "Content" with "announcement with no title"
+  And I press "Submit"
+  Then I should be on the new announcement page for "internal"
+  And I should see "Title field cannot be left blank."
 
 # happy path
 @javascript

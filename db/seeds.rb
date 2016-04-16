@@ -11,5 +11,3 @@ curr = User.create!(:email => "admin@communitygrows.org", :password => "communit
 :admin => true)
 curr1 = User.create!(:email => "user@communitygrows.org", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", 
 :admin => false)
-
-announce = Announcement.create!(:title => "Hello", :content => "This is a message", :type => "executive")
