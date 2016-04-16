@@ -16,8 +16,9 @@ class AdminController < ActionController::Base
   
     def index
         @users = User.all
-        @announcement_list = Announcement.order(created_at: :DESC)
+        @announcement_list = Announcement.where(committee_type: "dashboard").order(created_at: :DESC)
         if !current_user.admin
+            flash[:message] = "Access not granted. Please sign in again."
             redirect_to("/users/sign_in")
         end
     end
@@ -31,7 +32,7 @@ class AdminController < ActionController::Base
         begin
             @user.update_attributes!(user_params)
         rescue Exception
-            flash[:notice] = "Populate all fields before submission."
+            flash[:notice] = flash[:notice].to_a.concat @user.errors.full_messages
             redirect_to edit_user_path(@user.id)
         else
             flash[:notice] = "#{@user.email} was successfully updated."
@@ -44,9 +45,10 @@ class AdminController < ActionController::Base
     def create_user
         #try and catch
         begin
-            @user = User.create!(user_params)
+            @user = User.create(user_params)
+            @user.save!
         rescue Exception => e
-            flash[:notice] = "Populate all fields before submission."
+            flash[:notice] = flash[:notice].to_a.concat @user.errors.full_messages
             redirect_to new_user_path
         else
             flash[:notice] = "#{@user.email} was successfully created."
@@ -68,7 +70,10 @@ class AdminController < ActionController::Base
     end
     
     def create_announcement
-        Announcement.create!(announcement_params)
+        @title = announcement_params[:title]
+        @content = announcement_params[:content]
+        @type = "dashboard"
+        Announcement.create!(:title => @title, :content => @content, :committee_type => @type)
         flash[:notice] = 'Announcement creation successful.'
         redirect_to('/admin')
     end

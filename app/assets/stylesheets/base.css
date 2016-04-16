@@ -63,6 +63,10 @@ td {
 link {
   size: 50px;
 }
+#flashNotice {
+  font-size: 1.1em;
+  color: red;
+}
 
 /***************/
 /*Documents CSS*/
@@ -106,6 +110,14 @@ ul {
   width: 13em;
   height: 4.25em;
   padding: 0px 0px;
+}
+
+.search_head{
+  display: inline;
+  margin-right: 2%;
+}
+.search_button {
+  display: inline;
 }
 
 /*****************/

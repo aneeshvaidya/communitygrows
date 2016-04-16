@@ -1,0 +1,8 @@
+.well
+  %h2= comment.title
+  %p.text-muted
+    Added by
+    %strong= comment.author
+    on "#{comment.created_at, format: '%B, %d %Y %H:%M:%S'}""
+  %blockquote
+    %p= comment.body

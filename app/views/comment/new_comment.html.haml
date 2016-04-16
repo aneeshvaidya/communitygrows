@@ -1,0 +1,9 @@
+%h1 New comment
+
+= form_tag create_comment_path do
+    = label :comment, :content, 'Content'
+    = text_area :comment, 'content'
+    </br>
+    = submit_tag 'Submit'
+= link_to 'Back', comment_path(@announcement_id) , :class => "button"
+    

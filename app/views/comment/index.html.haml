@@ -1,0 +1,17 @@
+%h1 "#{@announcement.title}"
+%p "#{@announcement.content}"
+
+%h2 Comments:
+
+.outer
+  .container
+    %h3 Join the discussion
+    #comments
+    -@comments.where(announcement_id: @announcement.id).find_each do |comment|
+      %h4 "#{User.find(comment.user_id).email} says"
+      %p "#{comment.content} created at #{comment.created_at}"
+      %strong= button_to "Delete Comment", delete_comment_path(@announcement.id, comment.id), :method => :delete, data: { confirm: 'Are you sure?' }
+    %p Click the button below to start a new thread:
+    %p= link_to 'Add new topic', new_comment_path, class: 'btn btn-primary btn-lg'
+
+

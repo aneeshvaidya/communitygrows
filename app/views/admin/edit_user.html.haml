@@ -1,23 +1,38 @@
 %h1 Edit Existing User
 
 - if flash[:notice]
-  #flashNotice
-    = flash[:notice]
-    :javascript
-      alert("Fill in all forms before submission.");
+  - flash[:notice].each do |msg|
+    #flashNotice
+      = msg
+</br>
 
 = form_tag update_user_path(@user), :method => :put do
 
+  #leftUserText
   = label :user, :email, 'Email'
+  #rightUserField
   = text_field :user, 'email'
-  
+  </br>
+  </br>
+  #leftUserText  
   = label :user, :password, 'Password'
+  #rightUserField
   = text_field :user, 'password'
-  
+  </br>
+  </br>
+  #leftUserText
   = label :user, :password_confirmation, 'Password Confirmation'
+  #rightUserField
   = text_field :user, 'password_confirmation'
-
+  </br>
+  </br>
+  #leftUserText
   = label :user, :admin, 'Admin'
+  #rightUserField
   = select :user, :admin, [['True', true], ['False', false]]
 
+
+  </br>
+  </br>
   = submit_tag 'Update user'
+    

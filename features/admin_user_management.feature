@@ -43,14 +43,14 @@ Scenario: Admin fails to enter password during edit
   When I follow "zach@gmail.com"
   Then I fill in "Email" with "zachary@gmail.com"
   And I press "Update user"
-  Then I should see "Populate all fields before submission."
+  Then I should see "Password can't be blank"
   And I should be on the edit user page for "zach@gmail.com"
   
 Scenario: Admin fails to enter password while adding new user 
   When I follow "Add new user"
   And I fill in "Email" with "bob@billy.com"
   And I press "Submit"
-  Then I should see "Populate all fields before submission."
+  Then I should see "Password can't be blank"
   
 Scenario: Admin should see new user link
   Then I should see "Add new user"

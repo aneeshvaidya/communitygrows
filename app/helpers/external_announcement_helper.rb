@@ -1,0 +1,2 @@
+module ExternalAnnouncementHelper
+end

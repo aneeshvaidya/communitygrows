@@ -1,23 +1,37 @@
 %h1 Create New User
 
 - if flash[:notice]
-  #flashNotice
-    = flash[:notice]
-
+  - flash[:notice].each do |msg|
+    #flashNotice
+      = msg
 </br>
+
 
 = form_tag create_user_path do
 
+  #leftUserTextA
   = label :user, :email, 'Email'
+  #rightUserFieldA
   = text_field :user, 'email'
-  
+  </br>  
+  </br>
+  #leftUserTextA
   = label :user, :password, 'Password'
+  #rightUserFieldA
   = text_field :user, 'password'
-  
+  </br>
+  </br>
+  #leftUserTextA
   = label :user, :password_confirmation, 'Password Confirmation'
+  #rightUserFieldA
   = text_field :user, 'password_confirmation'
-
+  </br>
+  </br>
+  #leftUserTextA
   = label :user, :admin, 'Admin'
+  #rightUserFieldA
   = select :user, :admin, [['True', true], ['False', false]]
-
+  
+  </br>
+  </br>
   = submit_tag 'Submit'
