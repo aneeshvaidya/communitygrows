@@ -1,6 +1,7 @@
 %h1 Board Member Dashboard
 #announcements
-  %h2 Main Announcements
+  %h2{:class => "search_head" } Main Announcements
+  .search_button= link_to "Search", show_announcements_path(:categories => [:dashboard]), :id => :main
   #announcement_content
     %table
       %thead
@@ -12,7 +13,8 @@
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title}", comment_path(announcement.id)
-  %h2 Subcommittee Announcements
+  %h2{:class => "search_head" } Subcommittee Announcements
+  .search_button= link_to "Search", show_announcements_path(:categories => [:internal, :external, :executive]), :id => :subcommittee
   #announcement_content
     %table
       %thead
@@ -24,7 +26,6 @@
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title} [#{announcement.committee_type}]", comment_path(announcement.id)
-            
 #calendar
   %h2 Calendar
   <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width=98% height=91% frameborder="1" scrolling="no"></iframe>

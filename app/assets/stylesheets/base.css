@@ -112,6 +112,14 @@ ul {
   padding: 0px 0px;
 }
 
+.search_head{
+  display: inline;
+  margin-right: 2%;
+}
+.search_button {
+  display: inline;
+}
+
 /*****************/
 /* Dashboard CSS */
 /*****************/
