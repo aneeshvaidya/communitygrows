@@ -11,15 +11,19 @@ class AnnouncementController < ActionController::Base
         
     def create_announcement
         @title = params[:title]
-        @content = params[:content]
         @committee_type = params[:committee_type]
+        if @title.nil? || @title.empty?
+            flash[:notice] = "Title field cannot be left blank."
+            redirect_to new_committee_announcement_path(@committee_type) and return
+        end
+        @content = params[:content]
         Announcement.create!(:title => @title, :content => @content, :committee_type => @committee_type)
         flash[:notice] = "#{@committee_type.capitalize} Announcement creation successful."
         redirect_to subcommittee_index_path(:committee_type => @committee_type)
     end
         
     def edit_announcement
-        @announcement_id = params[:id]
+        @announcement_id = params[:announcement_id]
         @announcement = Announcement.find @announcement_id
     end
     
@@ -27,7 +31,12 @@ class AnnouncementController < ActionController::Base
         @target_announcement = Announcement.find params[:announcement][:id]
         @title = params[:title]
         @content = params[:content]
+        @announcement_id = params[:announcement_id]
         @committee_type = params[:committee_type]
+        if @title.nil? || @title.empty?
+            flash[:notice] = "Title field cannot be left blank."
+            redirect_to edit_committee_announcement_path(@committee_type, @announcement_id) and return
+        end
         @target_announcement.update_attributes!(:title => @title, :content => @content, :committee_type => @committee_type)
         flash[:notice] = "Announcement with title [#{@target_announcement.title}] updated successfully"
         redirect_to subcommittee_index_path(@committee_type)

@@ -25,6 +25,10 @@ class CommentController < ApplicationController
     def create_comment
         @id = params[:announcement_id]
         @content = comment_params[:content]
+        if @content.nil? || @content.empty?
+            flash[:notice] = "Comment cannot be blank."
+            redirect_to new_comment_path(@id) and return
+        end
         @comment = Comment.create(:content => @content, :user_id => current_user.id, :announcement_id => @id)
         @comment.save!
         redirect_to comment_path(@id) 

@@ -29,7 +29,8 @@ Scenario: User can see committee announcements
   And I should see "eeeeeee [internal]"
   And I should see "fffffff [external]"
 
-Scenario: User clicks on comments to view comments for given announcement
+# happy path
+Scenario: User clicks on announcement to view comments for given announcement
   When I follow "ddddddd [executive]"
   Then I should be on the comment page for "ddddddd"
   And I should see "Join the discussion"
@@ -38,3 +39,13 @@ Scenario: User clicks on comments to view comments for given announcement
   And I press "Submit"
   Then I should be on the comment page for "ddddddd"
   And I should see "This is a test comment"
+  
+#sad path
+Scenario: User should not be able to create a comment with empty content
+  When I follow "ddddddd [executive]"
+  Then I should be on the comment page for "ddddddd"
+  And I should see "Join the discussion"
+  Then I follow "Add new topic"
+  And I press "Submit"
+  Then I should be on the new comment page for "ddddddd"
+  And I should see "Comment cannot be blank."
