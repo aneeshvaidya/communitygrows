@@ -3,7 +3,7 @@
 = form_tag search_announcements_path :method => :post do
   = label_tag :search, "Search"
   = text_field_tag 'search'
-
+  = submit_tag 'Submit'
 = render :partial => 'announcement_table'
 
 <br/> <br/>

@@ -9,19 +9,19 @@ Background: user is on the document repository page and announcement is made
   
   Given a logged in user
   And I am on the CommunityGrows dashboard page
-  And an announcement is made with "test" as title and "test-url" as url
+  And an announcement is made with "test" as title and "test" as content
 
 # happy path
 Scenario: User can search for an announcement
-  When I follow "announcement list"
-  Then I search for "test"
+  When I click "Search" for "Main"
+  Then I fill in "search" with "test" 
   And I press "Submit"
-  And I should see "test"
+  Then I should see "test"
 
 # sad path
 Scenario: User can't search for an announcement that doesn't exist
-  When I follow "announcement title"
-  Then I search for "test-non-existant"
+  When I click "Search" for "Main"
+  Then I fill in "search" with "test-non-existant"
   And I press "Submit"
   And I should not see "test-non-existant"
 

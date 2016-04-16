@@ -1,7 +1,11 @@
 # By Tony. Steps needed for user testing
 
-Given /an announcement is made with "([^"]*)" as title and "([^"]*)" as url$/ do |title, url|
-  fail "Unimplemented"
+Given /an announcement is made with "([^"]*)" as title and "([^"]*)" as content$/ do |title, content|
+    Announcement.create(:title => title, :content => content, :committee_type => "dashboard")
+end
+
+When /click "([^"]*)" for "([^"]*)"$/ do |link, id|
+    page.find_by_id(id.downcase).click
 end
 
 
