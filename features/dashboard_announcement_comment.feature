@@ -36,7 +36,7 @@ Scenario: User clicks on announcement to view comments for given announcement
   Then I should be on the comment page for "ddddddd"
   And I should see "Join the discussion"
   Then I follow "Add new topic"
-  And I fill in "Content" with "This is a test comment"
+  And I fill in "comment_content" with "This is a test comment"
   And I press "Submit"
   Then I should be on the comment page for "ddddddd"
   And I should see "This is a test comment"
