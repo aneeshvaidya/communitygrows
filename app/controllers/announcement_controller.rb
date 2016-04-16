@@ -2,18 +2,12 @@ class AnnouncementController < ActionController::Base
     layout "base"
     before_filter :authenticate_user!
 
-    def announcement_params
-        params.require(:announcement).permit(:title, :content)
-    end
-    
     def show_announcements
        @announcements = Announcement.where(committee_type: params[:categories])
     end
 
-
     def new_announcement
     end
-    
         
     def create_announcement
         @title = params[:title]
@@ -24,7 +18,7 @@ class AnnouncementController < ActionController::Base
         end
         @content = params[:content]
         Announcement.create!(:title => @title, :content => @content, :committee_type => @committee_type)
-        flash[:notice] = 'Executive Announcement creation successful.'
+        flash[:notice] = "#{@committee_type.capitalize} Announcement creation successful."
         redirect_to subcommittee_index_path(:committee_type => @committee_type)
     end
         
