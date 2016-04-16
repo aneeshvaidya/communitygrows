@@ -3,7 +3,7 @@ class DocumentsController < ActionController::Base
     before_filter :authenticate_user!
     
     def file_params
-      params.require(:file).permit(:title, :url, :committee)
+      params.require(:file).permit(:title, :url, :committee_type)
     end
   
     def index

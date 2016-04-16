@@ -19,7 +19,7 @@
       %td Edit
       %td Delete
   %tbody
-    - documents = Document.where(:committee => 'executive')
+    - documents = Document.where(:committee_type => 'executive')
     - if documents.empty?
       %td= "No files have been entered"
     - documents.each do |file|
@@ -44,7 +44,7 @@
       %td Edit
       %td Delete
   %tbody
-    - documents = Document.where(:committee => 'external')
+    - documents = Document.where(:committee_type => 'external')
     - if documents.empty?
       %td= "No files have been entered"
     - documents.each do |file|
@@ -66,7 +66,7 @@
       %td Edit
       %td Delete
   %tbody
-    - documents = Document.where(:committee => 'internal')
+    - documents = Document.where(:committee_type => 'internal')
     - if documents.empty?
       %td= "No files have been entered"
     - documents.each do |file|

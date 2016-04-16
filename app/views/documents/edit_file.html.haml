@@ -12,8 +12,8 @@
   = label :file, :url, 'URL'
   = text_field :file, 'url', :value => @file.url
 
-  = label :file, :committee, 'Committee'
-  = select :file, :committee, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}, :value => @file.committee
+  = label :file, :committee_type, 'Committee'
+  = select :file, :committee_type, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}, :value => @file.committee_type
 
   = submit_tag 'Submit'
 =link_to 'back', documents_path

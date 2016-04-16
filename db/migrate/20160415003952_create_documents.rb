@@ -3,11 +3,8 @@ class CreateDocuments < ActiveRecord::Migration
     create_table :documents do |t|
       t.string :url
       t.string :title
-      t.datetime :created_at
-      t.datetime :updated_at
-      t.string :type
-
       t.timestamps null: false
+      t.string :committee_type
     end
   end
 end
