@@ -26,10 +26,11 @@ h2 {
   color: #FFFFFF;
   text-align: center;
   font-size: 13px;
-  padding: 15px;
-  width: 13%;
+  padding: 1%;
+  width: 15%;
   transition: all 0.5s;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 #content {
   text-align: center;

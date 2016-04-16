@@ -7,7 +7,7 @@
   #flashNotice
     = flash[:notice]
 
-%h2#committeeTitle Executive committee
+%h2#committeeTitle Executive committee 
 
 %table#docs
   %thead#filebar
@@ -28,9 +28,6 @@
         %td= file.updated_at
         %td= link_to "Edit document", edit_file_path(file.id)
         %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
-        /link_to("Edit", edit_file_path(file.id))
-        /+ " | "+ link_to("Delete", delete_path: {:file=>file})
-        /%td= link_to("Edit", file.url)+ " | "+ link_to("Delete", documents_path)
         
 %h2#committeeTitle External committee
 
