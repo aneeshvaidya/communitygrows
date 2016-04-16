@@ -7,14 +7,15 @@ class DocumentsController < ActionController::Base
     end
   
     def index
+        @documents = Document.all
+        @document_list = Document.order(updated_at: :DESC)
     end
     
     def create_file
-        #puts Document.where(:committee => 'executive')
         begin
-            if params[:title].to_s == "" or params[:url].to_s == ""
+        file = params[:file]
+            if file[:title].to_s == "" or file[:url].to_s == ""
                 flash[:notice] = "Populate all fields before submission."
-                puts "this is wahts going on "
                 redirect_to new_file_path
             else 
                 @file = Document.create!(file_params)
@@ -24,9 +25,23 @@ class DocumentsController < ActionController::Base
         end
     end
     
+    def edit_file
+       @id = params[:format] 
+       @file = Document.find @id
+    end
+    
+    def update_file
+        @target_file = Document.find params[:id]
+        @target_file.update_attributes!(file_params)
+        flash[:notice] = "Document with title [#{@target_file.title}] updated successfully"
+        redirect_to(documents_path)
+    end
+    
     def delete_file
-        
-        
+        @file_to_delete = Document.find params[:format]
+        @file_to_delete.destroy!
+        flash[:notice] = "Document with title [#{@file_to_delete.title}] deleted successfully"
+        redirect_to documents_path
     end
     
     def new_file
