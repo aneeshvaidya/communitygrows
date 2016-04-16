@@ -36,6 +36,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  config.global_fixtures = :all
   
   config.include Capybara::DSL #by Tony
   config.include Capybara::RSpecMatchers #by Tony

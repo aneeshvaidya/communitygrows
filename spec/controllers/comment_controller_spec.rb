@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe CommentController, type: :controller do
-
+describe CommentController do
+    fixtures :users
+    fixtures :announcements
+    describe 'render index' do
+    end
 end
