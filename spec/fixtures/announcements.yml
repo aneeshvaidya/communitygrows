@@ -1,0 +1,5 @@
+dashboard_announcement:
+    id: 1
+    title: test
+    content: rspec test
+    committee_type: dashboard

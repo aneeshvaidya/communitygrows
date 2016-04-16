@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe AnnouncementController do 
     fixtures :users
+    fixtures :announcements
     before(:each) do
         sign_in users(:tester)
     end
@@ -27,7 +28,9 @@ describe AnnouncementController do
     end
     describe 'edit announcement' do
         it 'renders edit announcment page' do
-            get :edit_announcement, :id => 1
+            post :create_announcement, :title => "Rspec", :content => "Is for testing", :committee_type => :internal
+            a = Announcement.where(title: "Rspec")
+            get :edit_announcement, :id => a.first.id
             response.should render_template(:edit_announcement)
         end
     end
