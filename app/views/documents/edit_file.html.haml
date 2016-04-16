@@ -1,0 +1,19 @@
+%h1 Edit current file
+
+- if flash[:notice] == "Populate all fields before submission."
+  #flashNotice
+    = flash[:notice]
+
+= form_tag update_file_path(@id, @file), :method => :put do
+
+  = label :file, :title, 'Title'
+  = text_field :file, 'title', :value => @file.title
+  
+  = label :file, :url, 'URL'
+  = text_field :file, 'url', :value => @file.url
+
+  = label :file, :committee, 'Committee'
+  = select :file, :committee, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}, :value => @file.committee
+
+  = submit_tag 'Submit'
+=link_to 'back', documents_path

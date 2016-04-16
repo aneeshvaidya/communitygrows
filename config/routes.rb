@@ -52,6 +52,13 @@ Rails.application.routes.draw do
   put 'subcommittee_index/:committee_type/update_document' => 'document_list#update_document', as: :update_committee_document
   
   
+  
+  get 'documents/new_file' => 'documents#new_file', as: :new_file
+  post 'documents/create' => 'documents#create_file', as: :create_file
+  get 'documents/delete_file' => 'documents#delete_file', as: :delete_file
+  get 'documents/edit_file' => 'documents#edit_file', as: :edit_file
+  put 'documents/edit_file' => 'documents#update_file', as: :update_file
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # =>                       controller#method
