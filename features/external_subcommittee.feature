@@ -110,5 +110,3 @@ Scenario: should be able to delete a created document
   When I follow first "Delete Document"
   And I confirm popup
   Then I should not see "new url"
-  
-# no sad path

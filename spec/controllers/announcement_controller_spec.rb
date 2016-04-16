@@ -32,13 +32,13 @@ describe AnnouncementController do
             get :edit_announcement, :announcement_id => @a.id, :committee_type => @a.committee_type
             response.should render_template(:edit_announcement)
         end
-        it 'updates the announcement' do
-            put :update_announcement, :title => @a.title, :content => @a.content, :announcement_id => @a.id, :committee_type => @a.committee_type, :announcement => { :id => @a.id }
-            response.should redirect_to(subcommittee_index_path(:committee_type => :internal))
-        end
         it 'updates incorrectly' do 
             put :update_announcement, :title => nil, :content => @a.content, :announcement_id => @a.id, :committee_type => @a.committee_type, :announcement => { :id => @a.id }
             response.should redirect_to(edit_committee_announcement_path(:committee_type => :internal, :announcement_id => @a.id))
+        end
+        it 'updates the announcement' do
+            put :update_announcement, :title => @a.title, :content => @a.content, :announcement_id => @a.id, :committee_type => @a.committee_type, :announcement => { :id => @a.id }
+            response.should redirect_to(subcommittee_index_path(:committee_type => :internal))
         end
     end
     describe 'delete announcement' do   

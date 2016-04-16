@@ -23,7 +23,8 @@ Scenario: User can see admin announcements
   Then I should see "aaaaaaa"
   And I should see "bbbbbbb"
   And I should see "ccccccc"
-  
+
+# happy path  
 Scenario: User can see committee announcements
   Then I should see "ddddddd [executive]"
   And I should see "eeeeeee [internal]"
