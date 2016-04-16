@@ -5,6 +5,10 @@ class AnnouncementController < ActionController::Base
     def announcement_params
         params.require(:announcement).permit(:title, :content)
     end
+    
+    def show_announcements
+       @announcements = Announcement.where(committee_type: params[:categories])
+    end
 
 
     def new_announcement
@@ -41,6 +45,12 @@ class AnnouncementController < ActionController::Base
         @target_announcement.destroy!
         flash[:notice] = "Executive Announcement with title [#{@target_announcement.title}] deleted successfully"
         redirect_to subcommittee_index_path(@committee_type)
+    end
+    
+    def search_announcements
+        @search = params[:search]
+        @announcements = Announcement.where("title LIKE ?", @search)
+        render :show_announcements
     end
 
 end
