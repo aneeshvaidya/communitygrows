@@ -31,10 +31,16 @@ class DocumentsController < ActionController::Base
     end
     
     def update_file
-        @target_file = Document.find params[:id]
-        @target_file.update_attributes!(file_params)
-        flash[:notice] = "Document with title [#{@target_file.title}] updated successfully"
-        redirect_to(documents_path)
+        @target_file = Document.find params[:format]
+        file = params[:file]
+        if file[:title].to_s == "" or file[:url].to_s == ""
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to edit_file_path(params[:format])
+        else
+            @target_file.update_attributes!(file_params)
+            flash[:notice] = "Document with title [#{@target_file.title}] updated successfully"
+            redirect_to(documents_path)
+        end
     end
     
     def delete_file

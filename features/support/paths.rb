@@ -18,7 +18,7 @@ module NavigationHelpers
     when /the (CommunityGrows )?log_in page$/ then
       '/users/sign_in'
     when /the (CommunityGrows )?document repository page$/ then
-      fail "Unimplemented"
+      '/documents'
     when /the (CommunityGrows )?internal affairs committee page$/ then
       '/internal_committee'
     when /the (CommunityGrows )?executive committee page$/ then
