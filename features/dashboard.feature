@@ -15,7 +15,6 @@ Scenario: see all the tabs
   And I should see "External"
   And I should see "Internal"
   
-
 Scenario: see all the panels
   Then I should see "Main Announcements"
   And I should see "Calendar"

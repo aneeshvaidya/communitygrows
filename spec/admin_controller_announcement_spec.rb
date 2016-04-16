@@ -43,7 +43,7 @@ RSpec.describe "Admin announcements/calendar", :type => :request do
     it 'should update or register a calendar' do
       visit '/admin'
       
-      fill_in "calendar_html", :with => 'tonylee1993'
+      fill_in "calendar_html", :with => 'info'
       click_button "Update Google Calendar"
       page.should have_content("New Calendar Creation successful")
     end
