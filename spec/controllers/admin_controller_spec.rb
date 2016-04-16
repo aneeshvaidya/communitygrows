@@ -12,11 +12,6 @@ describe AdminController do
             get :new_user
             response.should render_template(:new_user)
         end
-        it 'wrong post content renders new user page' do
-            sign_in users(:tester)
-            post :create_user
-            response.should redirect_to(:new_user)
-        end
         it 'redirects to index page on success' do
             sign_in users(:tester)
             user_params = {:email => "admin@rspec.com", :password => "communitygrowsrocks", :password_confirmation => "communitygrowsrocks", :admin => true}
