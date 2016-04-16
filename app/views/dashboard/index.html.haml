@@ -1,6 +1,6 @@
 %h1 Board Member Dashboard
 #announcements
-  %h2 Main Announcements
+  %h2{:class => "search_head" } Main Announcements
   .search_button= link_to "Search", show_announcements_path(:categories => [:dashboard])
   #announcement_content
     %table
@@ -13,7 +13,7 @@
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title}", comment_path(announcement.id)
-  %h2 Subcommittee Announcements
+  %h2{:class => "search_head" } Subcommittee Announcements
   .search_button= link_to "Search", show_announcements_path(:categories => [:internal, :external, :executive])
   #announcement_content
     %table
