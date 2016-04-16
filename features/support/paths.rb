@@ -37,6 +37,9 @@ module NavigationHelpers
       
     when /^the edit announcement page for "([^"]+)"$/ then
       edit_committee_announcement_path(:committee_type => Announcement.find_by_title($1).committee_type, :announcement_id => Announcement.find_by_title($1).id)
+
+    when /^the new comment page for "([^"]+)"$/ then
+      new_comment_path(:announcement_id => Announcement.find_by_title($1).id)
       
     # "Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
