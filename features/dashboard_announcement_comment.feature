@@ -23,7 +23,8 @@ Scenario: User can see admin announcements
   Then I should see "aaaaaaa"
   And I should see "bbbbbbb"
   And I should see "ccccccc"
-  
+
+# happy path  
 Scenario: User can see committee announcements
   Then I should see "ddddddd [executive]"
   And I should see "eeeeeee [internal]"
@@ -35,7 +36,7 @@ Scenario: User clicks on announcement to view comments for given announcement
   Then I should be on the comment page for "ddddddd"
   And I should see "Join the discussion"
   Then I follow "Add new topic"
-  And I fill in "Content" with "This is a test comment"
+  And I fill in "comment_content" with "This is a test comment"
   And I press "Submit"
   Then I should be on the comment page for "ddddddd"
   And I should see "This is a test comment"

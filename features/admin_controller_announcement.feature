@@ -9,6 +9,7 @@ Background: admin is on the admin dashboard
   Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
 
+# happy path
 Scenario: should be able to add an announcement
   Then I should see "New Announcement"
   When I follow "New Announcement"
@@ -18,6 +19,7 @@ Scenario: should be able to add an announcement
   Then I should see "new title"
   And I should see "new content"
 
+# happy path
 Scenario: should be able to edit a created announcement
   Then I should see "New Announcement"
   When I follow "New Announcement"
@@ -32,6 +34,7 @@ Scenario: should be able to edit a created announcement
   Then I should see "edited title"
   And I should see "edited content"
 
+# happy path
 @javascript
 Scenario: should be able to delete a created announcement
   Then I should see "New Announcement"
@@ -45,3 +48,5 @@ Scenario: should be able to delete a created announcement
   When I follow first "Delete Announcement"
   And I confirm popup
   Then I should not see "new content"
+
+# no sad path because the design of CRUD is specifically open to the admin's discretion

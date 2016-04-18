@@ -16,10 +16,12 @@ Background: users in database
   Given a logged in admin
   And I am on the CommunityGrows admin_dashboard page
 
+# happy path
 Scenario: Admin should see users on admin dashboard
   Then I should see "zach@gmail.com"
   And I should see "tonylee@gmail.com"
-  
+
+# happy path
 Scenario: Admin can add new user to the database 
   When I follow "Add new user"
   Then I fill in "Email" with "mg@mgmt.com"
@@ -28,7 +30,8 @@ Scenario: Admin can add new user to the database
   And I press "Submit"
   Then I should be on the admin_dashboard page
   And I should see "mg@mgmt.com"
-  
+
+# happy path  
 Scenario: Admin can edit an existing user's email
   When I follow "zach@gmail.com"
   Then I fill in "Email" with "zachary@gmail.com"
@@ -38,23 +41,27 @@ Scenario: Admin can edit an existing user's email
   Then I should be on the admin_dashboard page
   And I should see "zachary@gmail.com"
   And I should not see "zach@gmail.com"
-  
+
+# sad path  
 Scenario: Admin fails to enter password during edit
   When I follow "zach@gmail.com"
   Then I fill in "Email" with "zachary@gmail.com"
   And I press "Update user"
   Then I should see "Password can't be blank"
   And I should be on the edit user page for "zach@gmail.com"
-  
+
+# sad path  
 Scenario: Admin fails to enter password while adding new user 
   When I follow "Add new user"
   And I fill in "Email" with "bob@billy.com"
   And I press "Submit"
   Then I should see "Password can't be blank"
-  
+
+# happy path  
 Scenario: Admin should see new user link
   Then I should see "Add new user"
-  
+
+# happy path  
 Scenario: Admin should see last login data availabe for every user
   Then I should see "Created At"
 

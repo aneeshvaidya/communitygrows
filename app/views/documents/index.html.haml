@@ -24,7 +24,7 @@
     - documents.each do |file|
       %tr
         %td= file.title
-        %td= file.url
+        %td= link_to file.url, url_for(file.url)
         %td= file.updated_at
         %td= link_to "Edit document", edit_file_path(file.id)
         %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }

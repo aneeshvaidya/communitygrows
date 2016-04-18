@@ -27,7 +27,7 @@ h2 {
   text-align: center;
   font-size: 13px;
   padding: 1%;
-  width: 15%;
+  width: 15em;
   transition: all 0.5s;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -187,10 +187,10 @@ ul {
 }
 
 .admindashboard_row_announcement_title {
-  width: 10%;
+  width: 18%;
 }
 .admindashboard_row_announcement_content {
-  width: 48%;
+  width: 40%;
 }
 .admindashboard_row_announcement_createdat {
   width: 10%;
@@ -203,4 +203,15 @@ ul {
 }
 .admindashboard_row_announcement_delete {
   width: 12%;
+}
+
+/*****************/
+/*  Comment CSS  */
+/*****************/
+#comments {
+  margin-left: 1%;
+  margin-right: 3%;
+  display: block;
+  width: 100%;
+  word-wrap: break-word;
 }

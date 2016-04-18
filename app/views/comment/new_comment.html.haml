@@ -6,9 +6,9 @@
 </br>
 
 = form_tag create_comment_path do
-    = label :comment, :content, 'Content'
-    = text_area :comment, 'content'
-    </br>
+    // = label :comment, :content, 'Content'
+    = text_area :comment, 'content', cols: 40, rows: 10, :placeholder => "Your comment here"
+    <br>
     = submit_tag 'Submit'
 = link_to 'Back', comment_path(@announcement_id) , :class => "button"
     
