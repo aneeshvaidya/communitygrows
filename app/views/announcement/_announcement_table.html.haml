@@ -15,5 +15,5 @@
           %td= a.content
           %td= a.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= a.updated_at.strftime("%m/%d/%Y %l:%M %p")
-          %td= link_to "Edit Announcement", controller: :announcement, action: :edit_announcement, committee_type: a.committee_type, id: a.id
+          %td= link_to "Edit Announcement", edit_committee_announcement_path(:announcement_id => a.id, :committee_type => a.committee_type)
           %td= button_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => a.id, :committee_type => a.committee_type), :method => :delete, data: { confirm: 'Are you sure?' }
