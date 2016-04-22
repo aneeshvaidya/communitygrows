@@ -65,5 +65,12 @@ Scenario: User can delete an announcement
   And I confirm popup
   Then I should be on the document repository page
   And I should see "deleted successfully"
-
+  
+Scenario: see five categories
+  When I check out five categories of document repository
+  Then I should see "First category"
+  Then I should see "Second category"
+  Then I should see "Third category"
+  Then I should see "Fourth category"
+  Then I should see "Fifth category"
   
