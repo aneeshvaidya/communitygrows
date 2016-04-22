@@ -52,7 +52,7 @@ class AnnouncementController < ActionController::Base
     
     def search_announcements
         @search = params[:search]
-        @announcements = Announcement.where("title LIKE ?", @search)
+        @announcements = Announcement.where("title LIKE ?", "%#{@search}%")
         render :show_announcements
     end
 
