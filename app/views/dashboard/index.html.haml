@@ -1,7 +1,7 @@
 %h1 Board Member Dashboard
 #announcements
   %h2{:class => "search_head" } Main Announcements
-  .search_button= link_to "Search", show_announcements_path(:categories => [:dashboard]), :id => :main
+  .search_button= link_to "Search", show_announcements_path(:categories => [:dashboard, :internal, :executive, :external]), :id => :main
   #announcement_content
     %table
       %thead
@@ -14,7 +14,7 @@
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title}", comment_path(announcement.id)
   %h2{:class => "search_head" } Subcommittee Announcements
-  .search_button= link_to "Search", show_announcements_path(:categories => [:internal, :external, :executive]), :id => :subcommittee
+  // .search_button= link_to "Search", show_announcements_path(:categories => [:internal, :external, :executive]), :id => :subcommittee
   #announcement_content
     %table
       %thead

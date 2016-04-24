@@ -28,3 +28,7 @@ Given /^a logged in user$/ do
   fill_in "password", :with => "dummypass"
   click_button "Log in"
 end
+
+Given /^I edit password$/ do
+  fail "Unimplemented"
+end
