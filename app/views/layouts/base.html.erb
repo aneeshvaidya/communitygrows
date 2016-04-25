@@ -21,6 +21,7 @@
   <li><%= link_to "Executive", subcommittee_index_path("executive"), { :class=>"navigation"}%></li>
   <li><%= link_to "Documents", documents_path, { :class=>"navigation"}%></li>
   <li><%= link_to "Dashboard", dashboard_index_path, { :class=>"navigation"}%></li>
+  <li><%= link_to "Account Details", user_credentials_path(current_user.id), { :class=>"navigation"}%></li>
 </ul>
 
 <!-- yield will substitute different views in -->
