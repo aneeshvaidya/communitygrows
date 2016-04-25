@@ -1,3 +1,4 @@
+# @author: Zachary McPherson on 4/25/2016
 Feature: successfully edit email or password as a logged in user
   
   As an existing user
@@ -17,19 +18,25 @@ Background:
   
 #happy path 
 Scenario: successfully  change password
-  When I visit "Edit Account"
-  Then I am on the Edit Account Page for "zach@gmail.com"
+  When I follow "Account Details"
+  Then I am on the account details page for "zach@gmail.com"
   Then I fill in "Password" with "12245678"
   And I fill in "Password Confirmation" with "12245678"
   Then I press "Submit"
-  And I should be on the CommunityGrows home page
+  Then I am on the account details page for "zach@gmail.com"
+  Then I follow "Sign out"
+  And I am on the CommunityGrows log_in page
+  Then I fill in "user_email" with "zach@gmail.com"
+  Then I fill in "user_password" with "12245678"
+  And I press "Log in"
+  And I should be on the CommunityGrows dashboard page
   
 #sad path
 Scenario: user fails to fill in required fields
-  When I visit "Edit Account"
-  Then I am on the edit account page for "zach@gmail.com"
+  When I follow "Account Details"
+  Then I am on the account details page for "zach@gmail.com"
   And I fill in "Password" with ""
   And I fill in "Password Confirmation" with ""
   Then I press "Submit"
   And I should see "Password can't be blank"
-  And I should be on the edit account page for "zach@gmail.com"
+  And I should be on the account details page for "zach@gmail.com"

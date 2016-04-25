@@ -22,7 +22,7 @@ class UserController < ActionController::Base
             redirect_to user_credentials_path(@user.id)
         else
             flash[:notice] = "#{@user.email}'s credentials were successfully updated."
-            redirect_to dashboard_index_path
+            redirect_to user_credentials_path(@user.id)
         end
     end
 

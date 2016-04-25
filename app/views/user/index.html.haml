@@ -1,21 +1,25 @@
 %h1 Edit Account Credentials
 - if flash[:notice]
-  - flash[:notice].each do |msg|
-    #flashNotice  
-      = msg
+  - if (flash[:notice].respond_to? :each)
+    - flash[:notice].each do |msg|
+      #flashNotice  
+        = msg
+  -else
+    #flashNotice
+    flash[:notice]
 </br>
 
 #form
 = form_tag update_user_credentials_path(@user), :method => :put do
-  = label_tag :email, "Email: "
+  = label :user, :email, "Email: "
   #field
   = text_field :user, 'email', :placeholder => @user.email
   <br/>
-  = label_tag :password, "Password "
+  = label :user, :password, "Password"
   #field
   = text_field :user, 'password'
   <br/>
-  = label_tag :password_confirmation, "Password Confirmation "
+  = label :user, :password_confirmation, "Password Confirmation"
   #field
   = text_field :user, 'password_confirmation'
   <br/>
