@@ -1,3 +1,3 @@
-Given /^I check out five categories of document repository$/ do
+Given /^I check out four categories of document repository$/ do
   fail "Unimplemented"
 end
