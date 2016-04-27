@@ -26,16 +26,26 @@ describe "documents controller" do
         fill_in "URL", :with => 'bcd.com'
         click_button "Submit"
         page.should have_content("abcd")
-        page.should have_content("bcd.com")
+        
+        click_link "Add new file"
+        page.should have_content("Title")
+        page.should have_content("URL")
+        fill_in "Title", :with => 'something'
+        fill_in "URL", :with => 'something'
+        click_button "Submit"
+        page.should have_content("Please enter a valid URL.")
+        fill_in "Title", :with => 'something'
+        fill_in "URL", :with => 'something.com'
+        click_button "Submit"
+        page.should have_content("something")
           
         click_link "Edit document", match: :first
         page.should have_content("Title")
         page.should have_content("URL")
         fill_in "Title", :with => 'ccc'
-        fill_in "URL", :with => 'ddddd'
+        fill_in "URL", :with => 'ddddd.com'
         click_button "Submit"
         page.should have_content("ccc")
-        page.should have_content("ddddd")
         click_link "Delete document", match: :first
         page.should have_content("deleted successfully")
     end
@@ -49,6 +59,11 @@ describe "documents controller" do
         fill_in "Title", :with => 'abcd'
         click_button "Submit"
         page.should have_content("Populate all fields before submission.")
+        
+        fill_in "Title", :with => 'abcd'
+        fill_in "URL", :with => 'fasd'
+        click_button "Submit"
+        page.should have_content("Please enter a valid URL.")
     end
     
 end

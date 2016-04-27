@@ -17,7 +17,13 @@ class DocumentsController < ActionController::Base
             if file[:title].to_s == "" or file[:url].to_s == ""
                 flash[:notice] = "Populate all fields before submission."
                 redirect_to new_file_path
+            elsif !(file[:url]=~/.com(.*)/)
+                flash[:notice] = "Please enter a valid URL."
+                redirect_to new_file_path
             else 
+                if !(file[:url]=~/http:/)
+                    file[:url]="http://"+file[:url]
+                end
                 @file = Document.create!(file_params)
                 flash[:notice] = "#{@file.title} was successfully created."
                 redirect_to documents_path 
@@ -36,7 +42,13 @@ class DocumentsController < ActionController::Base
         if file[:title].to_s == "" or file[:url].to_s == ""
             flash[:notice] = "Populate all fields before submission."
             redirect_to edit_file_path(params[:format])
+        elsif !(file[:url]=~/.com(.*)/)
+            flash[:notice] = "Please enter a valid URL."
+            redirect_to new_file_path
         else
+            if !(file[:url]=~/http:/)
+                file[:url]="http://"+file[:url]
+            end
             @target_file.update_attributes!(file_params)
             flash[:notice] = "Document with title [#{@target_file.title}] updated successfully"
             redirect_to(documents_path)

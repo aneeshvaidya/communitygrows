@@ -18,7 +18,6 @@ Scenario: User can add a new document
   And I press "Submit"
   Then I should be on the document repository page
   And I should see "schedule"
-  And I should see "mock.com/schedule"
 
 # sad path
 Scenario: User can't add a new document without proper file name
@@ -40,7 +39,6 @@ Scenario: User can edit an existing file
   And I press "Submit"
   Then I should be on the document repository page
   And I should see "new schedule"
-  And I should see "mock.com/schedule"
 
 # sad path
 Scenario: User cannot edit an existing file without proper file name
@@ -66,11 +64,10 @@ Scenario: User can delete an announcement
   Then I should be on the document repository page
   And I should see "deleted successfully"
   
-Scenario: see five categories
-  When I check out five categories of document repository
-  Then I should see "First category"
-  Then I should see "Second category"
-  Then I should see "Third category"
-  Then I should see "Fourth category"
-  Then I should see "Fifth category"
-  
+# Scenario: see four categories
+#   When I check out four categories of document repository
+#   Then I should see "First category"
+#   Then I should see "Second category"
+#   Then I should see "Third category"
+#   Then I should see "Fourth category"
+
