@@ -5,14 +5,14 @@
   <!-- Fonts -->
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Forum" />
-  
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'base', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<ul>
+<ul class="nav-bar">
   <li><%= link_to image_tag( 'logo/logo.jpg'), dashboard_index_path, {:class=>"dashboard"}%></li>
   <li><%= link_to "Dashboard", dashboard_index_path, { :class=>"navigation"}%></li>
   <li><%= link_to "Documents", documents_path, { :class=>"navigation"}%></li>
