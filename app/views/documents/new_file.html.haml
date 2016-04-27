@@ -1,6 +1,6 @@
 %h1 Add new file
 
-- if flash[:notice] == "Populate all fields before submission."
+- if flash[:notice] == "Populate all fields before submission." or flash[:notice]=="Please enter a valid URL."
   #flashNotice
     = flash[:notice]
 
