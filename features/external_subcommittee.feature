@@ -76,25 +76,23 @@ Scenario: should be able to add a document
   Then I should see "Add new document"
   When I follow "Add new document"
   And I fill in "Title" with "new title"
-  And I fill in "URL" with "new url"
+  And I fill in "URL" with "newurl.com"
   And I press "Submit"
   Then I should see "new title"
-  And I should see "new url"
 
 # happy path
 Scenario: should be able to edit a created document
   Then I should see "Add new document"
   When I follow "Add new document"
   And I fill in "Title" with "new title"
-  And I fill in "URL" with "new url"
+  And I fill in "URL" with "newurl.com"
   And I press "Submit"
   Then I should see "Edit Document"
   When I follow first "Edit Document"
   And I fill in "Title" with "edited title"
-  And I fill in "url" with "edited url"
+  And I fill in "url" with "newurl.com"
   And I press "Submit"
   Then I should see "edited title"
-  And I should see "edited url"
 
 # happy path
 @javascript
@@ -102,10 +100,9 @@ Scenario: should be able to delete a created document
   Then I should see "Add new document"
   When I follow "Add new document"
   And I fill in "Title" with "new title"
-  And I fill in "URL" with "new url"
+  And I fill in "URL" with "newurl.com"
   And I press "Submit"
   Then I should see "new title"
-  And I should see "new url"
   Then I should see "Delete Document"
   When I follow first "Delete Document"
   And I confirm popup
