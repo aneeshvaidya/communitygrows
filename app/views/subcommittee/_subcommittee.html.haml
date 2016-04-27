@@ -1,7 +1,7 @@
 #admin
   %h1 #{@committee_type.capitalize} Subcommittee
 
-- if flash[:notice]
+- if flash[:notice] and flash[:notice]!="Signed in successfully."
   #flashNotice
     = flash[:notice]
 
@@ -39,7 +39,7 @@
     %thead
       %tr
         %td{:class => "admindashboard_row_announcement_title"} Title
-        %td{:class => "admindashboard_row_announcement_content"} URL
+        /%td{:class => "admindashboard_row_announcement_content"} URL
         %td{:class => "admindashboard_row_announcement_createdat"} Created at
         %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
         %td{:class => "admindashboard_row_announcement_updatedat"} Edit
@@ -47,8 +47,8 @@
     %tbody
       - @document_list.each do |document|
         %tr
-          %td= document.title
-          %td= document.url
+          %td= link_to document.title, document.url
+          /%td= document.url
           %td= document.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= document.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Document", edit_committee_document_path(:id => document.id)

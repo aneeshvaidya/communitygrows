@@ -4,25 +4,44 @@ class DocumentListController < ActionController::Base
     def new_document
     end
     def create_document
-        @title = params[:title]
-        @url = params[:url]
-        @committee_type = params[:committee_type]
-        Document.create!(:title => @title, :url => @url, :committee_type => @committee_type)
-        flash[:notice] = 'Document List creation successful.'
-        redirect_to subcommittee_index_path(@committee_type)
+        if params[:title].to_s == "" or params[:url].to_s == ""
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to new_committee_document_path
+        elsif !(params[:url]=~/.com(.*)/)
+            flash[:notice] = "Please enter a valid URL."
+            redirect_to new_committee_document_path
+        else
+            @title = params[:title]
+            @url = params[:url]
+            @committee_type = params[:committee_type]
+            Document.create!(:title => @title, :url => @url, :committee_type => @committee_type)
+            flash[:notice] = 'Document List creation successful.'
+            redirect_to subcommittee_index_path(@committee_type)
+        end
     end
     def edit_document
         @document_list_id = params[:id]
         @document = Document.find @document_list_id
     end
     def update_document
-        @title = params[:title]
-        @url = params[:url]
-        @committee_type = params[:committee_type]
-        @target_document = Document.find params[:document][:id]
-        @target_document.update_attributes!(:title => @title, :url => @url, :committee_type => @committee_type)
-        flash[:notice] = "Executive Document List with title [#{@target_document.title}] updated successfully"
-        redirect_to subcommittee_index_path(@committee_type)
+        if params[:title].to_s == "" or params[:url].to_s == ""
+            flash[:notice] = "Populate all fields before submission."
+            redirect_to new_committee_document_path
+        elsif !(params[:url]=~/.com(.*)/)
+            flash[:notice] = "Please enter a valid URL."
+            redirect_to new_committee_document_path
+        else
+            @title = params[:title]
+            if !(params[:url]=~/http:/)
+                params[:url]="http://"+file[:url]
+            end
+            @url = params[:url]
+            @committee_type = params[:committee_type]
+            @target_document = Document.find params[:document][:id]
+            @target_document.update_attributes!(:title => @title, :url => @url, :committee_type => @committee_type)
+            flash[:notice] = "Executive Document List with title [#{@target_document.title}] updated successfully"
+            redirect_to subcommittee_index_path(@committee_type)
+        end
     end
     def delete_document
         @committee_type = params[:committee_type]
