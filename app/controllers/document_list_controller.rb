@@ -33,7 +33,7 @@ class DocumentListController < ActionController::Base
         else
             @title = params[:title]
             if !(params[:url]=~/http:/)
-                params[:url]="http://"+file[:url]
+                params[:url]="http://"+params[:url]
             end
             @url = params[:url]
             @committee_type = params[:committee_type]
