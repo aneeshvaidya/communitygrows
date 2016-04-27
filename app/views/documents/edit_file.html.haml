@@ -13,7 +13,7 @@
   = text_field :file, 'url', :value => @file.url
 
   = label :file, :committee_type, 'Committee'
-  = select :file, :committee_type, {'Executive' => 'executive', 'Internal' => 'internal', 'External' => 'external'}, :value => @file.committee_type
+  = select :file, :committee_type, {'CommunityGrows Administration' => 'CGadmin', 'Board Overview' => 'boardoverview', 'Board Activities' => 'boardactivities', 'Budgets and Finances' => 'budgetfinance', 'AB Meetings' => 'abmeetings'}
 
   = submit_tag 'Submit'
 =link_to 'back', documents_path
