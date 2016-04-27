@@ -159,7 +159,6 @@
       %td Delete
   %tbody
     - documents = Document.where(:committee_type => 'budgetfinance')
-    
     - if documents.empty?
       %td= "No files have been entered"
     - documents.each do |file|
@@ -172,7 +171,6 @@
 
 
 %h2#committeeTitle AB Meetings
-
 %table#docs
   %thead#filebar
     %tr
