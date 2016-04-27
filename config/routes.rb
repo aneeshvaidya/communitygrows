@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   post 'dashboard_announcements/:announcement_id/comments/create_comment' => 'comment#create_comment', as: :create_comment
   delete 'dashboard_announcements/:announcement_id/comments/delete_comment/:comment_id' => 'comment#delete_comment', as: :delete_comment
 
+  # Account Info
+  get 'account_details/:user_id/' => 'user#index', as: :user_credentials
+  put 'account_details/:user_id/' => 'user#update', as: :update_user_credentials
   # Subcommittee
   get 'subcommittee_index/:committee_type/' => 'subcommittee#index', as: :subcommittee_index
   

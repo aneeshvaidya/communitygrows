@@ -3,7 +3,7 @@ class CommentController < ApplicationController
     before_filter :authenticate_user!
     
     def comment_params
-        params.require(:comment).permit(:content, :user_id)
+        params.require(:comment).permit(:content, :announcement_id)
     end
     
     def index
@@ -14,7 +14,6 @@ class CommentController < ApplicationController
     
     def new_comment
         @announcement_id = params[:announcement_id]
-        @comment = Comment.new
     end
     
     

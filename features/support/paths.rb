@@ -31,6 +31,9 @@ module NavigationHelpers
     
     when /^the comment page for "([^"]+)"$/
       comment_path(Announcement.find_by_title($1).id)
+  
+    when /^the account details page for "([^"]+)"$/ then
+      user_credentials_path(User.find_by_email($1).id)
     
     when /the new announcement page for "([^"]+)"$/ then
       new_committee_announcement_path($1)
