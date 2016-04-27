@@ -19,7 +19,7 @@ describe DocumentListController do
             response.should render_template(:edit_document)
         end
         it 'updates the document' do
-            put :update_document, :document => {:id => @doc.id}, :title => @doc.title, :url => "new_url", :committee_type => @doc.committee_type 
+            put :update_document, :document => {:id => @doc.id}, :title => @doc.title, :url => "new_url.com", :committee_type => @doc.committee_type 
             response.should redirect_to(subcommittee_index_path(:committee_type => @doc.committee_type))
         end
     end
