@@ -73,6 +73,18 @@ link {
   color: red;
 }
 
+.logo {
+  margin-right: 45%;
+  margin-left: 45%;
+}
+
+.logo img{
+  height: 5em;
+}
+
+
+
+
 /***************/
 /*Documents CSS*/
 /***************/
