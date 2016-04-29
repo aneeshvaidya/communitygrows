@@ -23,7 +23,7 @@
       - documents.each do |file|
         %tr
           %td= link_to file.title, file.url, :target => "_blank"
-          %td= file.updated_at
+          %td= file.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit document", edit_file_path(file.id)
           %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
         
@@ -45,7 +45,7 @@
       - documents.each do |file|
         %tr
           %td= link_to file.title, file.url, :target => "_blank"
-          %td= file.updated_at
+          %td= file.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit document", edit_file_path(file.id)
           %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
         
@@ -67,7 +67,7 @@
       - documents.each do |file|
         %tr
           %td= link_to file.title, file.url, :target => "_blank"
-          %td= file.updated_at
+          %td= file.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit document", edit_file_path(file.id)
           %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
 
@@ -88,7 +88,7 @@
       - documents.each do |file|
         %tr
           %td= link_to file.title, file.url, :target => "_blank"
-          %td= file.updated_at
+          %td= file.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit document", edit_file_path(file.id)
           %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
 
@@ -110,7 +110,7 @@
       - documents.each do |file|
         %tr
           %td= link_to file.title, file.url, :target => "_blank"
-          %td= file.updated_at
+          %td= file.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit document", edit_file_path(file.id)
           %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
           
