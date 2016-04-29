@@ -36,6 +36,14 @@ h2 {
   margin-bottom: 10px;
   text-decoration: none;
 }
+
+.comment {
+  margin-top: 10px;
+}
+
+.comment-delete{
+  display: inline-block;
+}
 .buttonSmall {
   display: inline-block;
   border-radius: 5px;
