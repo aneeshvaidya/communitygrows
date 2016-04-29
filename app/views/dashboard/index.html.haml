@@ -1,7 +1,6 @@
 %h1 Board Member Dashboard
 #announcements
   %h2{:class => "search_head" } Main Announcements
-  .search_button= link_to "Search", show_announcements_path(:categories => [:dashboard, :internal, :executive, :external]), :id => :main
   #announcement_content
     %table
       %thead
@@ -25,6 +24,7 @@
           %tr
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title} [#{announcement.committee_type}]", comment_path(announcement.id)
+  = link_to "Search", show_announcements_path(:categories => [:dashboard, :internal, :executive, :external]), :id => :main, :class => :buttonSmall
 #calendar
   %h2 Calendar
   <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40communitygrows.org&ctz=America/Los_Angeles" style="border: 0" width=98% height=89% frameborder="1" scrolling="no"></iframe>

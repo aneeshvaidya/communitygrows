@@ -39,7 +39,7 @@ h2 {
 .buttonSmall {
   display: inline-block;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #ff610d;
   color: #FFFFFF;
   text-align: center;
   font-size: 8px;
@@ -48,6 +48,7 @@ h2 {
   transition: all 0.5s;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-decoration: none;
 }
 #content {
   text-align: center;
