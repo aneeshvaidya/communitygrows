@@ -21,7 +21,7 @@ class DocumentsController < ActionController::Base
                 flash[:notice] = "Please enter a valid URL."
                 redirect_to new_file_path
             else 
-                if !(file[:url]=~/http:/)
+                if !(file[:url]=~/http(s)?:/)
                     file[:url]="http://"+file[:url]
                 end
                 @file = Document.create!(file_params)
@@ -46,7 +46,7 @@ class DocumentsController < ActionController::Base
             flash[:notice] = "Please enter a valid URL."
             redirect_to new_file_path
         else
-            if !(file[:url]=~/http:/)
+            if !(file[:url]=~/http(s)?:/)
                 file[:url]="http://"+file[:url]
             end
             @target_file.update_attributes!(file_params)

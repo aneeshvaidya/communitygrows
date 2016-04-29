@@ -20,8 +20,8 @@ Background:
 Scenario: successfully  change password
   When I follow "Account Details"
   Then I am on the account details page for "zach@gmail.com"
-  Then I fill in "Password" with "12245678"
-  And I fill in "Password Confirmation" with "12245678"
+  Then I fill in "Password:" with "12245678"
+  And I fill in "Password Confirmation:" with "12245678"
   Then I press "Submit"
   Then I am on the account details page for "zach@gmail.com"
   Then I follow "Sign out"
@@ -35,8 +35,8 @@ Scenario: successfully  change password
 Scenario: user fails to fill in required fields
   When I follow "Account Details"
   Then I am on the account details page for "zach@gmail.com"
-  And I fill in "Password" with ""
-  And I fill in "Password Confirmation" with ""
+  And I fill in "Password:" with ""
+  And I fill in "Password Confirmation:" with ""
   Then I press "Submit"
   And I should see "Password can't be blank"
   And I should be on the account details page for "zach@gmail.com"

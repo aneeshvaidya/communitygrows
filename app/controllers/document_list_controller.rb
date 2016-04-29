@@ -11,6 +11,9 @@ class DocumentListController < ActionController::Base
             flash[:notice] = "Please enter a valid URL."
             redirect_to new_committee_document_path
         else
+            if !(params[:url]=~/http(s)?:/)
+                params[:url]="http://"+params[:url]
+            end
             @title = params[:title]
             @url = params[:url]
             @committee_type = params[:committee_type]
@@ -32,7 +35,7 @@ class DocumentListController < ActionController::Base
             redirect_to new_committee_document_path
         else
             @title = params[:title]
-            if !(params[:url]=~/http:/)
+            if !(params[:url]=~/http(s)?:/)
                 params[:url]="http://"+params[:url]
             end
             @url = params[:url]
