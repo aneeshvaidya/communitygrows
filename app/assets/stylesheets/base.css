@@ -11,18 +11,21 @@ body {
   margin-left:2%;
   margin-right:2%;
 }
+.content_without_nav h1 {
+  text-align: center;
+}
 h1 {
-  font-family: "Forum";
+  /*font-family: "Forum";*/
   font-size: 2.9em;
 }
 h2 {
-  font-family: "Forum";
+  /*font-family: "Forum";*/
   font-size: 1.6em;
 }
 .button {
   display: inline-block;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #ff610d;
   color: #FFFFFF;
   text-align: center;
   font-size: 13px;
@@ -31,6 +34,7 @@ h2 {
   transition: all 0.5s;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-decoration: none;
 }
 .buttonSmall {
   display: inline-block;
@@ -67,7 +71,7 @@ table {
   white-space: nowrap;
 }
 thead {
-  background-color: #333;
+  background-color: #227E9D;
   color: white;
   border-bottom: 3px solid #ddd;
 }
@@ -88,6 +92,18 @@ link {
   color: red;
 }
 
+.logo {
+  margin-right: 45%;
+  margin-left: 45%;
+}
+
+.logo img{
+  height: 5em;
+}
+
+
+
+
 /***************/
 /*Documents CSS*/
 /***************/
@@ -103,25 +119,31 @@ link {
   padding:0;
 }
 .navigation{
-  float: right;
-  padding: 1.5em 1.5em;
+  height: 100%;
+  float: left;
+  padding: 1.1em 1.5em;
+  margin-left: 1.0em;
   display: block;
   color: white;
   text-align: center;
   text-decoration: none;
-  border-left: 1px solid #bbb;
-  font-size: 1em;
+  font-size: 1.4em;
 }
-ul {
+
+.signout {
+  float: right;
+}
+.nav-bar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #4b3603;
     width: 100%;
-    height: 4.3em;
+    height: 5.0em;
     position: fixed;
     top: 0;
+    box-shadow: 0px 1px 3px 1px;
 }
 .navigation:hover:not(.active) {
     background-color: #666;
@@ -144,24 +166,28 @@ ul {
 /* Dashboard CSS */
 /*****************/
 #announcements {
-    background-color:#eeeeee;
+    /*background-color:#eeeeee;*/
     float:left;
-    height:60em;
+    height:52em;
     text-align:center;
-    width:49.5%;
+    width:49%;
     border-radius: 7px;
     padding: 1px;
     margin-bottom: 2%;
+    border-style: solid;
+    border-color: #4b3603;
 }
 #calendar {
-    background-color:#eeeeee;
+    /*background-color:#eeeeee;*/
     float:right;
-    height:60em;
+    height:52em;
     text-align:center;
-    width:49.5%;
+    width:49%;
     border-radius: 7px;
     padding: 1px;
     margin-bottom: 2%;
+    border-style: solid;
+    border-color: #4b3603;
 }
 
 .dashboard_row_announcement_content {
@@ -179,7 +205,7 @@ ul {
 #announcement_content {
   overflow: auto;
   max-width: 100%;
-  max-height: 40%;
+  height: 40%;
   font-size: 1em;
 }
 

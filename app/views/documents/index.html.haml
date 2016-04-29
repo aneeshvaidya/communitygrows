@@ -1,7 +1,6 @@
 #docRepo
   %h1 Document Repository
   
-= link_to 'Add new file', new_file_path, :class => "button"
 
 - if flash[:notice] and flash[:notice]!="Signed in successfully."
   #flashNotice
@@ -77,6 +76,8 @@
         %td= file.updated_at
         %td= link_to "Edit document", edit_file_path(file.id)
         %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
+%br
+%br
 
 %h2#committeeTitle Budgets and Finances
 
@@ -122,3 +123,4 @@
         %td= file.updated_at
         %td= link_to "Edit document", edit_file_path(file.id)
         %td= link_to "Delete document", delete_file_path(file.id), data: { confirm: 'Are you sure?' }
+= link_to 'Add new file', new_file_path, :class => "button"
