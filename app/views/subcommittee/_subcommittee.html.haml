@@ -7,7 +7,7 @@
 
 %h2 Announcements
 
-#table_content
+#document_content
   %table
     %thead
       %tr
@@ -31,7 +31,7 @@
 
 %h2 Documents
 
-#table_content
+#document_content
   %table
     %thead
       %tr
@@ -43,7 +43,7 @@
     %tbody
       - @document_list.each do |document|
         %tr
-          %td= link_to document.title, document.url
+          %td= link_to document.title, document.url, :target => "_blank"
           %td= document.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= document.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Document", edit_committee_document_path(:id => document.id)
