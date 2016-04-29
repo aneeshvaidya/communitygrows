@@ -209,6 +209,10 @@ link {
   font-size: 1em;
 }
 
+.outer {
+  text-align: center;
+}
+
 /*****************/
 /* Committee CSS */
 /*****************/
