@@ -9,7 +9,7 @@
         .comment
           %span <b>#{User.find(comment.user_id).email} says: </b> #{comment.content} at #{comment.created_at.strftime("%m/%d/%Y %l:%M %p")}
           .comment-delete
-            = button_to "Delete Comment", delete_comment_path(@announcement.id, comment.id), :method => :delete, data: { confirm: 'Are you sure?' }
+            = link_to "Delete Comment", delete_comment_path(@announcement.id, comment.id), :method => :delete, data: { confirm: 'Are you sure?' }, class: :buttonSmall
     %p Click the button below to start a new thread:
     %p= link_to 'Add new topic', new_comment_path, class: :button
 
