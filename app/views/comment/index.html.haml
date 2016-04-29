@@ -5,8 +5,8 @@
   .container
     %h3 Join the discussion!
     #comments
-      -@comments.where(announcement_id: @announcement.id).find_each do |comment|
-        %h4 <b>#{User.find(comment.user_id).email} says: </b> #{comment.content}" at #{comment.created_at.strftime("%m/%d/%Y %l:%M %p")}
+      -@emailhash.each do |comment, email|
+        %h4 <b>#{email} says: </b> #{comment.content}" at #{comment.created_at.strftime("%m/%d/%Y %l:%M %p")}
         = button_to "Delete Comment", delete_comment_path(@announcement.id, comment.id), :method => :delete, data: { confirm: 'Are you sure?' }
     %p Click the button below to start a new thread:
     %p= link_to 'Add new topic', new_comment_path, class: :button
