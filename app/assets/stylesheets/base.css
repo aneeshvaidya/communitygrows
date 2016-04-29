@@ -92,18 +92,18 @@ link {
   font-size: 1.1em;
   color: red;
 }
-
-.logo {
-  margin-right: 45%;
-  margin-left: 45%;
+.bottom-bar {
+  position: static;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }
 
 .logo img{
-  height: 5em;
+  height: 3em;
 }
-
-
-
 
 /***************/
 /*Documents CSS*/
