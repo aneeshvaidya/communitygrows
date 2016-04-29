@@ -29,9 +29,6 @@
 
 = link_to 'Add new announcement', new_committee_announcement_path, :class => "button"
 
-<br/> <br/>
-
-
 %h2 Documents
 
 #table_content
@@ -39,7 +36,6 @@
     %thead
       %tr
         %td{:class => "admindashboard_row_announcement_title"} Title
-        /%td{:class => "admindashboard_row_announcement_content"} URL
         %td{:class => "admindashboard_row_announcement_createdat"} Created at
         %td{:class => "admindashboard_row_announcement_updatedat"} Updated at
         %td{:class => "admindashboard_row_announcement_updatedat"} Edit
@@ -48,12 +44,9 @@
       - @document_list.each do |document|
         %tr
           %td= link_to document.title, document.url
-          /%td= document.url
           %td= document.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= document.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Document", edit_committee_document_path(:id => document.id)
           %td= link_to "Delete Document", delete_committee_document_path(:document_id => document.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new document',new_committee_document_path, :class => "button"
-
-<br/> <br/>

@@ -209,6 +209,13 @@ link {
   font-size: 1em;
 }
 
+#document_content {
+  overflow: auto;
+  max-width: 100%;
+  height: 30em;
+  font-size: 1em;  
+}
+
 .outer {
   text-align: center;
 }

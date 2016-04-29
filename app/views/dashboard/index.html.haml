@@ -14,7 +14,6 @@
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title}", comment_path(announcement.id)
   %h2{:class => "search_head" } Subcommittee Announcements
-  // .search_button= link_to "Search", show_announcements_path(:categories => [:internal, :external, :executive]), :id => :subcommittee
   #announcement_content
     %table
       %thead
