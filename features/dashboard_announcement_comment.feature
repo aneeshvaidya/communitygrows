@@ -40,7 +40,7 @@ Scenario: User clicks on announcement to view comments for given announcement
   And I press "Submit"
   Then I should be on the comment page for "ddddddd"
   And I should see "This is a test comment"
-  Then I press "Delete"
+  Then I follow "Delete Comment"
   And I should not see "This is a test comment"
   
 #sad path
