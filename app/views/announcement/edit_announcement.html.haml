@@ -7,10 +7,10 @@
   = form_tag update_committee_announcement_path, :method => :put do
     = hidden_field :announcement, :id
     = label_tag :title, "Title: "
-    = text_area_tag 'title', @announcement.title, size: "40x3" 
+    = text_area_tag 'title', @announcement.title, size: "60x5" 
     <br/>
     = label_tag :content, "Content: "
-    = text_area_tag 'content', @announcement.content, size: "40x10"
+    = text_area_tag 'content', @announcement.content, size: "60x10"
     <br/>
     = submit_tag 'Submit', :class => "button"
   = link_to 'Back', subcommittee_index_path(params[:committee_type]), :class => "button"

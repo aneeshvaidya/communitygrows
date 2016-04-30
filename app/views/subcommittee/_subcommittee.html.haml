@@ -25,7 +25,7 @@
           %td= announcement.created_at.strftime("%m/%d/%Y %l:%M %p")
           %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
           %td= link_to "Edit Announcement", edit_committee_announcement_path(:announcement_id => announcement.id)
-          %td= button_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => announcement.id), :method => :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to "Delete Announcement", delete_committee_announcement_path(:announcement_id => announcement.id), :method => :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Add new announcement', new_committee_announcement_path, :class => "button"
 

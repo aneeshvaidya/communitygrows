@@ -3,11 +3,11 @@
 /* You can use Sass (SCSS) here: http://sass-lang.com/*/
 body {
   font-family: "Open Sans";
-  font-size: .75em;
+  font-size: .8em;
   margin: 0;
 }
 .content_without_nav {
-  margin-top:5%;
+  margin-top:7%;
   margin-left:2%;
   margin-right:2%;
 }
@@ -16,11 +16,11 @@ body {
 }
 h1 {
   /*font-family: "Forum";*/
-  font-size: 2.9em;
+  font-size: 2.5em;
 }
 h2 {
   /*font-family: "Forum";*/
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 .button {
   display: inline-block;
@@ -50,9 +50,9 @@ h2 {
   background-color: #ff610d;
   color: #FFFFFF;
   text-align: center;
-  font-size: 8px;
+  font-size: 10px;
   padding: 1%;
-  width: 10em !important;
+  width: 12em !important;
   transition: all 0.5s;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -262,13 +262,13 @@ link {
   width: 40%;
 }
 .admindashboard_row_announcement_createdat {
-  width: 10%;
+  width: 12%;
 }
 .admindashboard_row_announcement_updatedat {
-  width: 10%;
+  width: 12%;
 }
 .admindashboard_row_announcement_edit {
-  width: 10%;
+  width: 12%;
 }
 .admindashboard_row_announcement_delete {
   width: 12%;
