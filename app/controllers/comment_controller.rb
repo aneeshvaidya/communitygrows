@@ -7,8 +7,16 @@ class CommentController < ApplicationController
     end
     
     def index
-        @comments = Comment.all
         @announcement_id = params[:announcement_id]
+        @emailhash = Hash.new
+        Comment.where(announcement_id: @announcement_id).find_each do |comment|
+            @email = "Deleted"
+            if User.where(:id => comment.user_id).present?
+                @email = User.find(comment.user_id).email
+            end
+            @emailhash[comment] = @email
+        end
+            
         @announcement = Announcement.find @announcement_id
     end
     
