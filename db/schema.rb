@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160426234549) do
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.boolean  "admin"
-    t.datetime "last_sign_in_at",        default: '2016-06-05 22:30:32', null: false
+    t.datetime "last_sign_in_at",        default: '2016-06-09 01:33:42', null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
