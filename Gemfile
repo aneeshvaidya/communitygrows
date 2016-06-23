@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#allow for old style, non turbolinks jquery calls
+gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
+
 #Haml
 gem 'haml'
 # Use jquery as the JavaScript library

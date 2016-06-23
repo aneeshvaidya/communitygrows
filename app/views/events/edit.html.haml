@@ -1,0 +1,27 @@
+%h1 Edit Event
+
+- if flash[:notice]
+  #flashNotice
+    = flash[:notice]
+</br>
+
+#content
+  = form_tag update_event_path(@event.id) do
+    .row
+      =label :event, :title, 'Title', :class => "formLabel"
+      =text_field :event, 'title', :value => @event.title, :class => "formTextBox"
+    <br/>
+    .row
+      =label :event, :location, 'Location', :class => "formLabel"
+      =text_field :event, 'location', :value => @event.location, :class => "formTextBox"
+    <br/>
+    .row
+      =label :event, :description, 'Description', :class => "formLabel"
+      =text_field :event, 'description', :value =>@event.description, :class => "formTextBox"
+    <br/>
+    .row
+      =label :event, :date, 'Date and Time', :class => "formLabel"
+      =datetime_field :event, 'date', :value => @event.date.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM", :class => "formTextBox"
+    <br/>
+    = submit_tag 'Submit', :class => "button"
+  = link_to 'Back', admin_index_path, :class => "button"

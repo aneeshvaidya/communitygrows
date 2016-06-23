@@ -13,7 +13,8 @@ class AdminController < ActionController::Base
     def announcement_params
         params.require(:announcement).permit(:title, :content)
     end
-  
+    
+
     def index
         @users = User.all
         @announcement_list = Announcement.where(committee_type: "dashboard").order(created_at: :DESC)
@@ -21,6 +22,7 @@ class AdminController < ActionController::Base
             flash[:message] = "Access not granted. Please sign in again."
             redirect_to("/users/sign_in")
         end
+        @events = Event.all
     end
     
     def edit_user

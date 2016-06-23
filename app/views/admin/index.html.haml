@@ -56,12 +56,24 @@
 
 <br/> <br/>
 
-%h2 Register/Update Google Calendar
-%p Insert your CommunityGrows email id (Make sure to set your calendar shared to public or it would not be displayed correctly on the dashboard)
-%p ex) info@communitygrows.org => insert "info"
+%h2 Event Management
 
-= form_tag update_calendar_path(@calendar), :method => :put do
-  = label :calendar, :title, "Calendar owner's id:"
-  = text_field :calendar, 'html'
+#table_content
+  %table
+    %thead
+      %tr
+        %td{:class => "admindashboard_row_event_title"} Title
+        %td{:class => "admindashboard_row_event_location"} Location
+        %td{:class => "admindashboard_row_event_date"} Date
+        %td{:class => "admindashboard_row_event_edit"} Edit
+        %td{:class => "admindashboard_row_event_delete"} Delete
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td{:id => "eventTitle"}= event.title
+          %td= event.location
+          %td= event.date.strftime("%m/%d/%Y %l:%M %p")
+          %td= link_to "Edit Event", edit_event_path(event.id)
+          %td= link_to "Delete Event", delete_event_path(event.id), data: { confirm: 'Are you sure?' }
 
-  = submit_tag 'Update Google Calendar', :class => "button"
+= link_to 'New Event', a_new_event_path, :class => "button"

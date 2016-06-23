@@ -10,5 +10,6 @@ class DashboardController < ActionController::Base
         end
         @announcement_list = Announcement.where(committee_type: "dashboard").order(created_at: :DESC)
         @subcomittee_announcements_list = Announcement.where.not(committee_type: "dashboard").order(created_at: :DESC)
+        @events = Event.all
     end
 end

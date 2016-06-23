@@ -26,5 +26,16 @@
             %td= link_to "#{announcement.title} [#{announcement.committee_type}]", comment_path(announcement.id)
   = link_to "Search", show_announcements_path(:categories => [:dashboard, :internal, :executive, :external]), :id => :main, :class => :buttonSmall
 #calendar
-  %h2 Calendar
-  <iframe src="https://calendar.google.com/calendar/embed?src=#{@curr_calendar_id}%40communitygrows.org&ctz=America/Los_Angeles" style="border: 0" width=98% height=89% frameborder="1" scrolling="no"></iframe>
+  %h2 Events
+  %table
+    %thead
+      %tr
+        %td= "Title"
+        %td= "Location"
+        %td= "Date"
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= link_to "#{event.title}", show_event_path(event.id)  
+          %td= event.location
+          %td= event.date.strftime("%m/%d/%Y %l:%M %p")

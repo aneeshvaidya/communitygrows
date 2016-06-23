@@ -1,0 +1,14 @@
+
+<h1> Events Listing </h1>
+<div id="accordion-scrollable">
+    <div class="ui-accordion">
+        <% @events.each do |event| %>
+        <h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all" 
+            role="tab" id="ui-id-4" aria-controls="ui-id-5" aria-selected="false" aria-expanded="false" tabindex="-1">
+            <%= event.title %>: <%= event.date.strftime("%m/%d/%Y %l:%M %p") %></h3>
+        <div>
+            <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-7" aria-labelledby="ui-id-6" role="tabpanel" aria-hidden="false" style="display: block; height: 21px;"><%= event.description %></div>
+        </div>
+        <% end %>
+    </div>
+</div>

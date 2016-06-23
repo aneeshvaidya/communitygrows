@@ -1,6 +1,7 @@
 /* Place all the styles related to the documents controller here.*/
 /* They will automatically be included in application.css.*/
 /* You can use Sass (SCSS) here: http://sass-lang.com/*/
+
 body {
   font-family: "Open Sans";
   font-size: .8em;
@@ -219,13 +220,6 @@ link {
   overflow: auto;
   max-width: 100%;
   max-height: 40%;
-  font-size: 1em;
-}
-
-#accordion-scrollable {
-  overflow-y: scroll;
-  max-width: 100%;
-  max-height: 400px;
   font-size: 1em;
 }
 
