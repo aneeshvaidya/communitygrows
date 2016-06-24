@@ -79,9 +79,4 @@ class EventsController < ApplicationController
         redirect_to admin_index_path
     end
     
-    
-    def show
-       @events = Event.all.order(date: :DESC) 
-    end
-    
 end

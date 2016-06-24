@@ -190,7 +190,7 @@ link {
     border-style: solid;
     border-color: #4b3603;
 }
-#calendar {
+#accordion-scrollable {
     /*background-color:#eeeeee;*/
     float:right;
     height:52em;
@@ -201,6 +201,7 @@ link {
     margin-bottom: 2%;
     border-style: solid;
     border-color: #4b3603;
+    overflow-y: scroll;
 }
 
 .dashboard_row_announcement_content {
@@ -219,13 +220,6 @@ link {
   overflow: auto;
   max-width: 100%;
   max-height: 40%;
-  font-size: 1em;
-}
-
-#accordion-scrollable {
-  overflow-y: scroll;
-  max-width: 100%;
-  max-height: 400px;
   font-size: 1em;
 }
 

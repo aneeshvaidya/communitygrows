@@ -25,17 +25,11 @@
             %td= announcement.updated_at.strftime("%m/%d/%Y %l:%M %p")
             %td= link_to "#{announcement.title} [#{announcement.committee_type}]", comment_path(announcement.id)
   = link_to "Search", show_announcements_path(:categories => [:dashboard, :internal, :executive, :external]), :id => :main, :class => :buttonSmall
-#calendar
-  %h2 Events
-  %table
-    %thead
-      %tr
-        %td= "Title"
-        %td= "Location"
-        %td= "Date"
-    %tbody
-      - @events.each do |event|
-        %tr
-          %td= link_to "#{event.title}", show_event_path(event.id)  
-          %td= event.location
-          %td= event.date.strftime("%m/%d/%Y %l:%M %p")
+#accordion-scrollable
+  .ui-accordion
+    - @events.each do |event|
+      %h3#ui-id-4.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-collapsed.ui-corner-all{"aria-controls" => "ui-id-5", "aria-expanded" => "false", "aria-selected" => "false", :role => "tab", :tabindex => "-1"}
+        = event.title
+        \: #{event.date.strftime("%m/%d/%Y %l:%M %p")}  ||   Where? #{event.location}
+      %div
+        #ui-id-7.ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content.ui-accordion-content-active{"aria-hidden" => "false", "aria-labelledby" => "ui-id-6", :role => "tabpanel", :style => "display: block; height: 21px;"}= event.description
