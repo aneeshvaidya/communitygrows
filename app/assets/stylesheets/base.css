@@ -236,11 +236,6 @@ link {
   font-size: 1em;  
 }
 
-.event_location,
-.event_time,
-.event_content {
-  margin: 0 1.5% 24px 1.5%;
-}
 
 .event_location {
  float:left; 
@@ -252,6 +247,13 @@ link {
   clear: both;
   margin-bottom: 0;
   float:left;
+}
+
+.event_title {
+  float:left;
+}
+.event_title_date {
+  float:right;
 }
 
 .outer {
@@ -302,11 +304,11 @@ link {
 .row {
 
 }
-/*
-#eventContent {
-  text-align: center;
-  position: relative;
-}*/
+.formTextBox {
+  height: 100px;
+  width: 200px;
+  overflow-y: auto;
+}
 
 /*****************/
 /*  Comment CSS  */

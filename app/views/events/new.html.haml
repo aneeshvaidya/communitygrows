@@ -9,19 +9,19 @@
   = form_tag create_new_event_path do
     .row
       =label :event, :title, 'Title', :class => "formLabel"
-      =text_field :event, 'title', :class => "formTextBox"
+      =text_field :event, 'title'
     <br/>
     .row
       =label :event, :location, 'Location', :class => "formLabel"
-      =text_field :event, 'location', :class => "formTextBox"
+      =text_field :event, 'location'
     <br/>
     .row
-      =label :event, :description, 'Description', :class => "formLabel"
-      =text_field :event, 'description', :class => "formTextBox"
+      = label_tag :description, "Description: "
+      = text_area_tag 'description', nil, size: "60x10"
     <br/>
     .row
       =label :event, :date, 'Date and Time', :class => "formLabel"
-      =datetime_field :event, 'date', :value => Time.zone.now.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM", :class => "formTextBox"
+      =datetime_field :event, 'date', :value => Time.zone.now.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM"
     <br/>
     = submit_tag 'Submit', :class => "button"
   = link_to 'Back', admin_index_path, :class => "button"

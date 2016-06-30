@@ -184,8 +184,10 @@
 	position: relative;
 	margin: 2px 0 0 0;
 	padding: .5em .5em .5em .7em;
-	font-size: 120%;
+	font-size: 100%;
 	overflow: auto;
+	line-height: 2px;
+    font-size: 6pt;
 	background-color: #227E9D;
 	color: #FFFFFF;
 }
@@ -195,7 +197,7 @@
 }
 
 .ui-accordion .ui-accordion-content {
-	padding: 3em 2.2em;
+	padding: 4em 2.2em;
 	border-top: 0;
 	text-align: left;
 	overflow: auto;
