@@ -304,11 +304,6 @@ link {
 .row {
 
 }
-.formTextBox {
-  height: 100px;
-  width: 200px;
-  overflow-y: auto;
-}
 
 /*****************/
 /*  Comment CSS  */
