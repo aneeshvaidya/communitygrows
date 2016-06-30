@@ -248,7 +248,10 @@ link {
   margin-bottom: 0;
   float:left;
 }
-
+.event_link {
+  clear: left;
+  float:left;
+}
 .event_title {
   float:left;
 }

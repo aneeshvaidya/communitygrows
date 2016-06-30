@@ -20,11 +20,12 @@
       = text_area_tag 'description', @event.description, size: "60x10"
     <br/>
     .row
-      = label :event, :url, 'URL'
-      = text_field :event, 'url', :value => @event.url, size: '60x1'
-    .row
       =label :event, :date, 'Date and Time', :class => "formLabel"
       =datetime_field :event, 'date', :value => @event.date.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM", :class => "formTextBox"
+    <br/>
+    .row
+      = label :event, :url, 'URL'
+      = text_area :event, 'url', :value => @event.url, size: '60x1'
     <br/>
     = submit_tag 'Submit', :class => "button"
   = link_to 'Back', admin_index_path, :class => "button"

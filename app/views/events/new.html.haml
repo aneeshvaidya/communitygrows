@@ -16,15 +16,16 @@
       =text_field :event, 'location'
     <br/>
     .row
-      = label_tag :description, "Description: "
-      = text_area_tag 'description', nil, size: "60x10"
+      = label :event, :description, "Description: "
+      = text_area :event, 'description'
+    <br/>
+    .row
+      =label :event, :date, 'Date and Time', :class => "formLabel"
+      =datetime_field :event, 'date', :value => Time.zone.now.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM"
     <br/>
     .row
       = label :event, :url, 'URL'
       = text_field :event, 'url', placeholder: "Place url for link to external source", size: '60x1'
-    .row
-      =label :event, :date, 'Date and Time', :class => "formLabel"
-      =datetime_field :event, 'date', :value => Time.zone.now.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM"
     <br/>
     = submit_tag 'Submit', :class => "button"
   = link_to 'Back', admin_index_path, :class => "button"
