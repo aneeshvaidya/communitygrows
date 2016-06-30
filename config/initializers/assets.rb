@@ -9,7 +9,6 @@ Rails.application.config.assets.precompile += %w( admin.css ) #by Tony to compil
 Rails.application.config.assets.precompile += %w( committee.css ) #by Tony to compile committee.css
 #Rails.application.config.assets.precompile += %w( documents.css ) #by Tony to compile documents.css
 Rails.application.config.assets.precompile += %w( base.css ) #by Facundo to compile base.css
-Rails.application.config.assets.precompile += %w( events.css ) #by Zachary to compile event css
 Rails.application.config.assets.precompile += %w( jquery-ui.css ) #by Zachary to compile necessary jquery ui css
 
 # Add additional assets to the asset load path
