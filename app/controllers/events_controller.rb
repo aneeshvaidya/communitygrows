@@ -14,6 +14,7 @@ class EventsController < ApplicationController
         @location = event_params[:location]
         @description = event_params[:description]
         @date = event_params[:date]
+        @url = event_params[:url]
         
         if @title.empty?
             flash[:notice] = "Title field cannot be left blank."
@@ -34,6 +35,17 @@ class EventsController < ApplicationController
         rescue ArgumentError
             flash[:notice] = "Date was not correctly formatted, please follow provided format."
             redirect_to a_new_event_path and return
+        end
+        
+        begin
+            if !(@url=~/.com(.*)/)
+                flash[:notice] = "Please enter a valid URL."
+                redirect_to a_new_event_path and return
+            else 
+                if !(@url=~/http(s)?:/)
+                    @url="http://"+@url
+                end
+            end
         end
         
         @event = Event.create(event_params)

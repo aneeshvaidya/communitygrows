@@ -20,6 +20,9 @@
       = text_area_tag 'description', nil, size: "60x10"
     <br/>
     .row
+      = label :event, :url, 'URL'
+      = text_field :event, 'url', placeholder: "Place url for link to external source", size: '60x1'
+    .row
       =label :event, :date, 'Date and Time', :class => "formLabel"
       =datetime_field :event, 'date', :value => Time.zone.now.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM"
     <br/>
