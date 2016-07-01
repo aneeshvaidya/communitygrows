@@ -6,7 +6,7 @@
 namespace :delete do
     desc 'Delete old events'
     task :old_records => :environment do
-        Event.where('date < ?', Time.now.to_date).each do |event|
+        Event.where('date < ?', (Time.now.to_date - 2.days)).each do |event|
             event.destroy
         end
     end
