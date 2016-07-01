@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 
+gem 'whenever', :require => false
+
 #Haml
 gem 'haml'
 # Use jquery as the JavaScript library

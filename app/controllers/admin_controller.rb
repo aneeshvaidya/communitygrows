@@ -22,7 +22,7 @@ class AdminController < ActionController::Base
             flash[:message] = "Access not granted. Please sign in again."
             redirect_to("/users/sign_in")
         end
-        @events = Event.all
+        @events = Event.order(date: :DESC)
     end
     
     def edit_user

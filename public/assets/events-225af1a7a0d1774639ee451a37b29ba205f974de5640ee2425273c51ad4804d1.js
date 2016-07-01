@@ -1,4 +1,5 @@
 /* global $ */
+
 $.fn.myAccordion = function(){
   return this.each(function(){
 	$(this).addClass("ui-accordion ui-accordion-icons ui-widget ui-helper-reset")
