@@ -14,6 +14,7 @@
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.timepicker.js
 //= require events
 //= require turbolinks
 //= require_tree

@@ -24,6 +24,8 @@ gem 'jquery-ui-rails'
 
 gem 'whenever', :require => false
 
+gem 'simple_form'
+
 #Haml
 gem 'haml'
 # Use jquery as the JavaScript library

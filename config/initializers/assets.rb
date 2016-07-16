@@ -10,6 +10,7 @@ Rails.application.config.assets.precompile += %w( committee.css ) #by Tony to co
 #Rails.application.config.assets.precompile += %w( documents.css ) #by Tony to compile documents.css
 Rails.application.config.assets.precompile += %w( base.css ) #by Facundo to compile base.css
 Rails.application.config.assets.precompile += %w( jquery-ui.css ) #by Zachary to compile necessary jquery ui css
+Rails.application.config.assets.precompile += %w( jquery.timepicker.css )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

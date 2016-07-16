@@ -1,4 +1,5 @@
 /* global $ */
+
 $.fn.myAccordion = function(){
   return this.each(function(){
 	$(this).addClass("ui-accordion ui-accordion-icons ui-widget ui-helper-reset")
@@ -25,5 +26,4 @@ $.fn.myAccordion = function(){
 $(document).ready(function() {
     $('.ui-accordion').myAccordion({autoHeight: false, heightStyle: 'content'});
     $('.date_field').datepicker();
-    $('.time_field').timepicker();
 });

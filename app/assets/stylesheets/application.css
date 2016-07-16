@@ -13,5 +13,6 @@
  *= require_self
  *= require jquery-ui
  *= require jquery-ui/accordion
+ *= require jquery.timepicker.css
  */
 
