@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     before_filter :authenticate_user!
     
     def event_params
-        params.require(:event).permit(:title, :location, :description, :date, :url)
+        params.require(:event).permit(:title, :location, :description, :url, :start_date, :end_date, :start_time, :end_time)
     end
     
     def new
@@ -13,7 +13,11 @@ class EventsController < ApplicationController
         @title = event_params[:title]
         @location = event_params[:location]
         @description = event_params[:description]
-        @date = event_params[:date]
+        
+        @start_date = event_params[:start_date]
+        @end_date = event_params[:end_date]
+        @start_time = event_params[:start_time]
+        @end_time = event_params[:end_time]
         
         if @title.empty?
             flash[:notice] = "Title field cannot be left blank."

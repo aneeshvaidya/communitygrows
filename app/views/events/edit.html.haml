@@ -20,8 +20,17 @@
       = text_area_tag 'description', @event.description, size: "60x10"
     <br/>
     .row
-      =label :event, :date, 'Date and Time', :class => "formLabel"
-      =datetime_field :event, 'date', :value => @event.date.strftime('%Y-%m-%d %l:%M%p'), placeholder: "YYYY-MM-DD  HH:mmAM", :class => "formTextBox"
+      =label :event, :start_date, 'Start Date', :id => "start_date"
+      =datetime_field :event, 'start_date', :value => Time.zone.now.strftime('%m/%d/%Y'), placeholder: "MM/DD//YYYY", :class => "date_field"
+      =label :event, :end_date, 'End Date', :id => "end_date"
+      =datetime_field :event, 'end_date', :value => Time.zone.now.strftime('%m/%d/%Y'), placeholder: "MM/DD//YYYY", :class => "date_field"
+    <br/>
+    .row
+    =label :event, :start_time, 'Start Time'
+    =datetime_field :event, 'start_time', :class => "time_field"
+    =label :event, :end_time, 'End Time'
+    =datetime_field :event, 'end_time', :class => "time_field"
+    <br/>
     <br/>
     .row
       = label :event, :url, 'URL'

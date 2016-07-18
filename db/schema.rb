@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701062515) do
+ActiveRecord::Schema.define(version: 20160718004206) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -55,6 +55,10 @@ ActiveRecord::Schema.define(version: 20160701062515) do
     t.datetime "date"
     t.string   "url"
     t.datetime "end"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   create_table "users", force: :cascade do |t|
